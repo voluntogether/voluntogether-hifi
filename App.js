@@ -22,7 +22,6 @@ import { testable } from 'react-native-ui-lib/generatedTypes/src/components/feat
 import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
 import ProfileAvailability from './pages/Matching/ProfileAvailability';
 import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
-
 import { Provider } from 'react-redux'
 
 const Tab = createBottomTabNavigator();
@@ -41,13 +40,14 @@ const App = () => {
       <MatchingNavigator.Navigator
         screenOptions={
           {
-            headerShown: false,
+            headerShown: true,
           }
         }>
         <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
         <MatchingNavigator.Screen name="GetMatchedIntro" component={GetMatchedIntro} />
         <MatchingNavigator.Screen name="ProfileAvailability" component={ProfileAvailability} />
         <MatchingNavigator.Screen name="ProfileVolunteerAreas" component={ProfileVolunteerAreas} />
+
       </MatchingNavigator.Navigator>
     );
 
