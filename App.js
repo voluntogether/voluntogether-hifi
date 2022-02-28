@@ -22,7 +22,13 @@ import { testable } from 'react-native-ui-lib/generatedTypes/src/components/feat
 import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
 import ProfileAvailability from './pages/Matching/ProfileAvailability';
 import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
-
+import GetMatched from './pages/Matching/GetMatched'
+import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm'
+import MatchingChat from './pages/Matching/MatchingChat'
+import MatchingCompelete from './pages/Matching/MatchingComplete'
+import OrganizationMatch from './pages/Matching/OrganizationMatch'
+import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
+import GetNewMatch from './pages/Matching/GetNewMatch'
 import { Provider } from 'react-redux'
 
 const Tab = createBottomTabNavigator();
@@ -41,13 +47,27 @@ const App = () => {
       <MatchingNavigator.Navigator
         screenOptions={
           {
-            headerShown: false,
+            // headerShown: false,
+            headerLeft: () => (
+              <Button
+                onPress={() => navigation.goBack()}
+                // iconSource={() => (<FontAwesome5 name='fa-arrow-left' color={'#fff'} />)}
+                title={'testing back'}
+                color='#fff'
+              />)
           }
         }>
         <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
         <MatchingNavigator.Screen name="GetMatchedIntro" component={GetMatchedIntro} />
         <MatchingNavigator.Screen name="ProfileAvailability" component={ProfileAvailability} />
         <MatchingNavigator.Screen name="ProfileVolunteerAreas" component={ProfileVolunteerAreas} />
+        <MatchingNavigator.Screen name="GetNewMatch" component={GetNewMatch} />
+        <MatchingNavigator.Screen name="GetMatched" component={GetMatched} />
+        <MatchingNavigator.Screen name="MatchingAlgorithm" component={MatchingAlgorithm} />
+        <MatchingNavigator.Screen name="MatchingChat" component={MatchingChat} />
+        <MatchingNavigator.Screen name="MatchingCompelete" component={MatchingCompelete} />
+        <MatchingNavigator.Screen name="OrganizationMatch" component={OrganizationMatch} />
+        <MatchingNavigator.Screen name="ReconsiderMatching" component={ReconsiderMatching} />
       </MatchingNavigator.Navigator>
     );
 
@@ -77,7 +97,6 @@ const App = () => {
                   case 'Challenges':
                     iconName = 'mountain';
                     break;
-
                 }
 
 
