@@ -7,8 +7,9 @@ import { View, Text, Image, Button} from "react-native-ui-lib";
 let ProfileVolunteerAreas = () => {
     return (
         <View> 
-            <Text> Make your profile </Text>
+            <Text> Make Your Profile </Text>
             <Text> Tap to select the volunteer areas that interest you. </Text>
+            <Image source={require('./assets/blobs/match-2-blob.svg')}/>
             <Button label={'🏀 Sports'}/> 
             <Button label={'💻 Technology'}/>
             <Button label={'🐳 Animal Welfare'}/> 
