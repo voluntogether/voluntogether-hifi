@@ -7,7 +7,7 @@ let MatchingAlgorithm = () => {
         <View> 
             <Text> Success! </Text>
             <Text>Please wait while our algorithm finds you a volunteer partner! </Text>
-            <Image source={require('./assets/blobs/match-4-blob.svg')}/>
+            {/* <Image source={require('/assets/blobs/match-4-blob.svg')}/> */}
         </View>
     );
 }

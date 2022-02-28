@@ -9,7 +9,7 @@ let ProfileVolunteerAreas = () => {
         <View> 
             <Text> Make Your Profile </Text>
             <Text> Tap to select the times that you are generally free.</Text>
-            <Image source={require('./assets/blobs/match-3-blob.svg')}/>
+            {/* <Image source={require('/assets/blobs/match-3-blob.svg')}/> */}
             <Button label={'Mon morning'}/> 
             <Button label={'Tue morning'}/>
             <Button label={'Wed morning'}/> 
