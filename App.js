@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import {Header} from '@react-navigation/elements'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import state from './state/store';
@@ -30,6 +31,7 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
 import { Provider } from 'react-redux'
+import { Button, View, Text} from "react-native-ui-lib";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,18 +47,25 @@ const App = () => {
   let MatchingStack = () => {
     return (
       <MatchingNavigator.Navigator
-        screenOptions={
-          {
-            // headerShown: false,
-            headerLeft: () => (
-              <Button
-                onPress={() => navigation.goBack()}
-                // iconSource={() => (<FontAwesome5 name='fa-arrow-left' color={'#fff'} />)}
-                title={'testing back'}
-                color='#fff'
-              />)
-          }
-        }>
+        // screenOptions={() => ({
+        //   // headerShown: false,
+        //   header: ({ navigation, route, options, back }) => {
+
+
+        //     return (
+        //       <View>
+        //         <Text>
+        //           {route.name}asdfasdfadsssssssssssssssssssssssssssssssssssssss
+                  
+        //         </Text>
+        //         { back ? <Button onPress={navigation.goBack} /> : undefined}
+        //       </View>
+        //     );
+        //   }
+        // })}
+      
+      >
+
         <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
         <MatchingNavigator.Screen name="GetMatchedIntro" component={GetMatchedIntro} />
         <MatchingNavigator.Screen name="ProfileAvailability" component={ProfileAvailability} />
@@ -68,55 +77,55 @@ const App = () => {
         <MatchingNavigator.Screen name="MatchingCompelete" component={MatchingCompelete} />
         <MatchingNavigator.Screen name="OrganizationMatch" component={OrganizationMatch} />
         <MatchingNavigator.Screen name="ReconsiderMatching" component={ReconsiderMatching} />
-      </MatchingNavigator.Navigator>
+      </MatchingNavigator.Navigator >
     );
 
   }
 
 
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer>
-          <Tab.Navigator
-            screenOptions={({ route }) => ({
-              headerShown: false,
-              tabBarIcon: ({ focused, color, size }) => {
-                let iconName;
+return (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-                switch (route.name) {
-                  case 'Home':
-                    iconName = 'house-user';
-                    break;
-                  case 'Journaling':
-                    iconName = 'pen';
-                    break;
-                  case 'Matching':
-                    iconName = 'users';
-                    break;
-                  case 'Challenges':
-                    iconName = 'mountain';
-                    break;
-                }
+              switch (route.name) {
+                case 'Home':
+                  iconName = 'house-user';
+                  break;
+                case 'Journaling':
+                  iconName = 'pen';
+                  break;
+                case 'Matching':
+                  iconName = 'users';
+                  break;
+                case 'Challenges':
+                  iconName = 'mountain';
+                  break;
+              }
 
 
 
-                // You can return any component that you like here!
-                return <FontAwesome5 name={iconName} size={size} color={color} />;
-              },
-              tabBarActiveTintColor: 'navy',
-              tabBarInactiveTintColor: 'gray',
-            })}
-          >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Matching" component={MatchingStack} />
-            <Tab.Screen name="Journaling" component={Home} />
-            <Tab.Screen name="Challenges" component={Home} />
-          </Tab.Navigator>
-        </NavigationContainer>
-      </PersistGate>
-    </Provider>
-  );
+              // You can return any component that you like here!
+              return <FontAwesome5 name={iconName} size={size} color={color} />;
+            },
+            tabBarActiveTintColor: 'navy',
+            tabBarInactiveTintColor: 'gray',
+          })}
+        >
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Matching" component={MatchingStack} />
+          <Tab.Screen name="Journaling" component={Home} />
+          <Tab.Screen name="Challenges" component={Home} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </PersistGate>
+  </Provider>
+);
 };
 
 export default App;

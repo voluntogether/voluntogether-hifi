@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, Button } from "react-native-ui-lib";
-import wording from './assets/wording';
+import wording from '../../assets/wording';
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, name }) => {
