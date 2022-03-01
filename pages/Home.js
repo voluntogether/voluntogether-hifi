@@ -3,7 +3,7 @@ import { View, Text, Button, Incubator } from "react-native-ui-lib";
 // import { View, Text } from 'react-native-ui-lib';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector, useDispatch } from 'react-redux'
-import { rename } from "../state/userSlice";
+import { rename, toggleOnboarding } from "../state/userSlice";
 
 let TextField = Incubator.TextField;
 
@@ -29,6 +29,7 @@ let Home = ({ navigation }) => {
                 maxLength={30}
             />
             <Text>{userName}</Text>
+            <Button label="reonboard" onPress={() => dispatch(toggleOnboarding())} />
 
 
         </View>

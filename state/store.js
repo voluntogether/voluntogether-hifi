@@ -35,19 +35,3 @@ const state = { store, persistor }
 
 
 export default state
-
-// import { configureStore } from '@reduxjs/toolkit'
-// import rootReducer from './reducers'
-// import userReducer from './userSlice'
-
-// // const store = configureStore({
-// //     reducer: {
-// //         user: userReducer,
-// //   },
-// // })
-
-// const store = configureStore({
-//     reducer: rootReducer,
-// })
-
-// export default store
