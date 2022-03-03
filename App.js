@@ -31,13 +31,19 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
 import { Provider } from 'react-redux'
-import { Button, View, Text} from "react-native-ui-lib";
+import { Button, View, Text, Colors} from "react-native-ui-lib";
+
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
 
   const { store, persistor } = state;
+
+  Colors.loadColors({
+    background: '#f4f4f4',
+    deeperMatcha: '#9DB865'
+  });
 
   let MatchingNavigator = createNativeStackNavigator();
   const UserContext = React.createContext({

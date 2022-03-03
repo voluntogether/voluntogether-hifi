@@ -9,8 +9,8 @@ let MatchingIntro = ({ navigation }) => {
             <Text> Connect </Text>
             <Text> There are two ways to connect with other people on voluntogether. You can either invite a friend
                 nor match with a stranger who is already on the app.</Text>
-            <Button label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} />
-            <Button label={'Invite a friend'} />
+            <Button backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} />
+            <Button backgroundColor={'#9DB865'} label={'Invite a friend'} />
             <Text>{useSelector((state) => state.user.name)}</Text>
         </View>
     );
