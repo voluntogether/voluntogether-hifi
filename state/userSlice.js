@@ -4,6 +4,7 @@ const initialState = {
     name: "nada",
     email: "nada",
     passions: [],
+    isOnboarding: true,
 }
 
 export const userSlice = createSlice({
@@ -23,10 +24,13 @@ export const userSlice = createSlice({
         setState: (state, action) => {
             state = action.payload
         },
+        toggleOnboarding: (state) => {
+            state.isOnboarding = !state.isOnboarding
+        }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding } = userSlice.actions
 
 export default userSlice.reducer
