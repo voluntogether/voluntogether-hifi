@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
+import { View, Text, Image, Button, Card, StyleSheet } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
+
 
 let MatchingIntro = ({ navigation }) => {
     return (
@@ -13,6 +14,7 @@ let MatchingIntro = ({ navigation }) => {
             <Card height={100} center padding-card marginB-s4>
               <Text heading center todo> ADD BLOB HERE </Text>
             </Card>
+
             <Button backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
             <Button backgroundColor={'#9DB865'} label={'Invite a friend'} marginB-s4 />
             { /* <Text>{useSelector((state) => state.user.name)}</Text> */ }
