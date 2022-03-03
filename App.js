@@ -32,7 +32,7 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch';
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching';
 import GetNewMatch from './pages/Matching/GetNewMatch';
 import { Provider } from 'react-redux';
-import { Button, View, Text, Colors } from "react-native-ui-lib";
+import { Button, View, Text, Colors, Card, Typography, Spacings } from "react-native-ui-lib";
 import Intro from "./Intro";
 
 import Onboarding from 'react-native-onboarding-swiper';
@@ -45,9 +45,23 @@ const App = () => {
 
   Colors.loadColors({
     background: '#f4f4f4',
-    deeperMatcha: '#9DB865'
+    deeperMatcha: '#9DB865',
+    nonBlackBlack: '#10123D',
+    fadedSubtext: '#413D45',
+    todo: '#FF0000'
   });
 
+  Typography.loadTypographies({
+    heading: {fontSize: 25, fontWeight: '600'},
+    buttonText: {fontSize: 16, fontWeight: '400'},
+    body: {fontSize: 14, fontWeight: '400'}
+  });
+
+  Spacings.loadSpacings({
+      page: 20,
+      card: 12,
+      gridGutter: 16
+    });
 
   return (
     <Provider store={store}>
