@@ -5,7 +5,7 @@ let wording = {
         'getMatched': {
             'header': 'Get Matched',
             'bodyEmily': 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.',
-            'bodyNathan': 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.',
+            'bodyNathan': 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.',
             'buttonAccept': 'Volunteer together',
             'buttonReject': 'Meet someone else'
         },

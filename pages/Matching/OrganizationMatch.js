@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, Image, Button } from "react-native-ui-lib";
 
-let MatchingIntro = ({ navigation, name, organization }) => {
+let MatchingIntro = ({ route, navigation }) => {
+    const { name, organization } = route.params;
     return (
-        <View>
+        <View flex padding-page>
             <Text> Congratulations! </Text>
-            <Text> We assigned you and {name} an organization to volunteer at: {organization} </Text>
+            <Text> We assigned you and {JSON.stringify(name)} an organization to volunteer at: {JSON.stringify(organization)}</Text>
             <Text> 
                 ​{(organization == 'Ecumenical Hunger Program' ? '​EHP’s mission is to provide compassionate, dignified and practical assistance to families and individuals experiencing economic and personal hardship. We offer material help support services, and advocacy for our neighbors in need, in a challenging and rapidly changing environment.' 
                 : 'The Peninsula Humane Society & SPCA is a local, private, non-profit charitable organization dedicated to animal welfare. PHS/SPCA is an open admission shelter, not only accepting many pet animals who might be refused at other shelters, but also taking care of injured and orphaned native wildlife.')}
