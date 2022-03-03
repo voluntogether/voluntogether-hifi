@@ -9,7 +9,7 @@ import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
 let MatchingIntro = ({ navigation }) => {
     return (
         <View flex padding-page>
-            <Text center={true} heading center nonBlackBlack marginB-s4>Connect</Text>
+            <Text heading center nonBlackBlack marginB-s4>Connect</Text>
             <Text body fadedSubtext marginB-s4>
                 There are two ways to connect with other people on voluntogether. You can either invite a friend or match with a stranger who is already on the app.
             </Text>
@@ -28,7 +28,7 @@ let MatchingIntro = ({ navigation }) => {
               </Svg>
             </View>
 
-            <Button backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
+            <Button buttonSize={Button.sizes.medium} backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
             <Button backgroundColor={'#9DB865'} label={'Invite a friend'} marginB-s4 />
             { /* <Text>{useSelector((state) => state.user.name)}</Text> */ }
         </View>

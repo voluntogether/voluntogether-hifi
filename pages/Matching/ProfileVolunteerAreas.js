@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableHighlight } from 'react-native';
-import { View, Text, Image, Button, Incubator, TouchableHigh } from "react-native-ui-lib";
+import { View, Text, Image, Button, Incubator, Card, TouchableHigh } from "react-native-ui-lib";
 import Svg, {Path, G, Rect} from 'react-native-svg';
 
 let ChipsInput = Incubator.ChipsInput
@@ -36,8 +36,33 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             />
 
             <View>
-                <Button backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('ProfileAvailability')} />
+                <Button backgroundColor={'#9DB865'} paddingT={40} label={'Get matched'} onPress={() => navigation.navigate('ProfileAvailability')} />
             </View>
+            {/* <Text body fadedSubtext marginB-s4 center> Tap to select the volunteer areas that interest you. </Text>
+
+            <View style={{ marginHorizontal: 15, alignContent:'space-between'}}>
+                <Card height={200} center padding-card marginB-s4 paddingB={200}>
+                    <Text heading center todo> ADD BLOB HERE!!!! </Text>
+                </Card>
+
+                <ChipsInput
+                    placeholder={'Add new passions...'}
+                    chips={[
+                        { label: '🏀 Sports' }, 
+                        { label: '💻 Technology' }, 
+                         { label: '🐳 Animal Welfare' }, 
+                        { label: '📚 Education' },
+                        { label: '🏥 Health' },
+                        { label: '🎭 The Arts'},
+                        { label: '📋 Politics'},
+                        { label: '🥗 Food Sustainability'},
+                        ]}
+                />
+                <View> 
+                    <Button label={'Get matched'} paddingT={40} onPress={() => navigation.navigate('ProfileAvailability')} />
+                </View>
+                
+            </View>            */}
         </View>
     );
 }

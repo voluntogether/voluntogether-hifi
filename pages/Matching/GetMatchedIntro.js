@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
+import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
 
 // import wording from 'assets/wording';
@@ -24,6 +24,17 @@ let GetMatchedIntro = ({ navigation }) => {
             </View>
 
             <Button backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
+            {/* <Text body fadedSubtext marginB-s4 center> 
+                    To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ 
+            </Text>
+
+            <View style={{ marginHorizontal: 15, alignContent:'space-between'}}>
+                <Card height={300} center padding-card marginB-s4> 
+                    <Text heading center todo> ADD BLOB HERE!!!! </Text>
+                </Card> 
+                <Button backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
+             </View> */}
+
         </View>
     );
 }
