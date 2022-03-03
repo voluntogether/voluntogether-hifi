@@ -8,12 +8,12 @@
 
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Header } from '@react-navigation/elements'
+import { Header } from '@react-navigation/elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import state from './state/store';
-import { PersistGate } from 'redux-persist/integration/react'
-import { useSelector, useDispatch } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
@@ -24,16 +24,16 @@ import { testable } from 'react-native-ui-lib/generatedTypes/src/components/feat
 import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
 import ProfileAvailability from './pages/Matching/ProfileAvailability';
 import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
-import GetMatched from './pages/Matching/GetMatched'
-import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm'
-import MatchingChat from './pages/Matching/MatchingChat'
-import MatchingCompelete from './pages/Matching/MatchingComplete'
-import OrganizationMatch from './pages/Matching/OrganizationMatch'
-import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
-import GetNewMatch from './pages/Matching/GetNewMatch'
-import { Provider } from 'react-redux'
+import GetMatched from './pages/Matching/GetMatched';
+import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm';
+import MatchingChat from './pages/Matching/MatchingChat';
+import MatchingCompelete from './pages/Matching/MatchingComplete';
+import OrganizationMatch from './pages/Matching/OrganizationMatch';
+import ReconsiderMatching from './pages/Matching/ReconsiderMatching';
+import GetNewMatch from './pages/Matching/GetNewMatch';
+import { Provider } from 'react-redux';
 import { Button, View, Text } from "react-native-ui-lib";
-import Intro from "./Intro"
+import Intro from "./Intro";
 
 import Onboarding from 'react-native-onboarding-swiper';
 
