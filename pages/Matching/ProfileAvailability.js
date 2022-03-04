@@ -1,5 +1,6 @@
 import React from "react";
 import _, { map } from "underscore";
+import { StyleSheet } from "react-native";
 import { View, Text, Image, Button, Picker, TouchableOpacity } from "react-native-ui-lib";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import Styles from "../../Style.js";
@@ -15,21 +16,32 @@ let ProfileAvailability = ({ navigation }) => {
         { label: 'Perl', value: 'perl' }
     ];
 
-    let times = [
+    let timesMorning = [
         'Mon morning',
         'Tue morning',
         'Wed morning',
         'Thu morning',
-        // 'Fri morning',
-        // 'Sat morning',
-        // 'Sun morning',
+        'Fri morning',
+        'Sat morning',
+        'Sun morning',
         // 'Mon afternoon',
         // 'Tue afternoon',
         // 'Wed afternoon',
         // 'Thu afternoon',
         // 'Fri afternoon',
         // 'Sat afternoon',
-        'Sun afternoon']
+        // 'Sun afternoon'
+    ]
+
+    let timesAfternoon = [
+        'Mon afternoon',
+        'Tue afternoon',
+        'Wed afternoon',
+        'Thu afternoon',
+        'Fri afternoon',
+        'Sat afternoon',
+        'Sun afternoon'
+    ]
 
         const [selected, setSelected] = React.useState([]);
         const handlePress = time =>
@@ -51,14 +63,28 @@ let ProfileAvailability = ({ navigation }) => {
             </Svg>
         </View>
 
-
-            {_.map(times, time => (
+    <View style={Flex.container}>
+        <View style={Flex.leftCol}>
+        {_.map(timesMorning, time => (
                 <View marginT-s3 centerH>
-                    <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? 'gray' : 'white'} outlineColor={'black'}>
+                    <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
                         <Text key={time.value}>{time}</Text>
                     </Button>
                 </View>
                 ))}
+        </View>
+
+        <View style={Flex.rightCol}>
+            {_.map(timesAfternoon, time => (
+                <View marginT-s3 centerH>
+                    <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                        <Text key={time.value}>{time}</Text>
+                    </Button>
+                </View>
+                ))}
+        </View>
+     </View>
+
 
                 <View flex right bottom>
                     <Button nonBlackBlack style={[Styles.yellowButton]} label={">"} onPress={() => navigation.navigate('MatchingAlgorithm', {
@@ -70,5 +96,17 @@ let ProfileAvailability = ({ navigation }) => {
         </View >
     );
 }
+
+const Flex = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+    },
+    leftCol: {
+        flex: 3
+    },
+    rightCol: {
+        flex: 3
+    }
+});
 
 export default ProfileAvailability;
