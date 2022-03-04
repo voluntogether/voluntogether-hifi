@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
 import wording from '../../assets/wording';
@@ -29,7 +28,7 @@ let MatchingIntro = ({ navigation }) => {
             </View>
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
-            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Invite a friend'} marginB-s4 />
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Invite a friend'} onPress={() => navigation.navigate('InviteFriend')} marginB-s4 marginB-s4 />
             { /* <Text>{useSelector((state) => state.user.name)}</Text> */ }
         </View>
     );
