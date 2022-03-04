@@ -4,7 +4,7 @@ import { View, Text, Image, Button, Picker, TouchableOpacity } from "react-nativ
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 
 
-let ProfileVolunteerAreas = ({ navigation }) => {
+let ProfileAvailability = ({ navigation }) => {
 
     const options = [
         { label: 'JavaScript', value: 'js', disabled: false },
@@ -30,12 +30,9 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         'Sat afternoon',
         'Sun afternoon']
 
-
-
         const [selected, setSelected] = React.useState([]);
         const handlePress = time =>
         selected.includes(time) ? setSelected(selected.filter(s => s !== time)) : setSelected([...selected, time]);
-
 
     return (
         <View flex padding-page>
@@ -70,4 +67,4 @@ let ProfileVolunteerAreas = ({ navigation }) => {
     );
 }
 
-export default ProfileVolunteerAreas;
+export default ProfileAvailability;
