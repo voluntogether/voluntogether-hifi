@@ -52,7 +52,7 @@ let ProfileAvailability = ({ navigation }) => {
             <Text heading center nonBlackBlack marginB-s4>Make Your Profile</Text>
             <Text center={true} body fadedSubtext marginB-s4>Tap to select the times that you are generally free.</Text>
 
-        <View center marginB-s4>
+        <View center marginB-s4 style={[Styles.boxShadow]}>
             <Svg width="339" height="154" viewBox="0 0 339 154" fill="none" xmlns="http://www.w3.org/2000/svg">
             <G filter="url(#filter0_d_192_7040)">
             <Rect x="4" width="331" height="146" rx="12" fill="#A4C1E3"/>
