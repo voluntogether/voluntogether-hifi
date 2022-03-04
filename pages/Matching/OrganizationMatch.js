@@ -33,7 +33,4 @@ let OrganizationMatch = ({ route, navigation }) => {
         </View>
     );
 }
-
 export default OrganizationMatch;
-
-
