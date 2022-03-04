@@ -66,8 +66,8 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                 />
             </View>
 
-            <View flex right bottom>
-                <Button bold nonBlackBlack style={[Styles.yellowButton]} label={'>'} onPress={() => navigation.navigate('ProfileAvailability')} />
+            <View flex right bottom alignItems={'center'}>
+                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={'➔'} onPress={() => navigation.navigate('ProfileAvailability')} />
             </View>
 
         </View>
