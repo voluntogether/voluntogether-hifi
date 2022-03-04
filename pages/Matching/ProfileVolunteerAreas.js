@@ -48,7 +48,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             </View>
 
             <View flex right bottom>
-                <Button nonBlackBlack style={[Styles.yellowButton]} label={'>'} onPress={() => navigation.navigate('ProfileAvailability')} />
+                <Button bold nonBlackBlack style={[Styles.yellowButton]} label={'>'} onPress={() => navigation.navigate('ProfileAvailability')} />
             </View>
 
             {/* <Text body fadedSubtext marginB-s4 center> Tap to select the volunteer areas that interest you. </Text>

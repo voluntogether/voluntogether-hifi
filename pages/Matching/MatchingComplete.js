@@ -40,5 +40,3 @@ let MatchingComplete = ({ navigation }) => {
 }
 
 export default MatchingComplete;
-
-// blob, white text, yellow button

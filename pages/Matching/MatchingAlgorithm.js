@@ -29,7 +29,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
             </View>
 
             <View flex right bottom>
-                {(rematch ? <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
+                {(rematch ? <Button label={'>'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button bold label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
             </View>
 
 
