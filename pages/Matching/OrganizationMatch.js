@@ -14,19 +14,17 @@ let OrganizationMatch = ({ route, navigation }) => {
                 : 'The Peninsula Humane Society & SPCA is a local, private, non-profit charitable organization dedicated to animal welfare. PHS/SPCA is an open admission shelter, not only accepting many pet animals who might be refused at other shelters, but also taking care of injured and orphaned native wildlife.')}
             </Text>
 
-            <View centerV>
+            <View>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
                     <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/food.png')}/>
                 </Card>
-
-                <View center >
-                    <Text style={[Styles.nonButtonTag]}>
-                        <Text body nonBlackBlack>🥗 Food Sustainability</Text>
-                    </Text>
-                </View>
-                {/* <Button fadedSubtext style={[Styles.nonButtonTag]} label={'🥗 Food Sustainability'}/> */}
             </View>
-            {/* {(name == 'Ecumenical Hunger Program' ? <Image source={require('/assets/images/food.svg')}/> : <Image source={require('/assets/images/dog.svg')}/>)} */}
+            <View centerH>
+                <Text style={[Styles.nonButtonTag]}>
+                    <Text body nonBlackBlack>🥗 Food Sustainability</Text>
+                </Text>
+            </View>
+                {/* <Button fadedSubtext style={[Styles.nonButtonTag]} label={'🥗 Food Sustainability'}/> */}
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('MatchingChat', {
                 name: name,
