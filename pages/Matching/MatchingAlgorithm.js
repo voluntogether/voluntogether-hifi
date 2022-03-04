@@ -8,11 +8,11 @@ let MatchingAlgorithm = ({navigation, route}) => {
     let { rematch } = route.params;
     console.log(rematch);
     return (
-        <View flex padding-page> 
+        <View flex padding-page centerH> 
             <Text heading center nonBlackBlack marginB-s4 > Success! </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6 >{
             rematch ?
-            'Please wait while our algorithm finds you a new volunteer partner!' 
+            'Please wait while our algorithm finds you a new volunteer partner!'
             : 'Please wait while our algorithm finds you a volunteer partner!'}</Text>
             <View>
                 <Svg width="358" height="352" viewBox="0 0 358 352" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
                     </G>
                 </Svg>
             </View>
-            
+
             {(rematch ? <Button label={'next (temp)'} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button label={'next (temp)'} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
 
 
