@@ -5,7 +5,14 @@ const Styles = StyleSheet.create({
         backgroundColor: "#9DB865",
         borderRadius: 12,
         minWidth: "75%",
-    }, yellowButton: {
+    },
+    smallGreenButton: {
+        backgroundColor: "#9DB865",
+        borderRadius: 12,
+        maxWidth: "40%",
+        justifyContent: 'center'
+    },
+     yellowButton: {
         backgroundColor: "#F6CA44",
         minWidth: 54,
         width: 54,

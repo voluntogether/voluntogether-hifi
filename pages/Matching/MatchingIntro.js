@@ -9,7 +9,7 @@ let MatchingIntro = ({ navigation }) => {
     return (
         <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4>Connect</Text>
-            <Text body fadedSubtext marginB-s8>
+            <Text body fadedSubtext marginB-s8 center>
                 There are two ways to connect with other people on voluntogether. You can either invite a friend or match with a stranger who is already on the app.
             </Text>
 

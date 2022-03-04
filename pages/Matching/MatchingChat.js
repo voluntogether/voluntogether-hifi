@@ -57,18 +57,17 @@ let MatchingChat = ({ navigation, route }) => {
     return (
         <>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-                <View flex padding-page>
+                <View flex padding-page centerH>
                     <View>
                         <Text style={[Styles.spacer]}></Text>
                     </View>
 
                     <Text heading center nonBlackBlack marginB-s4>Chat with {name}</Text>
 
-                    <Text italic fadedSubtext>We recommend that you and {name} volunteer at {organization}. However, if you feel strongly, you can also discuss
+                    <Text center italic fadedSubtext marginB-s8 >We recommend that you and {name} volunteer at {organization}. However, if you feel strongly, you can also discuss
                         and select another organization yourselves.</Text>
 
-
-                    <Button label={'next (temp)'} onPress={() => navigation.navigate('MatchingComplete')} />
+                    <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
 
                 </View>
             </TouchableWithoutFeedback>
