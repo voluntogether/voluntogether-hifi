@@ -43,8 +43,10 @@ let Home = ({ navigation }) => {
 
 
     const [keyboardStatus, setKeyboardStatus] = useState(undefined);
+  
 
     useEffect(() => {
+       
         const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
             setKeyboardStatus("Keyboard Shown");
         });

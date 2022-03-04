@@ -49,22 +49,23 @@ const Intro = () => {
 
         return (
             <MatchingNavigator.Navigator
-            // screenOptions={() => ({
-            //   // headerShown: false,
-            //   header: ({ navigation, route, options, back }) => {
+                screenOptions={() => ({
+                    keyboardHidesTabBar: false,
+                    //   // headerShown: false,
+                    //   header: ({ navigation, route, options, back }) => {
 
 
-            //     return (
-            //       <View>
-            //         <Text>
-            //           {route.name}asdfasdfadsssssssssssssssssssssssssssssssssssssss
+                    //     return (
+                    //       <View>
+                    //         <Text>
+                    //           {route.name}asdfasdfadsssssssssssssssssssssssssssssssssssssss
 
-            //         </Text>
-            //         { back ? <Button onPress={navigation.goBack} /> : undefined}
-            //       </View>
-            //     );
-            //   }
-            // })}
+                    //         </Text>
+                    //         { back ? <Button onPress={navigation.goBack} /> : undefined}
+                    //       </View>
+                    //     );
+                    //   }
+                })}
 
             >
 
@@ -88,6 +89,7 @@ const Intro = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 headerShown: false,
+                keyboardHidesTabBar: false,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
 
@@ -162,7 +164,7 @@ const Intro = () => {
 
 
     let initOnboarding = useSelector(state => state.user.isOnboarding);
-   let [isOnboarding, setIsOnboarding] = useState(true);
+    let [isOnboarding, setIsOnboarding] = useState(true);
 
 
     useEffect(() => {
