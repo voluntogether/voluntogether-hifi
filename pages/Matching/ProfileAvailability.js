@@ -2,6 +2,7 @@ import React from "react";
 import _, { map } from "underscore";
 import { View, Text, Image, Button, Picker, TouchableOpacity } from "react-native-ui-lib";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import Styles from "../../Style.js";
 
 
 let ProfileVolunteerAreas = ({ navigation }) => {
@@ -19,15 +20,15 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         'Tue morning',
         'Wed morning',
         'Thu morning',
-        'Fri morning',
-        'Sat morning',
-        'Sun morning',
-        'Mon afternoon',
-        'Tue afternoon',
-        'Wed afternoon',
-        'Thu afternoon',
-        'Fri afternoon',
-        'Sat afternoon',
+        // 'Fri morning',
+        // 'Sat morning',
+        // 'Sun morning',
+        // 'Mon afternoon',
+        // 'Tue afternoon',
+        // 'Wed afternoon',
+        // 'Thu afternoon',
+        // 'Fri afternoon',
+        // 'Sat afternoon',
         'Sun afternoon']
 
 
@@ -38,7 +39,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
 
 
     return (
-        <View flex padding-page centerH>
+        <View flex padding-page>
             <Text heading center nonBlackBlack marginB-s4> Make Your Profile </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6> Tap to select the times that you are generally free.</Text>
 
@@ -53,17 +54,20 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             </Svg>
         </View>
 
-        <Button label={'next (temp)'} onPress={() => navigation.navigate('MatchingAlgorithm', {
-            rematch: false
-        })}/>
 
             {_.map(times, time => (
-                <View marginT-s3>
+                <View marginT-s3 centerH>
                     <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? 'gray' : 'white'} outlineColor={'black'}>
                         <Text key={time.value}>{time}</Text>
                     </Button>
                 </View>
                 ))}
+
+                <View flex right bottom>
+                    <Button nonBlackBlack style={[Styles.yellowButton]} label={">"} onPress={() => navigation.navigate('MatchingAlgorithm', {
+                        rematch: false
+                    })}/>
+                </View>
 
 
         </View >

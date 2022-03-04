@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
+import Styles from "../../Style.js";
 
 // import wording from 'assets/wording';
 // let pageWording = wording.matched.getMatchedIntro;
@@ -8,12 +9,11 @@ import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
 
 let GetMatchedIntro = ({ navigation }) => {
     return (
-        <View flex top padding-page style={{alignContent:'space-between'}}>
+        <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4> Get Matched </Text>
-            <Text center={true} body fadedSubtext marginB-s4  marginT-s6> To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ </Text>
+            <Text center body fadedSubtext marginB-s4 marginT-s6> To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ </Text>
 
-            <View margin-s8>
-            <View marginB-s8 marginT-s3 center>
+            <View marginB-s8 marginT-s3 center style={[Styles.boxShadow]}>
               <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
               <G filter="url(#filter0_d_192_3072)">
               <Rect x="4" width="270" height="247" rx="12" fill="#A4C1E3"/>
@@ -24,17 +24,16 @@ let GetMatchedIntro = ({ navigation }) => {
               </Svg>
             </View>
 
-            <Button br40 backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
-            </View>
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
 
-            {/* <Text body fadedSubtext marginB-s4 center> 
-                    To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ 
+            {/* <Text body fadedSubtext marginB-s4 center>
+                    To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨
             </Text>
 
             <View style={{ marginHorizontal: 15, alignContent:'space-between'}}>
-                <Card height={300} center padding-card marginB-s4> 
+                <Card height={300} center padding-card marginB-s4>
                     <Text heading center todo> ADD BLOB HERE!!!! </Text>
-                </Card> 
+                </Card>
                 <Button backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
              </View> */}
 

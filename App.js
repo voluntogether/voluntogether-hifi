@@ -49,13 +49,16 @@ const App = () => {
     deeperMatcha: '#9DB865',
     nonBlackBlack: '#10123D',
     fadedSubtext: '#413D45',
+    lightBlue: '#A4C1E3',
     todo: '#FF0000'
   });
 
   Typography.loadTypographies({
-    heading: {fontSize: 25, fontWeight: '600'},
-    buttonText: {fontSize: 16, fontWeight: '400'},
-    body: {fontSize: 14, lineHeight: 21, fontWeight: '400'}
+    heading: { fontSize: 25, fontWeight: '600' },
+    buttonText: { fontSize: 16, fontWeight: '400' },
+    body: { fontSize: 14, lineHeight: 21, fontWeight: '400' },
+    italic: { fontStyle: "italic" },
+    bold: { fontWeight: "bold" }
   });
 
   Spacings.loadSpacings({

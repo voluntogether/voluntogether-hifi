@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, Button} from "react-native-ui-lib";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import Styles from "../../Style.js";
 
 
 
@@ -8,7 +9,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
     let { rematch } = route.params;
     console.log(rematch);
     return (
-        <View flex padding-page centerH> 
+        <View flex padding-page>
             <Text heading center nonBlackBlack marginB-s4 > Success! </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6 >{
             rematch ?
@@ -27,8 +28,9 @@ let MatchingAlgorithm = ({navigation, route}) => {
                 </Svg>
             </View>
 
-            {(rematch ? <Button label={'next (temp)'} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button label={'next (temp)'} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
-
+            <View flex right bottom>
+                {(rematch ? <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
+            </View>
 
 
         </View>

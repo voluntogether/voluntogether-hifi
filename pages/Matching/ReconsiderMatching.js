@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, Button } from "react-native-ui-lib";
 import Svg, {Path, G, Circle} from 'react-native-svg';
+import Styles from "../../Style.js";
 
 
 
