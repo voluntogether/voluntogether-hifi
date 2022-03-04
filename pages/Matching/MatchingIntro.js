@@ -9,7 +9,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 let MatchingIntro = ({ navigation }) => {
   return (
     <View flex padding-page >
-      <View marginB-50 />
+      <View marginB-70 />
       <Text heading center nonBlackBlack marginB-s4>Connect</Text>
       <Text center body fadedSubtext marginB-s8>
         There are two ways to connect with other people on voluntogether. You can either invite a friend or match with a stranger who is already on the app.

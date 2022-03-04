@@ -2,12 +2,14 @@ import React from "react";
 import { View, Text, Image, Button } from "react-native-ui-lib";
 import Svg, {Path, G, Circle} from 'react-native-svg';
 import Styles from "../../Style.js";
-
+import BackArrow from "../../components/BackArrow.js";
 
 
 let ReconsiderMatching = ({ navigation }) => {
     return (
         <View flex padding-page centerH>
+            <View marginB-70 />
+
             <Text heading center nonBlackBlack marginB-s4 >Get Matched</Text>
             <Text center={true} body fadedSubtext marginB-s4>Picky, aren’t you? Unfortunately our prototype has a limited number of partners for you to match with. Why don’t you reconsider Emily? </Text>
             <View center marginB-s4>
