@@ -4,6 +4,7 @@ import { TextInput, Keyboard, TouchableWithoutFeedback, StyleSheet } from "react
 import Styles from "../../Style.js";
 import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
 import DismissKeyboardView from "../../components/DismissKeyboardView.js";
+import BackArrow from "../../components/BackArrow.js";
 
 
 let MatchingChat = ({ navigation, route }) => {
@@ -57,7 +58,9 @@ let MatchingChat = ({ navigation, route }) => {
     return (
         <>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-                <View flex padding-page centerH>
+                <View flex padding-page>
+                    <BackArrow navigation={navigation} />
+
                     <View>
                         <Text style={[Styles.spacer]}></Text>
                     </View>

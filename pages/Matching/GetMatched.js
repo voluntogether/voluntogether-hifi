@@ -4,14 +4,15 @@ import wording from '../../assets/wording';
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import Styles from "../../Style.js";
 import { abs } from "react-native-reanimated";
+import BackArrow from "../../components/BackArrow";
 
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, route }) => {
    const { name } = route.params;
-   console.log(name)
     return (
-        <View flex padding-page centerH>
+        <View flex padding-page>
+            <BackArrow navigation={navigation} />
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
             <Text center body fadedSubtext marginB-s4>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner. \n \n You and Emily both like food sustainability.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner. \n \n You and Nathan both like animal welfare.')} </Text>
 
