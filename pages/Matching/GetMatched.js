@@ -13,15 +13,15 @@ let GetMatched = ({ navigation, route }) => {
     return (
         <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
-            <Text center body fadedSubtext marginB-s4 marginT-s6>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
+            <Text center body fadedSubtext marginB-s4>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
 
             <View centerV>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/Emily.png')}/> 
+                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/Emily.png')}/>
                 </Card>
             </View>
 
-            
+
 
 
 

@@ -50,7 +50,7 @@ let ProfileAvailability = ({ navigation }) => {
     return (
         <View flex padding-page>
             <Text heading center nonBlackBlack marginB-s4>Make Your Profile</Text>
-            <Text center={true} body fadedSubtext marginB-s4  marginT-s6>Tap to select the times that you are generally free.</Text>
+            <Text center={true} body fadedSubtext marginB-s4>Tap to select the times that you are generally free.</Text>
 
         <View center marginB-s4>
             <Svg width="339" height="154" viewBox="0 0 339 154" fill="none" xmlns="http://www.w3.org/2000/svg">
