@@ -13,9 +13,17 @@ let OrganizationMatch = ({ route, navigation }) => {
                 ​{(organization == 'Ecumenical Hunger Program' ? '​EHP’s mission is to provide compassionate, dignified and practical assistance to families and individuals experiencing economic and personal hardship. We offer material help support services, and advocacy for our neighbors in need, in a challenging and rapidly changing environment.'
                 : 'The Peninsula Humane Society & SPCA is a local, private, non-profit charitable organization dedicated to animal welfare. PHS/SPCA is an open admission shelter, not only accepting many pet animals who might be refused at other shelters, but also taking care of injured and orphaned native wildlife.')}
             </Text>
-            <Card height={100} width={100} marginB-s4 backgroundColor={"#A4C1E3"}>
-              <Text heading center todo> ADD IMAGE </Text>
-            </Card>
+        
+            <View centerV>
+                <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
+                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/food.png')}/> 
+                </Card>
+
+                <View > 
+                    <Text body center nonBlackBlack marginB-s4>🥗 Food Sustainability</Text>
+                </View>
+                {/* <Button label={'🥗 Food Sustainability'}/> */}
+            </View>
             {/* {(name == 'Ecumenical Hunger Program' ? <Image source={require('/assets/images/food.svg')}/> : <Image source={require('/assets/images/dog.svg')}/>)} */}
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('MatchingChat', {
