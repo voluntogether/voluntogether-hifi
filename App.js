@@ -51,6 +51,7 @@ const App = () => {
     fadedSubtext: '#413D45',
     lightBlue: '#A4C1E3',
     darkBlue: '#345F93',
+    backgroundOffWhite: '#F7FDF8',
     todo: '#FF0000'
   });
 

@@ -7,11 +7,11 @@ import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
 
 let MatchingComplete = ({ navigation }) => {
     return (
-        <View flex padding-page centerH centerV>
-        
-            <Text heading center nonBlackBlack marginB-s4>Have fun volunteering!</Text>
-            
-            <View marginB-s8 marginT-s3 center style={[Styles.boxShadow]}>
+        <View flex padding-page centerH centerV backgroundColor={"#345F93"}>
+
+            <Text heading center backgroundOffWhite marginB-s4>Have fun volunteering!</Text>
+
+            <View center style={[Styles.boxShadow]}>
               {/* <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
               <G filter="url(#filter0_d_192_3072)">
               <Rect x="4" width="270" height="247" rx="12" fill="#A4C1E3"/>
@@ -28,14 +28,14 @@ let MatchingComplete = ({ navigation }) => {
                 </Svg>
             </View>
 
-            <Text center={true} body fadedSubtext marginB-s4 marginT-s6>
+            <Text center={true} body backgroundOffWhite marginB-s10 marginT-s6>
                     Congratulations on matching with a partner and organization!
                     For this prototype, please imagine you coordinated, met up, and volunteered together. After this, you would re-open voluntogether.
             </Text>
             {/* <Image source={require('/assets/blobs/match-11-blob.svg')}/> */}
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Back to homepage'} onPress={() => navigation.navigate('GetMatchedIntro')} />
         </View>
-      
+
     );
 }
 
