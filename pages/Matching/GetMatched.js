@@ -22,8 +22,8 @@ let GetMatched = ({ navigation, route }) => {
             </View>
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonAccept} onPress={() => navigation.navigate('OrganizationMatch', {
-                name: 'Emily',
-                organization: 'Ecumenical Hunger Program'
+                name: name,
+                organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
             })} />
             {(name == 'Emily' ? <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('MatchingAlgorithm', {
                 rematch: true

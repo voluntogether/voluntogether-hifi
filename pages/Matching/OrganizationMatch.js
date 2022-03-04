@@ -16,16 +16,14 @@ let OrganizationMatch = ({ route, navigation }) => {
 
             <View>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/food.png')}/>
+                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={organization == 'Ecumenical Hunger Program' ? require("../../assets/images/food.png") : require("../../assets/images/dog.png")}/>
                 </Card>
             </View>
             <View centerH>
                 <Text style={[Styles.nonButtonTag]}>
-                    <Text body nonBlackBlack>🥗 Food Sustainability</Text>
+                    <Text body nonBlackBlack>{organization == "Ecumenical Hunger Program" ? "🥗 Food Sustainability" : "🐳 Animal Welfare"}</Text>
                 </Text>
             </View>
-                {/* <Button fadedSubtext style={[Styles.nonButtonTag]} label={'🥗 Food Sustainability'}/> */}
-
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('MatchingChat', {
                 name: name,
                 organization: organization
