@@ -35,6 +35,16 @@ const Styles = StyleSheet.create({
         borderColor: "#10123D",
         padding: 5,
         marginBottom: 20, 
+    },
+    avatarBox: {
+        width: 62, 
+        height: 62,
+        marginTop: 20,
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    spacer: {
+        marginBottom: 20
     }
 });
 
