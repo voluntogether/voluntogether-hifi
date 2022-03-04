@@ -9,10 +9,10 @@ let GetMatched = ({ navigation, route }) => {
    const { name } = route.params;
    console.log(name)
     return (
-        <View flex padding-page>
+        <View flex padding-page centerH>
             <Text> {pageWording.header} </Text>
             <Text> {(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
-            
+
             <View >
                 <Svg width="296" height="212" viewBox="0 0 296 212" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <G filter="url(#filter0_d_192_7629)">
@@ -27,7 +27,7 @@ let GetMatched = ({ navigation, route }) => {
             })} />
             {(name == 'Emily' ? <Button backgroundColor={'#9DB865'} label={pageWording.buttonReject} onPress={() => navigation.navigate('MatchingAlgorithm', {
                 rematch: true
-            })} /> 
+            })} />
             : <Button backgroundColor={'#9DB865'} label={pageWording.buttonReject} onPress={() => navigation.navigate('ReconsiderMatching'
             )} />)}
 

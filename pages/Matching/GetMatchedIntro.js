@@ -8,11 +8,12 @@ import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
 
 let GetMatchedIntro = ({ navigation }) => {
     return (
-        <View flex padding-page>
+        <View flex top padding-page style={{alignContent:'space-between'}}>
             <Text heading center nonBlackBlack marginB-s4> Get Matched </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6> To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ </Text>
 
-            <View marginB-s10 marginT-s3 center>
+            <View margin-s8>
+            <View marginB-s8 marginT-s3 center>
               <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
               <G filter="url(#filter0_d_192_3072)">
               <Rect x="4" width="270" height="247" rx="12" fill="#A4C1E3"/>
@@ -23,7 +24,9 @@ let GetMatchedIntro = ({ navigation }) => {
               </Svg>
             </View>
 
-            <Button backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
+            <Button br40 backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
+            </View>
+
             {/* <Text body fadedSubtext marginB-s4 center> 
                     To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ 
             </Text>

@@ -11,6 +11,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             <Text heading center nonBlackBlack marginB-s4> Make Your Profile </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6> Tap to select the volunteer areas that interest you. </Text>
 
+    
             <View center marginB-s4>
                 <Svg width="339" height="154" viewBox="0 0 339 154" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <G filter="url(#filter0_d_192_6612)">
@@ -32,12 +33,22 @@ let ProfileVolunteerAreas = ({ navigation }) => {
 
             <ChipsInput
                 placeholder={'Add new passions...'}
-                chips={[{ label: '🏀 Sports' }, { label: '💻 Technology' }, { label: '🐳 Animal Welfare' }, { label: '📚 Education' }]}
+                chips={[
+                    { label: '🏀 Sports' }, 
+                    { label: '💻 Technology' }, 
+                    { label: '🐳 Animal Welfare' }, 
+                    { label: '📚 Education' },
+                    { label: '🏥 Health' },
+                    { label: '🎭 The Arts'},
+                    { label: '📋 Politics'},
+                    { label: '🥗 Food Sustainability'},
+                    ]}
             />
 
             <View>
                 <Button backgroundColor={'#9DB865'} paddingT={40} label={'Get matched'} onPress={() => navigation.navigate('ProfileAvailability')} />
             </View>
+            
             {/* <Text body fadedSubtext marginB-s4 center> Tap to select the volunteer areas that interest you. </Text>
 
             <View style={{ marginHorizontal: 15, alignContent:'space-between'}}>
@@ -63,6 +74,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                 </View>
                 
             </View>            */}
+            
         </View>
     );
 }

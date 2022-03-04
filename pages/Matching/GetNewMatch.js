@@ -4,7 +4,7 @@ import { View, Text, Image, Button } from "react-native-ui-lib";
 
 let GetNewMatch = ({ navigation }) => {
     return (
-        <View>
+        <View centerH>
             <Text> Get a New Match! </Text>
             <Text> Please wait while our algorithm finds you a new volunteer partner! </Text>
         </View>

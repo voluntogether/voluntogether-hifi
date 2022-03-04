@@ -35,7 +35,7 @@ let ProfileAvailability = ({ navigation }) => {
         selected.includes(time) ? setSelected(selected.filter(s => s !== time)) : setSelected([...selected, time]);
 
     return (
-        <View flex padding-page>
+        <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4> Make Your Profile </Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6> Tap to select the times that you are generally free.</Text>
 
@@ -53,14 +53,14 @@ let ProfileAvailability = ({ navigation }) => {
         <Button label={'next (temp)'} onPress={() => navigation.navigate('MatchingAlgorithm', {
             rematch: false
         })}/>
-            
+
             {_.map(times, time => (
                 <View marginT-s3>
                     <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? 'gray' : 'white'} outlineColor={'black'}>
                         <Text key={time.value}>{time}</Text>
                     </Button>
                 </View>
-                ))}     
+                ))}
 
 
         </View >

@@ -32,6 +32,7 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch';
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching';
 import GetNewMatch from './pages/Matching/GetNewMatch';
 import { Provider } from 'react-redux';
+import { StyleSheet } from "react-native";
 import { Button, View, Text, Colors, Card, Typography, Spacings } from "react-native-ui-lib";
 import Intro from "./Intro";
 
@@ -62,6 +63,7 @@ const App = () => {
       card: 12,
       gridGutter: 16
     });
+
 
   return (
     <Provider store={store}>
