@@ -14,6 +14,8 @@ const Styles = StyleSheet.create({
         height: 54,
         maxHeight: 54,
         borderRadius: 108,
+        padding: 0,
+        boxSizing: "border-box"
     }, boxShadow: {
         shadowColor: '#10123D',
         shadowOffset: {width: 0, height: 4},

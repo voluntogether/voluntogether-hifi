@@ -1,5 +1,5 @@
 import React from "react";
-import _, { map } from "underscore";
+import _, { map, size } from "underscore";
 import { StyleSheet } from "react-native";
 import { View, Text, Image, Button, Picker, TouchableOpacity } from "react-native-ui-lib";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
@@ -87,7 +87,7 @@ let ProfileAvailability = ({ navigation }) => {
 
 
                 <View flex right bottom>
-                    <Button bold nonBlackBlack style={[Styles.yellowButton]} label={">"} onPress={() => navigation.navigate('MatchingAlgorithm', {
+                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
                         rematch: false
                     })}/>
                 </View>
