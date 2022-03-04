@@ -50,6 +50,7 @@ const App = () => {
     nonBlackBlack: '#10123D',
     fadedSubtext: '#413D45',
     lightBlue: '#A4C1E3',
+    darkBlue: '#345F93',
     todo: '#FF0000'
   });
 

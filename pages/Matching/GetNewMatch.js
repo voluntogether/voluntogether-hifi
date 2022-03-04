@@ -6,8 +6,8 @@ import Styles from "../../Style.js";
 let GetNewMatch = ({ navigation }) => {
     return (
         <View centerH>
-            <Text> Get a New Match! </Text>
-            <Text> Please wait while our algorithm finds you a new volunteer partner! </Text>
+            <Text>Get a New Match!</Text>
+            <Text>Please wait while our algorithm finds you a new volunteer partner!</Text>
         </View>
     );
 }

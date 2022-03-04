@@ -11,8 +11,8 @@ let GetMatched = ({ navigation, route }) => {
    console.log(name)
     return (
         <View flex padding-page>
-            <Text heading center nonBlackBlack marginB-s4> {pageWording.header} </Text>
-            <Text center body fadedSubtext marginB-s4 marginT-s6> {(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
+            <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
+            <Text center body fadedSubtext marginB-s4 marginT-s6>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
 
             <View >
                 <Svg width="296" height="212" viewBox="0 0 296 212" fill="none" xmlns="http://www.w3.org/2000/svg">

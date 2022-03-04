@@ -10,7 +10,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
     console.log(rematch);
     return (
         <View flex padding-page>
-            <Text heading center nonBlackBlack marginB-s4 > Success! </Text>
+            <Text heading center nonBlackBlack marginB-s4>Success!</Text>
             <Text center={true} body fadedSubtext marginB-s4  marginT-s6 >{
             rematch ?
             'Please wait while our algorithm finds you a new volunteer partner!'
