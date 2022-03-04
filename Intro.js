@@ -7,7 +7,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { Header } from '@react-navigation/elements'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -32,9 +32,10 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
 import InviteFriend from './pages/Matching/InviteFriend'
-
+import Styles from "./Style.js";
 import { Provider } from 'react-redux'
-import { Button, View, Text } from "react-native-ui-lib";
+import { Button } from "react-native-ui-lib";
+import { Text, View } from "react-native";
 
 import { toggleOnboarding } from './state/userSlice';
 
@@ -50,23 +51,24 @@ const Intro = () => {
         let MatchingNavigator = createNativeStackNavigator();
 
         return (
+
             <MatchingNavigator.Navigator
                 screenOptions={() => ({
-                    keyboardHidesTabBar: false,
-                    //   // headerShown: false,
-                    //   header: ({ navigation, route, options, back }) => {
+                    headerShown: false,
+                    header: ({ navigation, route, options, back }) => {
 
 
-                    //     return (
-                    //       <View>
-                    //         <Text>
-                    //           {route.name}asdfasdfadsssssssssssssssssssssssssssssssssssssss
+                        return (
 
-                    //         </Text>
-                    //         { back ? <Button onPress={navigation.goBack} /> : undefined}
-                    //       </View>
-                    //     );
-                    //   }
+
+
+                            <View>
+                                <Text> HELLO</Text>
+                                {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
+                            </View>
+
+                        );
+                    }
                 })}
 
             >
@@ -88,44 +90,45 @@ const Intro = () => {
 
     }
 
-    const MainNavigation = () => (<NavigationContainer>
-        <Tab.Navigator
-            screenOptions={({ route }) => ({
-                headerShown: false,
-                keyboardHidesTabBar: false,
-                tabBarIcon: ({ focused, color, size }) => {
-                    let iconName;
+    const MainNavigation = () => (
+        <NavigationContainer>
+            <Tab.Navigator
+                screenOptions={({ route }) => ({
+                    headerShown: false,
+                    keyboardHidesTabBar: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
 
-                    switch (route.name) {
-                        case 'Home':
-                            iconName = 'house-user';
-                            break;
-                        case 'Journaling':
-                            iconName = 'pen';
-                            break;
-                        case 'Matching':
-                            iconName = 'users';
-                            break;
-                        case 'Challenges':
-                            iconName = 'mountain';
-                            break;
-                    }
+                        switch (route.name) {
+                            case 'Home':
+                                iconName = 'house-user';
+                                break;
+                            case 'Journaling':
+                                iconName = 'pen';
+                                break;
+                            case 'Matching':
+                                iconName = 'users';
+                                break;
+                            case 'Challenges':
+                                iconName = 'mountain';
+                                break;
+                        }
 
 
 
-                    // You can return any component that you like here!
-                    return <FontAwesome5 name={iconName} size={size} color={color} />;
-                },
-                tabBarActiveTintColor: 'navy',
-                tabBarInactiveTintColor: 'gray',
-            })}
-        >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Matching" component={MatchingStack} />
-            <Tab.Screen name="Journaling" component={Home} />
-            <Tab.Screen name="Challenges" component={Home} />
-        </Tab.Navigator>
-    </NavigationContainer>);
+                        // You can return any component that you like here!
+                        return <FontAwesome5 name={iconName} size={size} color={color} />;
+                    },
+                    tabBarActiveTintColor: '#345f93',
+                    tabBarInactiveTintColor: 'gray',
+                })}
+            >
+                <Tab.Screen name="Home" component={Home} />
+                <Tab.Screen name="Matching" component={MatchingStack} />
+                <Tab.Screen name="Journaling" component={Home} />
+                <Tab.Screen name="Challenges" component={Home} />
+            </Tab.Navigator>
+        </NavigationContainer>);
 
 
     let Onboarder = () => {
