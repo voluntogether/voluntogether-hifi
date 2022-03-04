@@ -69,7 +69,7 @@ let Home = ({ navigation }) => {
                 <FontAwesome5 name={'check'}
                     size={30}
                     color={"#000"} />
-                <Button onPress={() => navigation.navigate('Matching')} label="Go to Matching Intro" />
+                <Button onPress={() => navigation.navigate('MatchingIntro')} label="Go to Matching Intro" />
                 <TextField
                     placeholder={'Placeholder'}
                     floatingPlaceholder
