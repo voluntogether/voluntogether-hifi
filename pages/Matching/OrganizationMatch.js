@@ -3,7 +3,7 @@ import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import Styles from "../../Style.js";
 
 
-let MatchingIntro = ({ route, navigation }) => {
+let OrganizationMatch = ({ route, navigation }) => {
     const { name, organization } = route.params;
     return (
         <View flex padding-page centerH>
@@ -17,9 +17,13 @@ let MatchingIntro = ({ route, navigation }) => {
               <Text heading center todo> ADD IMAGE </Text>
             </Card>
             {/* {(name == 'Ecumenical Hunger Program' ? <Image source={require('/assets/images/food.svg')}/> : <Image source={require('/assets/images/dog.svg')}/>)} */}
-            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('GetMatchedIntro')} />
+
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('MatchingChat', {
+                name: name,
+                organization: organization
+            })}/>
         </View>
     );
 }
 
-export default MatchingIntro;
+export default OrganizationMatch;

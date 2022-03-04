@@ -27,7 +27,7 @@ import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
 import GetMatched from './pages/Matching/GetMatched'
 import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm'
 import MatchingChat from './pages/Matching/MatchingChat'
-import MatchingCompelete from './pages/Matching/MatchingComplete'
+import MatchingComplete from './pages/Matching/MatchingComplete'
 import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
@@ -76,7 +76,7 @@ const Intro = () => {
                 <MatchingNavigator.Screen name="GetMatched" component={GetMatched} />
                 <MatchingNavigator.Screen name="MatchingAlgorithm" component={MatchingAlgorithm} />
                 <MatchingNavigator.Screen name="MatchingChat" component={MatchingChat} />
-                <MatchingNavigator.Screen name="MatchingCompelete" component={MatchingCompelete} />
+                <MatchingNavigator.Screen name="MatchingComplete" component={MatchingComplete} />
                 <MatchingNavigator.Screen name="OrganizationMatch" component={OrganizationMatch} />
                 <MatchingNavigator.Screen name="ReconsiderMatching" component={ReconsiderMatching} />
             </MatchingNavigator.Navigator >
