@@ -43,11 +43,11 @@ let MatchingChat = ({ navigation, route }) => {
         setMessages([
             {
                 _id: 1,
-                text: 'Hello developer',
+                text: `Hey, let's volunteer at ${organization} soon. You down?`,
                 createdAt: new Date(),
                 user: {
                     _id: 2,
-                    name: 'React Native',
+                    name: name,
                     avatar: 'https://placeimg.com/140/140/any',
                 },
             },
@@ -57,23 +57,18 @@ let MatchingChat = ({ navigation, route }) => {
     return (
         <>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-                <View flex padding-page centerH>
-
+                <View flex padding-page>
+                    <View>
+                        <Text style={[Styles.spacer]}></Text>
+                    </View>
 
                     <Text heading center nonBlackBlack marginB-s4>Chat with {name}</Text>
 
                     <Text italic fadedSubtext>We recommend that you and {name} volunteer at {organization}. However, if you feel strongly, you can also discuss
                         and select another organization yourselves.</Text>
-                    <View>
-                        <Text> {name} </Text>
-                    </View>
-                    <Text> Hey, let's volunteer at {organization} soon. You down? </Text>
+
 
                     <Button label={'next (temp)'} onPress={() => navigation.navigate('MatchingComplete')} />
-
-
-                    {/* </DismissKeyboardView> */}
-
 
                 </View>
             </TouchableWithoutFeedback>
@@ -88,10 +83,7 @@ let MatchingChat = ({ navigation, route }) => {
                 user={{
                     _id: 1,
                 }}
-            // bottomOffset={120}
             />
-
-
         </>
 
 

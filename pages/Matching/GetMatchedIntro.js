@@ -11,7 +11,7 @@ let GetMatchedIntro = ({ navigation }) => {
     return (
         <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4>Get Matched</Text>
-            <Text center body fadedSubtext marginB-s4 marginT-s6>To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ </Text>
+            <Text center body fadedSubtext marginB-s4>To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨ </Text>
 
             <View marginB-s8 marginT-s3 center style={[Styles.boxShadow]}>
               <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">

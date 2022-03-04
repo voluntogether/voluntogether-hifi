@@ -11,7 +11,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
     return (
         <View flex padding-page>
             <Text heading center nonBlackBlack marginB-s4>Success!</Text>
-            <Text center={true} body fadedSubtext marginB-s4  marginT-s6 >{
+            <Text center={true} body fadedSubtext marginB-s4>{
             rematch ?
             'Please wait while our algorithm finds you a new volunteer partner!'
             : 'Please wait while our algorithm finds you a volunteer partner!'}</Text>
@@ -29,7 +29,7 @@ let MatchingAlgorithm = ({navigation, route}) => {
             </View>
 
             <View flex right bottom>
-                {(rematch ? <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
+                {(rematch ? <Button label={'>'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Nathan' })}/> : <Button bold label={'>'} nonBlackBlack style={[Styles.yellowButton]} onPress={() => navigation.navigate('GetMatched', { name: 'Emily' })}/>)}
             </View>
 
 

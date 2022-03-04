@@ -13,22 +13,17 @@ let GetMatched = ({ navigation, route }) => {
     return (
         <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
-            <Text center body fadedSubtext marginB-s4 marginT-s6>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner.')} </Text>
+            <Text center body fadedSubtext marginB-s4>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner. \n \n You and Emily both like food sustainability.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner. \n \n You and Nathan both like animal welfare.')} </Text>
 
-            <View centerV>
+            <View>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={require('../../assets/images/Emily.png')}/> 
+                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={name == 'Emily' ? require("../../assets/images/Emily.png") : require("../../assets/images/Nathan.png")}/>
                 </Card>
             </View>
 
-            
-
-
-
-            {/* {(name == 'Emily' ? <Image source={require('/assets/images/emily.svg')}/> : <Image source={require('/assets/images/nathan.svg')}/>)} */}
             <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonAccept} onPress={() => navigation.navigate('OrganizationMatch', {
-                name: 'Emily',
-                organization: 'Ecumenical Hunger Program'
+                name: name,
+                organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
             })} />
             {(name == 'Emily' ? <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('MatchingAlgorithm', {
                 rematch: true

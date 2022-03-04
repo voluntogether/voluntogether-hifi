@@ -31,6 +31,8 @@ import MatchingComplete from './pages/Matching/MatchingComplete'
 import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
+import InviteFriend from './pages/Matching/InviteFriend'
+
 import { Provider } from 'react-redux'
 import { Button, View, Text } from "react-native-ui-lib";
 
@@ -70,6 +72,7 @@ const Intro = () => {
             >
 
                 <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
+                <MatchingNavigator.Screen name="InviteFriend" component={InviteFriend} />
                 <MatchingNavigator.Screen name="GetMatchedIntro" component={GetMatchedIntro} />
                 <MatchingNavigator.Screen name="ProfileAvailability" component={ProfileAvailability} />
                 <MatchingNavigator.Screen name="ProfileVolunteerAreas" component={ProfileVolunteerAreas} />
