@@ -1,16 +1,16 @@
 import React from "react";
-import { View, Text, Image, Button, Card, StyleSheet } from "react-native-ui-lib";
+import { StyleSheet } from "react-native";
+import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
 import wording from '../../assets/wording';
-
+import Styles from "../../Style.js";
 import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
-
 
 let MatchingIntro = ({ navigation }) => {
     return (
-        <View flex padding-page>
+        <View flex padding-page centerH>
             <Text heading center nonBlackBlack marginB-s4>Connect</Text>
-            <Text body fadedSubtext marginB-s4>
+            <Text body fadedSubtext marginB-s8>
                 There are two ways to connect with other people on voluntogether. You can either invite a friend or match with a stranger who is already on the app.
             </Text>
 
@@ -28,8 +28,8 @@ let MatchingIntro = ({ navigation }) => {
               </Svg>
             </View>
 
-            <Button buttonSize={Button.sizes.medium} backgroundColor={'#9DB865'} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
-            <Button backgroundColor={'#9DB865'} label={'Invite a friend'} marginB-s4 />
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Invite a friend'} marginB-s4 />
             { /* <Text>{useSelector((state) => state.user.name)}</Text> */ }
         </View>
     );
