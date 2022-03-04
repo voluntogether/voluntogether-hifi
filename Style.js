@@ -19,6 +19,13 @@ const Styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 4},
         shadowOpacity: 0.25,
         shadowRadius: 2
+    },
+    blueCard: {
+        backgroundColor: "#A4C1E3",
+        height: 200,
+        width: 330,
+        paddingTop: 25,  
+        marginBottom: 60, 
     }
 });
 

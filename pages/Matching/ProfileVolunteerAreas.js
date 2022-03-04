@@ -9,8 +9,8 @@ let ChipsInput = Incubator.ChipsInput
 let ProfileVolunteerAreas = ({ navigation }) => {
     return (
         <View flex padding-page>
-            <Text heading center nonBlackBlack marginB-s4> Make Your Profile </Text>
-            <Text center={true} body fadedSubtext marginB-s4  marginT-s6> Tap to select the volunteer areas that interest you. </Text>
+            <Text heading center nonBlackBlack marginB-s4>Make Your Profile</Text>
+            <Text center={true} body fadedSubtext marginB-s4  marginT-s6>Tap to select the volunteer areas that interest you. </Text>
 
 
             <View center marginB-s4 style={[Styles.boxShadow]}>
