@@ -60,7 +60,7 @@ let CreateThread = ({ navigation, route }) => {
                 <View flex padding-page>
                     <BackArrow navigation={navigation} />
 
-                    <View centerH>  
+                    <View centerH>
                         <View>
                             <Text style={[Styles.spacer]}></Text>
                         </View>
@@ -72,7 +72,7 @@ let CreateThread = ({ navigation, route }) => {
 
                         <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
                     </View>
-                    
+
                 </View>
             </TouchableWithoutFeedback>
 

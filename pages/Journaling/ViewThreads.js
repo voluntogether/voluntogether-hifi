@@ -33,7 +33,7 @@ let ViewThreads = ({ navigation, route }) => {
       }
 
       <View flex right bottom>
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories')} />
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', {journal})} />
       </View>
     </View>
   );

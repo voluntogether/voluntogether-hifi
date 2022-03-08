@@ -10,6 +10,7 @@
 import React from 'react';
 import { SafeAreaView, FlatList, StyleSheet, StatusBar, Pressable } from 'react-native';
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
+import BackArrow from '../../components/BackArrow';
 
 
 const DATA = [
@@ -27,13 +28,25 @@ const DATA = [
   },
 ];
 
-const Item = ({ title }) => (
-  <View style={stylesPrompts.item}>
-    <Text style={stylesPrompts.title}>{title}</Text>
-  </View>
-);
 
-const ViewPrompts = ( { navigation, route} ) => {
+const ViewPrompts = ({ navigation, route }) => {
+
+  let { journal } = route.params;
+
+  const Item = ({ title }) => (
+    <Pressable onPress={() => {
+      navigation.navigate("CreateThread", {
+        prompt: title,
+        journal
+      })
+    }}>
+      <View style={stylesPrompts.item}>
+        <Text style={stylesPrompts.title}>{title}</Text>
+      </View>
+    </Pressable>
+
+  );
+
   const { category } = route.params;
 
   const renderItem = ({ item }) => (
@@ -43,8 +56,9 @@ const ViewPrompts = ( { navigation, route} ) => {
 
   return (
     <SafeAreaView style={stylesPrompts.container}>
-        <View marginB-70 />
-        <Text heading center nonBlackBlack marginB-s4> {category + ' Prompts'} </Text>
+      <View marginB-70 />
+      <BackArrow />
+      <Text heading center nonBlackBlack marginB-s4> {category + ' Prompts'} </Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
