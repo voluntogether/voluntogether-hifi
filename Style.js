@@ -36,6 +36,13 @@ const Styles = StyleSheet.create({
         paddingTop: 25,  
         marginBottom: 60, 
     },
+    blueCardJournal: {
+        backgroundColor: "#A4C1E3",
+        height: 200,
+        width: 150,
+        paddingTop: 25,  
+        marginBottom: 60, 
+    },
     nonButtonTag: {
         backgroundColor: "#f4f4f4",
         borderStyle: "solid",

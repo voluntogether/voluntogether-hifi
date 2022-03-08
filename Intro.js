@@ -32,6 +32,9 @@ import OrganizationMatch from './pages/Matching/OrganizationMatch'
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
 import GetNewMatch from './pages/Matching/GetNewMatch'
 import InviteFriend from './pages/Matching/InviteFriend'
+import JournalHome from './pages/Journaling/JournalHome'
+import ViewThreads from './pages/Journaling/ViewThreads'
+
 import Styles from "./Style.js";
 import { Provider } from 'react-redux'
 import { Button } from "react-native-ui-lib";
@@ -51,28 +54,19 @@ const Intro = () => {
         let MatchingNavigator = createNativeStackNavigator();
 
         return (
-
             <MatchingNavigator.Navigator
                 screenOptions={() => ({
                     headerShown: false,
                     header: ({ navigation, route, options, back }) => {
-
-
                         return (
-
-
-
                             <View>
                                 <Text> HELLO</Text>
                                 {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
                             </View>
-
                         );
                     }
                 })}
-
             >
-
                 <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
                 <MatchingNavigator.Screen name="InviteFriend" component={InviteFriend} />
                 <MatchingNavigator.Screen name="GetMatchedIntro" component={GetMatchedIntro} />
@@ -89,6 +83,36 @@ const Intro = () => {
         );
 
     }
+
+    let JournalingStack = () => {
+
+        let JournalingNavigator = createNativeStackNavigator();
+
+        return (
+
+            <JournalingNavigator.Navigator
+                screenOptions={() => ({
+                    headerShown: false,
+                    header: ({ navigation, route, options, back }) => {
+
+                        return (
+                            <View>
+                                <Text> HELLO</Text>
+                                {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
+                            </View>
+
+                        );
+                    }
+                })}
+            >
+                <JournalingNavigator.Screen name="JournalHome" component={JournalHome} />
+                <JournalingNavigator.Screen name="ViewThreads" component={ViewThreads} />
+            </JournalingNavigator.Navigator >
+        );
+
+    }
+
+    
 
     const MainNavigation = () => (
         <NavigationContainer>
@@ -125,7 +149,7 @@ const Intro = () => {
             >
                 <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="Matching" component={MatchingStack} />
-                <Tab.Screen name="Journaling" component={Home} />
+                <Tab.Screen name="Journaling" component={JournalingStack} />
                 <Tab.Screen name="Challenges" component={Home} />
             </Tab.Navigator>
         </NavigationContainer>);
