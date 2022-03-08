@@ -34,6 +34,10 @@ import GetNewMatch from './pages/Matching/GetNewMatch'
 import InviteFriend from './pages/Matching/InviteFriend'
 import JournalHome from './pages/Journaling/JournalHome'
 import ViewThreads from './pages/Journaling/ViewThreads'
+import ViewPromptCategories from './pages/Journaling/ViewPromptCategories'
+import ViewPrompts from './pages/Journaling/ViewPrompts'
+
+
 
 import Styles from "./Style.js";
 import { Provider } from 'react-redux'
@@ -107,6 +111,11 @@ const Intro = () => {
             >
                 <JournalingNavigator.Screen name="JournalHome" component={JournalHome} />
                 <JournalingNavigator.Screen name="ViewThreads" component={ViewThreads} />
+                <JournalingNavigator.Screen name="ViewPromptCategories" component={ViewPromptCategories} />
+                <JournalingNavigator.Screen name="ViewPrompts" component={ViewPrompts} />
+
+
+
             </JournalingNavigator.Navigator >
         );
 

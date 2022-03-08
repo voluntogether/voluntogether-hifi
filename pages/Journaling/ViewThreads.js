@@ -18,11 +18,10 @@ let ViewThreads = ({ navigation, route}) => {
         Journal together with your volunteer partner(s) online by uploading responses to prompts.
         </Text>
 
-
         {/* Need some way to query the state to check if there are any journals */}
 
         <View flex right bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('MatchingAlgorithm')}/>
+            <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories')}/>
         </View>
     </View>
   );

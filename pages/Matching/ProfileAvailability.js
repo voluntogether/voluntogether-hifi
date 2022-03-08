@@ -89,12 +89,11 @@ let ProfileAvailability = ({ navigation }) => {
                 </View>
             </View>
 
-
-                <View flex right bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
-                        rematch: false
-                    })}/>
-                </View>
+            <View flex right bottom>
+                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
+                    rematch: false
+                 })}/>
+            </View>
 
 
         </View >
