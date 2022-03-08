@@ -52,14 +52,17 @@ const App = () => {
     lightBlue: '#A4C1E3',
     darkBlue: '#345F93',
     backgroundOffWhite: '#F7FDF8',
+    nonWhiteWhite: '#F7FDF8',
     todo: '#FF0000'
   });
 
   Typography.loadTypographies({
+    megaHeading: { fontSize: 35, fontWeight: '600' },
     heading: { fontSize: 25, fontWeight: '600' },
     buttonArrow: { fontSize: 18, fontWeight: "600" },
     buttonText: { fontSize: 16, fontWeight: '400' },
     body: { fontSize: 14, lineHeight: 21, fontWeight: '400' },
+    bigBody: { fontSize: 16, lineHeight: 21, fontWeight: '600' },
     italic: { fontStyle: "italic" },
     bold: { fontWeight: "bold" }
   });

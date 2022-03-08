@@ -18,7 +18,7 @@ let GetMatched = ({ navigation, route }) => {
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
             <Text center body fadedSubtext marginB-s4>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner. \n \n You and Emily both like food sustainability.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner. \n \n You and Nathan both like animal welfare.')} </Text>
 
-            <View>
+            <View centerH>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
                     <Image style={{width: 280, height: 200, borderRadius: 10}} source={name == 'Emily' ? require("../../assets/images/Emily.png") : require("../../assets/images/Nathan.png")}/>
                 </Card>
@@ -29,7 +29,7 @@ let GetMatched = ({ navigation, route }) => {
                 name: name,
                 organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
             })
-            dispatch(setMatch( { 
+            dispatch(setMatch( {
                 name: name,
                 organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
             }))}} />

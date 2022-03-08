@@ -18,7 +18,7 @@ let OrganizationMatch = ({ route, navigation }) => {
                     : 'The Peninsula Humane Society & SPCA is a local, private, non-profit charitable organization dedicated to animal welfare. PHS/SPCA is an open admission shelter, not only accepting many pet animals who might be refused at other shelters, but also taking care of injured and orphaned native wildlife.')}
             </Text>
 
-            <View>
+            <View centerH>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
                     <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={organization == 'Ecumenical Hunger Program' ? require("../../assets/images/food.png") : require("../../assets/images/dog.png")} />
                 </Card>
