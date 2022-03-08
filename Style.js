@@ -33,15 +33,33 @@ const Styles = StyleSheet.create({
         backgroundColor: "#A4C1E3",
         height: 200,
         width: 330,
-        paddingTop: 25,  
-        marginBottom: 60, 
+        paddingTop: 25,
+        marginBottom: 60,
+    },
+    yellowCard: {
+        backgroundColor: "#FFCE00",
+        width: 330,
+        paddingTop: 25,
+        marginBottom: 60,
+        //justifyContent: "flex-end",
+        justifyContent: "center",
+        flexDirection: "row"
+        //alignItems: "flex-end"
+
+    },
+    resizeableBlueCard: {
+        backgroundColor: "#A4C1E3",
+        minHeight: 200,
+        width: 330,
+        paddingTop: 25,
+        marginBottom: 60,
     },
     blueCardJournal: {
         backgroundColor: "#A4C1E3",
         height: 200,
         width: 150,
-        paddingTop: 25,  
-        marginBottom: 60, 
+        paddingTop: 25,
+        marginBottom: 60,
     },
     nonButtonTag: {
         backgroundColor: "#f4f4f4",
@@ -50,10 +68,10 @@ const Styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: "#10123D",
         padding: 5,
-        marginBottom: 20, 
+        marginBottom: 20,
     },
     avatarBox: {
-        width: 62, 
+        width: 62,
         height: 62,
         marginTop: 20,
         flexDirection: "row",
@@ -61,6 +79,23 @@ const Styles = StyleSheet.create({
     },
     spacer: {
         marginBottom: 20
+    },
+    invisibleBackgroundButton: {
+        backgroundColor: "transparent",
+        backgroundColor: "red",
+        border: "none",
+        visibility: "none",
+        borderRadius: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        marginBottom: 0,
+        margin: 0,
+        height: "auto",
+        marginTop: 0,
+        maxHeight: "100%",
+        minHeight: 0
     }
 });
 
