@@ -36,8 +36,9 @@ import JournalHome from './pages/Journaling/JournalHome'
 import ViewThreads from './pages/Journaling/ViewThreads'
 import ViewPromptCategories from './pages/Journaling/ViewPromptCategories'
 import ViewPrompts from './pages/Journaling/ViewPrompts'
-
-
+import ViewChallenges from './pages/Challenges/ViewChallenges'
+import ExpandChallenge from './pages/Challenges/ExpandChallenge'
+import ChallengeJoined from './pages/Challenges/ChallengeJoined'
 
 import Styles from "./Style.js";
 import { Provider } from 'react-redux'
@@ -121,7 +122,35 @@ const Intro = () => {
 
     }
 
-    
+    let ChallengesStack = () => {
+
+        let ChallengesNavigator = createNativeStackNavigator();
+
+        return (
+
+            <ChallengesNavigator.Navigator
+                screenOptions={() => ({
+                    headerShown: false,
+                    header: ({ navigation, route, options, back }) => {
+
+                        return (
+                            <View>
+                                <Text> HELLO</Text>
+                                {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
+                            </View>
+
+                        );
+                    }
+                })}
+            >
+                <ChallengesNavigator.Screen name="ViewChallenges" component={ViewChallenges} />
+                <ChallengesNavigator.Screen name="ExpandChallenge" component={ExpandChallenge} />
+                <ChallengesNavigator.Screen name="ChallengeJoined" component={ChallengeJoined} />
+
+            </ChallengesNavigator.Navigator >
+        );
+
+    }
 
     const MainNavigation = () => (
         <NavigationContainer>
@@ -159,7 +188,7 @@ const Intro = () => {
                 <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="Matching" component={MatchingStack} />
                 <Tab.Screen name="Journaling" component={JournalingStack} />
-                <Tab.Screen name="Challenges" component={Home} />
+                <Tab.Screen name="Challenges" component={ChallengesStack} />
             </Tab.Navigator>
         </NavigationContainer>);
 
