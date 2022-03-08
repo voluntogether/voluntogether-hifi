@@ -4,7 +4,7 @@ import { StateScreen } from 'react-native-ui-lib'
 const initialState = {
     journals: [
         {
-            "date": new Date(),
+            "date": Date.now(),
             "id": 1,
             "users": [1, 2],
             "prompts": [{
@@ -57,6 +57,6 @@ export const journaling = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch } = userSlice.actions
+export const { addJournal, updateJournal } = journaling.actions
 
-export default userSlice.reducer
+export default journaling.reducer
