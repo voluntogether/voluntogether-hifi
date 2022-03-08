@@ -8,7 +8,7 @@
 // import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import React from 'react';
-import { SafeAreaView, FlatList, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView, FlatList, StyleSheet, StatusBar, Pressable } from 'react-native';
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 
 
@@ -37,6 +37,7 @@ const ViewPrompts = ( { navigation, route} ) => {
   const { category } = route.params;
 
   const renderItem = ({ item }) => (
+
     <Item title={item.title} />
   );
 

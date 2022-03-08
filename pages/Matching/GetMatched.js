@@ -1,15 +1,17 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { View, Text, Image, Button, Card} from "react-native-ui-lib";
 import wording from '../../assets/wording';
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import Styles from "../../Style.js";
 import { abs } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
-
+import { setMatch } from "../../state/userSlice";
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, route }) => {
-   const { name } = route.params;
+    const { name } = route.params;
+    const dispatch = useDispatch();
     return (
         <View flex padding-page>
             <BackArrow navigation={navigation} />
@@ -22,10 +24,15 @@ let GetMatched = ({ navigation, route }) => {
                 </Card>
             </View>
 
-            <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonAccept} onPress={() => navigation.navigate('OrganizationMatch', {
+            <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonAccept} onPress={() => {
+            navigation.navigate('OrganizationMatch', {
                 name: name,
                 organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
-            })} />
+            })
+            dispatch(setMatch( { 
+                name: name,
+                organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
+            }))}} />
             {(name == 'Emily' ? <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('MatchingAlgorithm', {
                 rematch: true
             })} />

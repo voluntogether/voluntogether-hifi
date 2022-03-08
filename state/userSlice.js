@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { StateScreen } from 'react-native-ui-lib'
 
 const initialState = {
     name: "nada",
@@ -6,6 +7,9 @@ const initialState = {
     passions: [],
     isOnboarding: true,
     chips: [],
+    partner: null,
+    organization: null,
+    hasMatched: false
 }
 
 export const userSlice = createSlice({
@@ -30,11 +34,17 @@ export const userSlice = createSlice({
         },
         setChips: (state, action) => {
             state.chips = action.payload
+        },
+        setMatch: (state, action) => {
+            state.partner = action.payload.partner
+            state.organization = action.payload.organization
+            state.hasMatched = true
         }
+
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch } = userSlice.actions
 
 export default userSlice.reducer
