@@ -1,9 +1,11 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
+import journalingSlice from './journalingSlice';
 import userSlice from './userSlice';
 
 
 const rootReducer = combineReducers({
-    user: userSlice
+    user: userSlice,
+    journaling: journalingSlice
 })
 
 
