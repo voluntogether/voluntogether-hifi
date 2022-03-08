@@ -5,6 +5,7 @@ const initialState = {
     journals: [
         {
             "date": Date.now(),
+            "organization": "Palo Alto Nursing Home",
             "id": 1,
             "users": [1, 2],
             "prompts": [{
@@ -52,11 +53,14 @@ export const journaling = createSlice({
                     state.journals[i] = action.payload
                 }
             }
+        },
+        resetJournals: (state) => {
+            state.journals = initialState.journals
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { addJournal, updateJournal } = journaling.actions
+export const { addJournal, updateJournal, resetJournals } = journaling.actions
 
 export default journaling.reducer

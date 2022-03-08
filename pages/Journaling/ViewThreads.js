@@ -7,22 +7,34 @@ import { StyleSheet, Pressable } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
+import BackArrow from "../../components/BackArrow";
+import _ from "underscore"
 
-let ViewThreads = ({ navigation, route}) => {
-    const { organization } = route.params;
+let ViewThreads = ({ navigation, route }) => {
+  const { journal } = route.params;
   return (
     <View flex padding-page >
       <View marginB-70 />
-        <Text heading center nonBlackBlack marginB-s4> {organization} </Text>
-        <Text center body fadedSubtext marginB-s8>
+      <BackArrow navigation={navigation} />
+      <Text heading center nonBlackBlack marginB-s4> {journal.organization} </Text>
+      <Text center body fadedSubtext marginB-s8>
         Journal together with your volunteer partner(s) online by uploading responses to prompts.
-        </Text>
+      </Text>
 
-        {/* Need some way to query the state to check if there are any journals */}
+      {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
+        return (
+          <Pressable>
+            <View>
+              <Text>{prompt.prompt}</Text>
+              <FontAwesome5 name={prompt.icon} size={20} />
+            </View>
+          </Pressable>)
+      }) : <Text>Uh oh. No prompts, go make one</Text>
+      }
 
-        <View flex right bottom>
-            <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories')}/>
-        </View>
+      <View flex right bottom>
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories')} />
+      </View>
     </View>
   );
 }

@@ -6,15 +6,20 @@ import Styles from "../../Style.js";
 import { StyleSheet, Pressable } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import _ from "underscore";
+import { resetJournals } from "../../state/journalingSlice";
 
 let JournalHome = ({ navigation }) => {
 
+  let dispatch = useDispatch();
   let [journals, setJournals] = useState([])
+  let stateJournals = useSelector(state => state.journaling.journals)
+  let userName = useSelector(state => state.user.name)
 
 
   useEffect(() => {
-
-  }, [])
+    setJournals(stateJournals);
+  }, [stateJournals])
 
   return (
     <View flex padding-page >
@@ -25,27 +30,40 @@ let JournalHome = ({ navigation }) => {
       </Text>
 
       <View style={StylesJournal.journalcontainer}>
-        <View style={StylesJournal.rowContainer}>
-          <Pressable onPress={() => navigation.navigate('ViewThreads', { organization: 'Peninsula Humane Society' })}>
-            <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
-              {/* insert image here */}
-            </Card>
-          </Pressable>
-          <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
-            {/* insert image here */}
-          </Card>
-        </View>
+        {
+          _.map(_.chunk(journals, 2), (journalPair) => {
 
-        <View style={StylesJournal.rowContainer}>
-          <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
-            {/* insert image here */}
-          </Card>
-          <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
-            {/* insert image here */}
-          </Card>
-        </View>
+            return (
+              <>
+                <View style={StylesJournal.rowContainer}>
+                  {
+                    _.map(journalPair, (journal) => {
+                      // more code here
+                      return (
+                        <Pressable onPress={() => navigation.navigate('ViewThreads', { journal })}>
+                          <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
+                            <Text>{new Date(journal.date).toLocaleDateString("en-US")}</Text>
+                            <Text>{userName} and Emily</Text>
+
+                            {/* insert image here */}
+                          </Card>
+                        </Pressable>
+                      )
+                    })
+                  }
+                </View>
+              </>
+            )
+
+          })
+
+
+
+        }
       </View>
+      <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => dispatch(resetJournals())} />
     </View>
+
   );
 }
 
