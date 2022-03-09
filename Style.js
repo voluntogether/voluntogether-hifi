@@ -88,7 +88,6 @@ const Styles = StyleSheet.create({
     },
     invisibleBackgroundButton: {
         backgroundColor: "transparent",
-        backgroundColor: "red",
         border: "none",
         visibility: "none",
         borderRadius: 0,
@@ -105,14 +104,27 @@ const Styles = StyleSheet.create({
     },
     challengeImage: {
         height: 200,
-        width: 330,
+        width: 322,
         paddingTop: 25,
         marginBottom: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        textAlign: "center",
+        flexDirection: "row",
+        justifyContent: "center",
     },
     challengeTitle: {
         marginTop: 5,
         marginBottom: 10
+    },
+    tagList: {
+        flexDirection: "row",
+        justifyContent: "flex-start",
+    },
+    challenge: {
+        width: "100%",
+    },
+    width322: {
+        width: 322
     }
 });
 
