@@ -60,6 +60,7 @@ const App = () => {
     megaHeading: { fontSize: 35, fontWeight: '600' },
     heading: { fontSize: 25, fontWeight: '600' },
     subHeading: { fontSize: 18, fontWeight: '600' },
+    categoryTitle: { fontSize: 18, fontWeight: '600' },
     buttonArrow: { fontSize: 18, fontWeight: "600" },
     buttonText: { fontSize: 16, fontWeight: '400' },
     smallBody: { fontSize: 10, lineHeight: 21, fontWeight: '400' },

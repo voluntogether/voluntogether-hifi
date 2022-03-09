@@ -29,7 +29,7 @@ const Styles = StyleSheet.create({
         borderRadius: 108,
         padding: 0,
         boxSizing: "border-box"
-    }, 
+    },
     smallerYellowButton: {
         backgroundColor: "#F6CA44",
         borderRadius: 25,
@@ -78,6 +78,12 @@ const Styles = StyleSheet.create({
         justifyContent: "center",
         flexDirection: "row"
         //alignItems: "flex-end"
+    },
+    fullyResizeableBlueCard: {
+        backgroundColor: "#A4C1E3",
+        width: 330,
+        paddingTop: 25,
+        marginBottom: 60,
     },
     resizeableBlueCard: {
         backgroundColor: "#A4C1E3",
