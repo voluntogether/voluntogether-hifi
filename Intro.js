@@ -8,11 +8,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
-import { Header } from '@react-navigation/elements'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import state from './state/store';
-import { PersistGate } from 'redux-persist/integration/react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -20,7 +17,6 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Home from './pages/Home';
 import MatchingIntro from './pages/Matching/MatchingIntro';
 import 'react-native-gesture-handler';
-import { testable } from 'react-native-ui-lib/generatedTypes/src/components/featureHighlight';
 import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
 import ProfileAvailability from './pages/Matching/ProfileAvailability';
 import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
@@ -41,12 +37,11 @@ import ViewChallenges from './pages/Challenges/ViewChallenges'
 import ExpandChallenge from './pages/Challenges/ExpandChallenge'
 import ChallengeJoined from './pages/Challenges/ChallengeJoined'
 
-import Styles from "./Style.js";
-import { Provider } from 'react-redux'
-import { Button } from "react-native-ui-lib";
-import { Text, View } from "react-native";
+import { Button, View, Text, Incubator } from "react-native-ui-lib";
+const { TextField } = Incubator;
 
-import { toggleOnboarding } from './state/userSlice';
+
+import { rename, toggleOnboarding } from './state/userSlice';
 
 import Onboarding from 'react-native-onboarding-swiper';
 
@@ -218,7 +213,15 @@ const Intro = () => {
                 {
                     backgroundColor: '#999',
                     title: 'Triangle',
-                    subtitle: "Beautiful, isn't it?",
+                    subtitle: (<View>
+                        <Text>Put your name in here:</Text>
+                        <TextField
+                            placeholder={'Placeholder'}
+                            floatingPlaceholder
+                            onChangeText={(message) => dispatch(rename(message))}
+
+                                /> 
+                    </View>),
                 },
             ]}
         />)
