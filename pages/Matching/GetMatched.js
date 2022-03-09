@@ -54,7 +54,10 @@ let GetMatched = ({ navigation, route }) => {
         <View flex padding-page>
             <BackArrow navigation={navigation} />
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
-            <Text center body fadedSubtext marginB-s4>{(name == 'Emily' ? 'Congratulations! The voluntogether algorithm has paired you with Emily, your new volunteer partner. \n \n You and Emily both like food sustainability.' : 'Congratulations! The voluntogether algorithm has paired you with Nathan, your new volunteer partner. \n \n You and Nathan both like animal welfare.')} </Text>
+            <Text center body fadedSubtext marginB-s4>
+                Congratulations! The voluntogether algorithm has paired you with <Text bold>{name}</Text>, your new volunteer partner. {"\n\n"}
+                You and {name} both like {name == "Emily" ? "food sustainability" : "animal welfare"}.
+            </Text>
 
             <View centerH>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
