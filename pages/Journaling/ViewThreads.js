@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
-import wording from '../../assets/wording';
 import Styles from "../../Style.js";
 import { StyleSheet, Pressable } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
@@ -22,9 +21,12 @@ let ViewThreads = ({ navigation, route }) => {
         Journal together with your volunteer partner(s) online by uploading responses to prompts.
       </Text>
 
-      {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
+      {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt, index) => {
         return (
-          <Pressable onPress={() => navigation.navigate("ExpandThread")}>
+          <Pressable onPress={() => navigation.navigate("ExpandThread", {
+            id: id,
+            index: index
+          })}>
             <View>
               <Text>{prompt.prompt}</Text>
               <FontAwesome5 name={prompt.icon} size={20} />

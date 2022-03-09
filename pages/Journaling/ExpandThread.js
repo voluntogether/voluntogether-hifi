@@ -1,27 +1,29 @@
 import React from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
-import wording from '../../assets/wording';
 import Styles from "../../Style.js";
 import { StyleSheet, Pressable } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
+import Journal from "../../components/Journal";
+
 import _ from "underscore"
 
 let ExpandThread = ({ navigation, route }) => {
-    // const { id } = route.params;
-    // const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
+    const { id, index } = route.params;
+    const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
     <View flex padding-page >
       <View marginB-70 />
       <BackArrow navigation={navigation} />
       <Text heading center nonBlackBlack marginB-s4> Expand Thread </Text>
       <Text center body fadedSubtext marginB-s8>
-        Journal together with your volunteer partner(s) online by uploading responses to prompts.
+        
       </Text>
 
+      <Journal navigation={navigation} index={index} journal={journal} />
       {/* {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
         return (
           <Pressable>
