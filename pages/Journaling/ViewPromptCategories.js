@@ -21,7 +21,7 @@ let ViewPromptCategories = ({ navigation, route }) => {
       <View marginB-70 />
       <BackArrow navigation={navigation} />
 
-      <Text heading center nonBlackBlack marginB-s4> Pick a Category </Text>
+      <Text heading center nonBlackBlack marginB-s4>Pick a Category</Text>
 
       <View style={StylesJournal.journalcontainer} marginT-s4>
         <View style={StylesJournal.rowContainer}>

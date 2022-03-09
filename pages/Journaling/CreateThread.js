@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
+import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { TextInput, Keyboard, TouchableWithoutFeedback, StyleSheet } from "react-native";
 import Styles from "../../Style.js";
 import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
@@ -41,9 +41,9 @@ let CreateThread = ({ navigation, route }) => {
                         </View>
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
-
-                        <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
-
+                        <Card style={[Styles.fullyResizeableBlueCard, Styles.boxShadow]}>
+                            <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
+                        </Card>
                         <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
                     </View>
 
@@ -87,4 +87,3 @@ let CreateThread = ({ navigation, route }) => {
 }
 
 export default CreateThread
-

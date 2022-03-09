@@ -23,9 +23,7 @@ let JournalHome = ({ navigation }) => {
     <View flex padding-page >
       <View marginB-70 />
       <Text heading center nonBlackBlack marginB-s4>Experiences</Text>
-      <Text center body fadedSubtext marginB-s8>
-        Journal together with your volunteer partner(s) online by uploading responses to prompts.
-      </Text>
+      <Text center body fadedSubtext marginB-s8>Journal together with your volunteer partner(s) online by uploading responses to prompts.</Text>
 
       <View style={StylesJournal.journalcontainer}>
         {

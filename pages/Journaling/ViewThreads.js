@@ -16,7 +16,7 @@ let ViewThreads = ({ navigation, route }) => {
     <View flex padding-page >
       <View marginB-70 />
       <BackArrow navigation={navigation} />
-      <Text heading center nonBlackBlack marginB-s4> {journal.organization} </Text>
+      <Text heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
       <Text center body fadedSubtext marginB-s8>
         Journal together with your volunteer partner(s) online by uploading responses to prompts.
       </Text>
