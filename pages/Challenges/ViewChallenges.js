@@ -12,9 +12,9 @@ let ViewChallenges = ({ navigation, route}) => {
   return (
     <ScrollView>
     <View flex padding-page >
-    <BackArrow navigation={navigation} />
+        <BackArrow navigation={navigation} />
 
-      <View marginB-70 center />
+      <View centerH />
         <Text heading center nonBlackBlack marginB-s4>Explore Challenges</Text>
 
         <View centerH marginB-s4 style={[Styles.challenge]}>
@@ -28,7 +28,7 @@ let ViewChallenges = ({ navigation, route}) => {
                   <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
                 </View>
 
-                <View style={[Styles.tagList]}>
+                <View style={[Styles.tagList]} marginB-s4>
                     <Text style={[Styles.nonButtonTag]} marginR-s2>
                         <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
                     </Text>
@@ -37,42 +37,12 @@ let ViewChallenges = ({ navigation, route}) => {
                     </Text>
                 </View>
 
-                <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+                <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
             </Pressable>
         </View>
 
         <View style={[Styles.spacer]}></View>
 
-        <View centerH marginB-s4 style={[Styles.challenge]}>
-            <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
-                <View centerH>
-                    <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
-                </View>
-
-                <View style={[Styles.width322, Styles.alignRow]}>
-                  <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
-                  <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
-                </View>
-
-                <View style={[Styles.tagList]}>
-                    <Text style={[Styles.nonButtonTag]} marginR-s2>
-                        <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
-                    </Text>
-                    <Text style={[Styles.nonButtonTag]}>
-                        <Text smallBody nonBlackBlack>🌍 Environment</Text>
-                    </Text>
-                </View>
-
-
-                <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
-            </Pressable>
-        </View>
-
-        <View style={[Styles.spacer]}></View>
-
-
-
-{/* WHY THE HELL IS THIS NOT ALIGNED WHEN ITS THE SAME _it only changes whne you change the text???!!!! */}
         <View centerH marginB-s4 style={[Styles.challenge]}>
             <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
                 <View centerH>
@@ -85,17 +55,14 @@ let ViewChallenges = ({ navigation, route}) => {
                         <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
                     </View>
 
-                    <View style={[Styles.tagList]}>
-                        <Text style={[Styles.nonButtonTag]} marginR-s2>
-                            <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
-                        </Text>
+                    <View style={[Styles.tagList]} marginB-s4>
                         <Text style={[Styles.nonButtonTag]}>
                             <Text smallBody nonBlackBlack>🌍 Environment</Text>
                         </Text>
                     </View>
 
 
-                    <Text body>Our ecosystems need our help. Come out for planting on your own or join a group with EcoTreeHealth.</Text>
+                    <Text body marginT-s2>Our ecosystems need our help. Come out for a session of tree planting on your own or join a group with EcoTreeHealth.</Text>
             </Pressable>
         </View>
 
