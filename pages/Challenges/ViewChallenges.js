@@ -22,8 +22,16 @@ let ViewChallenges = ({ navigation, route}) => {
                 <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
                     <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
 
-                    <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
-                    { /* <Text body> # + person icon</Text> */ }
+                    <View >
+                      <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+                      { /* <Text body> # + person icon</Text> */ }
+                      <FontAwesome5 name={'fa-solid fa-user-group'}
+                      size={30}
+                      color={"#000"} />
+                    </View>
+                    
+
+
                     <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
                     { /* <Text buttonText>Tags</Text> */ }
                 </Pressable>
