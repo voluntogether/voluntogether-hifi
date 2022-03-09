@@ -24,7 +24,7 @@ let ViewThreads = ({ navigation, route }) => {
 
       {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
         return (
-          <Pressable>
+          <Pressable onPress={() => navigation.navigate("ExpandThread")}>
             <View>
               <Text>{prompt.prompt}</Text>
               <FontAwesome5 name={prompt.icon} size={20} />
@@ -34,7 +34,7 @@ let ViewThreads = ({ navigation, route }) => {
       }
 
       <View flex right bottom>
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', {id})} />
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
       </View>
     </View>
   );
