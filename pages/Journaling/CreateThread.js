@@ -6,12 +6,12 @@ import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
 import DismissKeyboardView from "../../components/DismissKeyboardView.js";
 import BackArrow from "../../components/BackArrow.js";
 import { useSelector, useDispatch } from 'react-redux';
-import { updateJournal } from "../../state/journalingSlice";
+import { addJournalPrompt } from "../../state/journalingSlice";
 
 
 let CreateThread = ({ navigation, route }) => {
 
-    const { prompt, journal } = route.params;
+    const { prompt, id } = route.params;
 
     const dispatch = useDispatch();
 
@@ -55,26 +55,25 @@ let CreateThread = ({ navigation, route }) => {
                 messages={messages}
                 onSend={messages => {
                     Keyboard.dismiss();
-                    console.log(messages);
-                    let journalClone = journal;
-                    journalClone.prompts.push(
-                        {
+                    dispatch(addJournalPrompt({
+                        id: id,
+                        prompt: {
                             prompt: prompt,
                             icon: "arrow-left",
                             responses: [{
                                 message: {
-                                    
-                                        user: 1,
-                                        body: messages[0].text
+
+                                    user: 1,
+                                    body: messages[0].text
                                 },
                                 replies: []
                             }]
                         }
-                    )
+                    }
 
-                    dispatch(updateJournal(journalClone))
+                    ))
                     navigation.navigate('ViewThreads', {
-                        journal: journalClone
+                        id: id
                     });
                 }}
                 user={{

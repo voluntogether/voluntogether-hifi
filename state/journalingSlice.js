@@ -56,11 +56,19 @@ export const journaling = createSlice({
         },
         resetJournals: (state) => {
             state.journals = initialState.journals
+        },
+
+        addJournalPrompt: (state, action) => {
+            for (let i = 0; i < state.journals.length; i++) {
+                if (state.journals[i].id === action.payload.id) {
+                    state.journals[i].prompts.push(action.payload.prompt)
+                }
+            }
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { addJournal, updateJournal, resetJournals } = journaling.actions
+export const { addJournal, updateJournal, updateJournals, resetJournals, addJournalPrompt } = journaling.actions
 
 export default journaling.reducer

@@ -11,7 +11,8 @@ import BackArrow from "../../components/BackArrow";
 import _ from "underscore"
 
 let ViewThreads = ({ navigation, route }) => {
-  const { journal } = route.params;
+  const { id } = route.params;
+  const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
     <View flex padding-page >
       <View marginB-70 />
@@ -33,7 +34,7 @@ let ViewThreads = ({ navigation, route }) => {
       }
 
       <View flex right bottom>
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', {journal})} />
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', {id})} />
       </View>
     </View>
   );

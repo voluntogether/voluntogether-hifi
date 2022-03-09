@@ -40,7 +40,7 @@ let JournalHome = ({ navigation }) => {
                     _.map(journalPair, (journal) => {
                       // more code here
                       return (
-                        <Pressable onPress={() => navigation.navigate('ViewThreads', { journal })}>
+                        <Pressable onPress={() => navigation.navigate('ViewThreads', { id: journal.id })}>
                           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
                             <Text>{new Date(journal.date).toLocaleDateString("en-US")}</Text>
                             <Text>{userName} and Emily</Text>

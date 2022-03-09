@@ -10,6 +10,7 @@
 import React from 'react';
 import { SafeAreaView, FlatList, StyleSheet, StatusBar, Pressable } from 'react-native';
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
+import { useSelector } from 'react-redux';
 import BackArrow from '../../components/BackArrow';
 
 
@@ -31,13 +32,14 @@ const DATA = [
 
 const ViewPrompts = ({ navigation, route }) => {
 
-  let { journal } = route.params;
+  let { id } = route.params;
+  const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
 
   const Item = ({ title }) => (
     <Pressable onPress={() => {
       navigation.navigate("CreateThread", {
         prompt: title,
-        journal
+        id
       })
     }}>
       <View style={stylesPrompts.item}>
@@ -57,7 +59,7 @@ const ViewPrompts = ({ navigation, route }) => {
   return (
     <SafeAreaView style={stylesPrompts.container}>
       <View marginB-70 />
-      <BackArrow navigation={navigation}/>
+      <BackArrow navigation={navigation} />
       <Text heading center nonBlackBlack marginB-s4> {category + ' Prompts'} </Text>
       <FlatList
         data={DATA}
