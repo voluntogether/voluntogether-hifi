@@ -72,7 +72,7 @@ const Styles = StyleSheet.create({
         borderWidth: 0.25,
         borderRadius: 15,
         borderColor: "#10123D",
-        
+
     },
     yellowCard: {
         backgroundColor: "#FFCE00",
@@ -177,6 +177,9 @@ const Styles = StyleSheet.create({
     alignRow: {
         flexDirection: "row",
         justifyContent: "space-between"
+    },
+    participationCount: {
+
     }
 });
 

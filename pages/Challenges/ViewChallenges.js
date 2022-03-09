@@ -25,7 +25,10 @@ let ViewChallenges = ({ navigation, route}) => {
 
                 <View style={[Styles.width322, Styles.alignRow]}>
                   <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
-                  <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+                  <Text>
+                      <Text bold style={[Styles.participationCount]}>25  </Text> {/* extra two spaces at the end of this is intentional */}
+                      <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+                  </Text>
                 </View>
 
                 <View style={[Styles.tagList]} marginB-s4>
@@ -52,7 +55,10 @@ let ViewChallenges = ({ navigation, route}) => {
 
                     <View style={[Styles.width322, Styles.alignRow]}>
                         <Text subHeading style={[Styles.challengeTitle]}>Tree Planting</Text>
-                        <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+                        <Text>
+                            <Text bold style={[Styles.participationCount]}>12  </Text> {/* extra two spaces at the end of this is intentional */}
+                            <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+                        </Text>
                     </View>
 
                     <View style={[Styles.tagList]} marginB-s4>
