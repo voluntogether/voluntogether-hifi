@@ -180,6 +180,9 @@ const Intro = () => {
                     },
                     tabBarActiveTintColor: '#345f93',
                     tabBarInactiveTintColor: 'gray',
+                    tabBarStyle: {
+                        marginTop: 10
+                    }
                 })}
             >
                 <Tab.Screen name="Home" component={Home} />
@@ -220,7 +223,7 @@ const Intro = () => {
                             floatingPlaceholder
                             onChangeText={(message) => dispatch(rename(message))}
 
-                                /> 
+                                />
                     </View>),
                 },
             ]}
