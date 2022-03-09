@@ -3,11 +3,14 @@ import { View, Text, Image, Button } from "react-native-ui-lib";
 import StyleSheet from 'react-native';
 import Styles from "../../Style.js";
 import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
+import BackArrow from "../../components/BackArrow";
 
 let InviteFriend = ({ navigation }) => {
     const [copied, setCopied] = React.useState(false);
     return (
-        <View flex padding-page centerH>
+        <View flex padding-page>
+            <BackArrow navigation={navigation} />
+
             <View marginB-50/>
             <Text heading center nonBlackBlack marginB-s4> Invite a Friend </Text>
             <Text body fadedSubtext center marginB-s8> Invite a friend to join you on voluntogether using your personalized invite link (tap to copy). </Text>
@@ -29,7 +32,7 @@ let InviteFriend = ({ navigation }) => {
 
 
         </View>
-        
+
     );
 }
 
