@@ -51,7 +51,6 @@ const Styles = StyleSheet.create({
         justifyContent: "center",
         flexDirection: "row"
         //alignItems: "flex-end"
-
     },
     resizeableBlueCard: {
         backgroundColor: "#A4C1E3",
@@ -66,6 +65,15 @@ const Styles = StyleSheet.create({
         width: 150,
         paddingTop: 25,
         marginBottom: 60,
+    },
+    greyCardChallenge: {
+        backgroundColor: "#E4E4E4",
+        backgroundColor: "red",
+        //paddingTop: 200
+        //height: 600,
+        //width: "screenX",
+        //width: "windowWidth"
+
     },
     nonButtonTag: {
         backgroundColor: "#f4f4f4",
