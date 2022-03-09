@@ -6,6 +6,7 @@ import { StyleSheet, Pressable, Dimensions } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
+import BackArrow from "../../components/BackArrow";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -14,7 +15,9 @@ const windowHeight = Dimensions.get('window').height;
 let ExpandChallenge = ({ navigation, route}) => {
   return (
     <View padding-page >
-      <View marginB-70  />
+    <BackArrow navigation={navigation} />
+
+      <View />
         <Text heading center nonBlackBlack marginB-s4> Explore Challenges </Text>
 
         <View centerv style={[Styles.greyCardChallenge]}>
@@ -26,7 +29,7 @@ let ExpandChallenge = ({ navigation, route}) => {
               </Card>
           </View>
 
-          <View style={[Styles.alignRow]}> 
+          <View style={[Styles.alignRow]}>
             <Text marginL-s3 subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
               { /* <Text body> # + person icon</Text> */ }
             <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
@@ -40,7 +43,7 @@ let ExpandChallenge = ({ navigation, route}) => {
               <Text smallBody nonBlackBlack>🌍 Environment</Text>
             </Text>
           </View>
-        
+
           <View centerH>
             <Text fadedSubtext body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
               { /* <Text buttonText>Tags</Text> */ }
@@ -50,22 +53,22 @@ let ExpandChallenge = ({ navigation, route}) => {
               <View style={[Styles.alignRow]}>
               <Card style={[Styles.challengeBlueCard, Styles.boxShadow]} left >
                   <Text bold nonWhiteWhite marginB-s2 bigBody>Challenge details</Text>
-                  <View flexDirection="row"> 
+                  <View flexDirection="row">
                     <Text nonBlackBlack marginB-s1 >Total Hours Required</Text>
                     <Text nonBlackBlack >5</Text>
                   </View>
 
                   {/* <View> */}
-                  <View flexDirection="row">  
+                  <View flexDirection="row">
                     <Text nonBlackBlack>Participants</Text>
                     <Text nonBlackBlack>25</Text>
                   </View>
               </Card>
-              </View>      
+              </View>
                 <Button style={[Styles.smallerYellowButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
               </View>
           </View>
-          
+
         {/* Need some way to query the state to check if there are any journals */}
     </View>
   );

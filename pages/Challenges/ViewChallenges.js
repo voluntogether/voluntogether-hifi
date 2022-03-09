@@ -6,11 +6,14 @@ import { StyleSheet, Pressable, ScrollView} from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
+import BackArrow from "../../components/BackArrow";
 
 let ViewChallenges = ({ navigation, route}) => {
   return (
     <ScrollView>
     <View flex padding-page >
+    <BackArrow navigation={navigation} />
+
       <View marginB-70 center />
         <Text heading center nonBlackBlack marginB-s4>Explore Challenges</Text>
 
@@ -76,7 +79,7 @@ let ViewChallenges = ({ navigation, route}) => {
                     <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/tree-planting.jpg")} />
                 </View>
 
-                
+
                     <View style={[Styles.width322, Styles.alignRow]}>
                         <Text subHeading style={[Styles.challengeTitle]}>Tree Planting</Text>
                         <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
@@ -91,12 +94,12 @@ let ViewChallenges = ({ navigation, route}) => {
                         </Text>
                     </View>
 
-                    
-                    <Text body>Our ecosystems need our help. Come out for planting on your own or join a group with EcoTreeHealth.</Text>                
+
+                    <Text body>Our ecosystems need our help. Come out for planting on your own or join a group with EcoTreeHealth.</Text>
             </Pressable>
         </View>
 
-        
+
 
         {/* Need some way to query the state to check if there are any journals */}
     </View>
