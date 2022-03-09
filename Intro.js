@@ -37,6 +37,7 @@ import ViewThreads from './pages/Journaling/ViewThreads'
 import ViewPromptCategories from './pages/Journaling/ViewPromptCategories'
 import ViewPrompts from './pages/Journaling/ViewPrompts'
 import CreateThread from './pages/Journaling/CreateThread';
+import ExpandThread from './pages/Journaling/ExpandThread';
 import ViewChallenges from './pages/Challenges/ViewChallenges'
 import ExpandChallenge from './pages/Challenges/ExpandChallenge'
 import ChallengeJoined from './pages/Challenges/ChallengeJoined'
@@ -116,8 +117,7 @@ const Intro = () => {
                 <JournalingNavigator.Screen name="ViewPromptCategories" component={ViewPromptCategories} />
                 <JournalingNavigator.Screen name="ViewPrompts" component={ViewPrompts} />
                 <JournalingNavigator.Screen name="CreateThread" component={CreateThread} />
-
-
+                <JournalingNavigator.Screen name="ExpandThread" component={ExpandThread} />
 
             </JournalingNavigator.Navigator >
         );
@@ -224,14 +224,6 @@ const Intro = () => {
         />)
 
     }
-
-
-
-
-
-
-
-
 
     let initOnboarding = useSelector(state => state.user.isOnboarding);
     let [isOnboarding, setIsOnboarding] = useState(true);
