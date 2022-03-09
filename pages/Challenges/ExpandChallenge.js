@@ -31,8 +31,10 @@ let ExpandChallenge = ({ navigation, route}) => {
 
           <View style={[Styles.alignRow]}>
             <Text marginL-s3 subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
-              { /* <Text body> # + person icon</Text> */ }
-            <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+            <Text>
+                <Text bold style={[Styles.participationCount]}>25  </Text> {/* extra two spaces at the end of this is intentional */}
+                <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+            </Text>
           </View>
 
           <View marginL-s3 style={[Styles.tagList]}>
