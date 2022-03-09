@@ -27,6 +27,11 @@ let ExpandChallenge = ({ navigation, route}) => {
             <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
             { /* <Text buttonText>Tags</Text> */ }
 
+            <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH>
+                <Text>Challenge details</Text>
+                <Text>Total Hours Required 5</Text>
+                <Text>Participants 25</Text>
+            </Card>
 
             <Button style={[Styles.regularYellowButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
 
