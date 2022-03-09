@@ -68,6 +68,11 @@ const Styles = StyleSheet.create({
         paddingLeft: 25,
         marginTop: 20,
         marginBottom: 20,
+        borderStyle: "solid",
+        borderWidth: 0.25,
+        borderRadius: 15,
+        borderColor: "#10123D",
+        
     },
     yellowCard: {
         backgroundColor: "#FFCE00",
