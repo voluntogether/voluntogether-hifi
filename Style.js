@@ -69,7 +69,7 @@ const Styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         borderStyle: "solid",
-        borderWidth: 0.25,
+        borderWidth: 0.20,
         borderRadius: 15,
         borderColor: "#10123D",
         

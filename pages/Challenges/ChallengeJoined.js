@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
 import Styles from "../../Style.js";
-import { StyleSheet, Pressable, Dimensions, TouchableOpacity, ImageBackground} from "react-native";
+import { StyleSheet, Pressable, Dimensions, TouchableOpacity, ImageBackground, ScrollView} from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
@@ -12,30 +12,29 @@ const windowHeight = Dimensions.get('window').height;
 
 let ChallengeJoined = ({ navigation, route}) => {
   return (
+    <ScrollView>
     <View flex >
       <View>
-        <ImageBackground style={{ width: windowWidth, height: 300, borderRadius: 0 }} source={"a" == 'a' ? require("../../assets/images/ocean-cleanup.jpg") : require("../../assets/images/tree-planting.jpg")} >
-          <Text>Beach Cleanup</Text>
+        <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={"a" == 'a' ? require("../../assets/images/ocean-cleanup.jpg") : require("../../assets/images/tree-planting.jpg")} >
+          <Text center megaHeading bold color="#F7FDF8">Beach Cleanup</Text>
         </ImageBackground>
       </View>
 
-      <View right marginR-s4> 
-        <TouchableOpacity
-          onPress={() => navigation.navigate('ViewChallenge')} 
-        >
-            <Text>Leave challenge</Text>
-        </TouchableOpacity>
+      <View right marginR-s4>
+        <Pressable centerH onPress={() => navigation.navigate('ViewChallenge')}>
+          <Text marginT-s2>Leave challenge</Text>
+        </Pressable>
       </View>
 
 
-      <Card style={[Styles.challengeBlankCard, Styles.boxShadow]}  >
+      <Card style={[Styles.challengeBlankCard]} marginL-s8 >
         <Text bold nonBlackBlack marginB-s2 body>Started February 2022</Text>
           <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 5 / 20 hours </Text>
           <Text nonBlackBlack marginB-s1 left>The voluntogether community collectively volunteered 5 hours on this challenge.</Text>
       </Card>
 
-      <View marginH-s5>
-        <Text nonBlackBlack bigBody> Challenge Details</Text>
+      <View marginL-s8  marginH-s5>
+        <Text nonBlackBlack bigBody>Challenge Details</Text>
         <Text nonBlackBlack body>Looking for service and serenity? Join this Beach Cleanup challenge with SF Marine Wildlife to help make our planet and community more sustainable. 
         </Text>
       </View>
@@ -69,6 +68,7 @@ let ChallengeJoined = ({ navigation, route}) => {
 
 
     </View>
+    </ScrollView>
   );
 }
 
