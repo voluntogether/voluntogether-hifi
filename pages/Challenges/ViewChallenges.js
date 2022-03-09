@@ -27,7 +27,7 @@ let ViewChallenges = ({ navigation, route}) => {
                 </View>
 
                 <View style={[Styles.tagList]}>
-                    <Text style={[Styles.nonButtonTag]} marginR-s4>
+                    <Text style={[Styles.nonButtonTag]} marginR-s2>
                         <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
                     </Text>
                     <Text style={[Styles.nonButtonTag]}>
@@ -35,10 +35,11 @@ let ViewChallenges = ({ navigation, route}) => {
                     </Text>
                 </View>
 
-
                 <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
             </Pressable>
         </View>
+
+        <View style={[Styles.spacer]}></View>
 
         <View centerH marginB-s4 style={[Styles.challenge]}>
             <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
@@ -52,7 +53,7 @@ let ViewChallenges = ({ navigation, route}) => {
                 </View>
 
                 <View style={[Styles.tagList]}>
-                    <Text style={[Styles.nonButtonTag]} marginR-s4>
+                    <Text style={[Styles.nonButtonTag]} marginR-s2>
                         <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
                     </Text>
                     <Text style={[Styles.nonButtonTag]}>
@@ -64,6 +65,9 @@ let ViewChallenges = ({ navigation, route}) => {
                 <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
             </Pressable>
         </View>
+
+        <View style={[Styles.spacer]}></View>
+
 
 
 {/* WHY THE HELL IS THIS NOT ALIGNED WHEN ITS THE SAME _it only changes whne you change the text???!!!! */}
@@ -80,7 +84,7 @@ let ViewChallenges = ({ navigation, route}) => {
                     </View>
 
                     <View style={[Styles.tagList]}>
-                        <Text style={[Styles.nonButtonTag]} marginR-s4>
+                        <Text style={[Styles.nonButtonTag]} marginR-s2>
                             <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
                         </Text>
                         <Text style={[Styles.nonButtonTag]}>

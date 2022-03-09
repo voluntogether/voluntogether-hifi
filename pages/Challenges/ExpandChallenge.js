@@ -28,13 +28,13 @@ let ExpandChallenge = ({ navigation, route}) => {
           </View>
 
           <View style={[Styles.alignRow]}> 
-            <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+            <Text marginL-s3 subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
               { /* <Text body> # + person icon</Text> */ }
             <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
           </View>
 
-          <View style={[Styles.tagList]}>
-            <Text style={[Styles.nonButtonTag]} marginR-s4>
+          <View marginL-s3 style={[Styles.tagList]}>
+            <Text style={[Styles.nonButtonTag]} marginR-s2>
               <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
             </Text>
             <Text style={[Styles.nonButtonTag]}>
@@ -50,10 +50,10 @@ let ExpandChallenge = ({ navigation, route}) => {
               {/* <View justifyContent="space-between"> */}
               <View style={[Styles.alignRow]}>
               <Card style={[Styles.challengeBlueCard, Styles.boxShadow]} left >
-                  <Text bold nonWhiteWhite>Challenge details</Text>
+                  <Text bold nonWhiteWhite marginB-s2 bigBody>Challenge details</Text>
                   <View flexDirection="row"> 
-                    <Text nonBlackBlack>Total Hours Required</Text>
-                    <Text nonBlackBlack>5</Text>
+                    <Text nonBlackBlack marginB-s1 >Total Hours Required</Text>
+                    <Text nonBlackBlack >5</Text>
                   </View>
 
                   {/* <View> */}

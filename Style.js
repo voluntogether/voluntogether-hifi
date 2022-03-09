@@ -32,8 +32,8 @@ const Styles = StyleSheet.create({
     }, 
     smallerYellowButton: {
         backgroundColor: "#F6CA44",
-        borderRadius: 12,
-        minWidth: "45%",
+        borderRadius: 25,
+        minWidth: "35%",
         color: "#10123D"
     },
     boxShadow: {
@@ -51,12 +51,23 @@ const Styles = StyleSheet.create({
     },
     challengeBlueCard: {
         backgroundColor: "#A4C1E3",
-        height: 100,
+        minHeight: 100,
         width: 330,
-        paddingTop: 25,
+        paddingTop: 20,
+        paddingBottom: 20,
         paddingLeft: 25,
-        marginTop: 10,
-        marginBottom: 10,
+        marginTop: 20,
+        marginBottom: 20,
+    },
+    challengeBlankCard: {
+        backgroundColor: "transparent",
+        minHeight: 100,
+        width: 330,
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 25,
+        marginTop: 20,
+        marginBottom: 20,
     },
     yellowCard: {
         backgroundColor: "#FFCE00",
@@ -144,6 +155,7 @@ const Styles = StyleSheet.create({
     },
     tagList: {
         flexDirection: "row",
+        marginBottom: -15,
     },
     challenge: {
         width: "100%",
