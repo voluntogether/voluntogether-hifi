@@ -18,7 +18,7 @@ let ChallengeJoined = ({ navigation, route}) => {
         </Text> */}
 
 
-            <View>
+            <View centerH>
                 {/* <Pressable onPress={() => navigation.navigate('ExpandChallenges')}> */}
                     <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
                             {/* <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={organization == 'Ecumenical Hunger Program' ? require("../../assets/images/food.png") : require("../../assets/images/dog.png")} /> */}

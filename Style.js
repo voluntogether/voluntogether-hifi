@@ -6,6 +6,12 @@ const Styles = StyleSheet.create({
         borderRadius: 12,
         minWidth: "75%",
     },
+    regularYellowButton: {
+        backgroundColor: "#F6CA44",
+        borderRadius: 12,
+        minWidth: "75%",
+        color: "#10123D"
+    },
     smallGreenButton: {
         backgroundColor: "#9DB865",
         borderRadius: 12,
@@ -96,6 +102,17 @@ const Styles = StyleSheet.create({
         marginTop: 0,
         maxHeight: "100%",
         minHeight: 0
+    },
+    challengeImage: {
+        height: 200,
+        width: 330,
+        paddingTop: 25,
+        marginBottom: 10,
+        borderRadius: 10
+    },
+    challengeTitle: {
+        marginTop: 5,
+        marginBottom: 10
     }
 });
 

@@ -18,11 +18,25 @@ let ViewChallenges = ({ navigation, route}) => {
         </Text> */}
 
 
-            <View>
-                <Pressable onPress={() => navigation.navigate('ExpandChallenge')}>
-                    <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                            {/* <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={organization == 'Ecumenical Hunger Program' ? require("../../assets/images/food.png") : require("../../assets/images/dog.png")} /> */}
-                    </Card>
+            <View centerH marginB-s4>
+                <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
+                    <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
+
+                    <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+                    { /* <Text body> # + person icon</Text> */ }
+                    <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+                    { /* <Text buttonText>Tags</Text> */ }
+                </Pressable>
+            </View>
+
+            <View centerH marginB-s4>
+                <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
+                    <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/tree-planting.jpg")} />
+
+                    <Text subHeading style={[Styles.challengeTitle]}>Tree Planting</Text>
+                    { /* <Text body> # + person icon</Text> */ }
+                    <Text body>Our ecosystems need our help. Come out for planting on your own or join a group with EcoTreeHealth. </Text>
+                    { /* <Text buttonText>Tags</Text> */ }
                 </Pressable>
             </View>
 

@@ -13,20 +13,22 @@ let ExpandChallenge = ({ navigation, route}) => {
     <View flex padding-page >
       <View marginB-70 />
         <Text heading center nonBlackBlack marginB-s4> Explore Challenges </Text>
-        {/* <Text center body fadedSubtext marginB-s8>
-        Journal together with your volunteer partner(s) online by uploading responses to prompts.
-        </Text> */}
+
+        <View centerH>
+            <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
+                { /* TODO: add the actual variable to this to choose an image */ }
+                <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={"a" == 'a' ? require("../../assets/images/ocean-cleanup.jpg") : require("../../assets/images/tree-planting.jpg")} />
+            </Card>
+        </View>
 
 
-            <View>
-                <Pressable onPress={() => navigation.navigate('ChallengeJoined')}>
-                    <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                            {/* <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={organization == 'Ecumenical Hunger Program' ? require("../../assets/images/food.png") : require("../../assets/images/dog.png")} /> */}
-                    </Card>
-                </Pressable>
-            </View>
+            <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+            { /* <Text body> # + person icon</Text> */ }
+            <Text body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+            { /* <Text buttonText>Tags</Text> */ }
 
 
+            <Button style={[Styles.regularYellowButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
 
         {/* Need some way to query the state to check if there are any journals */}
     </View>
