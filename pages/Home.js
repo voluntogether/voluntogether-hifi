@@ -16,11 +16,12 @@ let TextField = Incubator.TextField;
 
 let Home = ({ navigation }) => {
 
+    let userName = useSelector(state => state.user.name);
 
     return (
         <View flex padding-page>
             <View marginT-s10>
-                <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>good morning.</Text>
+                <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>good morning, {userName}.</Text>
             </View>
             <View centerH>
                 <Pressable onPress={() => navigation.navigate('Matching')}>

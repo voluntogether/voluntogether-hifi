@@ -36,7 +36,76 @@ const initialState = {
 
             }
             ]
+        },
+        {
+            "date": Date.now(),
+            "organization": "Default 1",
+            "id": 2,
+            "users": [1, 2],
+            "prompts": [{
+                "prompt": "How are you doing today?",
+                "icon": "fa-smile-o",
+                "responses": [
+                    {
+                        "message": {
+                            "user": 1,
+                            "body": "I'm doing great!"
+                        },
+                        "replies": [
+                            {
+                                "message": {
+                                    "user": 1,
+                                    "body": "I'm doing great!"
+                                }
+                            },
+                            {
+                                "message": {
+                                    "user": 2,
+                                    "body": "I'm doing great!"
+                                }
+                            }
+                        ]
+                    }
+                ]
+
+            }
+            ]
+        },
+        {
+            "date": Date.now(),
+            "organization": "Default 2",
+            "id": 3,
+            "users": [1, 2],
+            "prompts": [{
+                "prompt": "How are you doing today?",
+                "icon": "fa-smile-o",
+                "responses": [
+                    {
+                        "message": {
+                            "user": 1,
+                            "body": "I'm doing great!"
+                        },
+                        "replies": [
+                            {
+                                "message": {
+                                    "user": 1,
+                                    "body": "I'm doing great!"
+                                }
+                            },
+                            {
+                                "message": {
+                                    "user": 2,
+                                    "body": "I'm doing great!"
+                                }
+                            }
+                        ]
+                    }
+                ]
+
+            }
+            ]
         }
+
     ],
 }
 
