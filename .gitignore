@@ -64,3 +64,6 @@ buck-out/
 
 yarn.lock
 package-lock.json
+assets/images/.tree-planting.jpg.icloud
+.gitignore
+assets/images/.food.svg.icloud
