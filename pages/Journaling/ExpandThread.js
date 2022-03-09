@@ -10,34 +10,34 @@ import { RotateInUpLeft } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
 import _ from "underscore"
 
-let ViewThreads = ({ navigation, route }) => {
-  const { id } = route.params;
-  const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
+let ExpandThread = ({ navigation, route }) => {
+    // const { id } = route.params;
+    // const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
     <View flex padding-page >
       <View marginB-70 />
       <BackArrow navigation={navigation} />
-      <Text heading center nonBlackBlack marginB-s4> {journal.organization} </Text>
+      <Text heading center nonBlackBlack marginB-s4> Expand Thread </Text>
       <Text center body fadedSubtext marginB-s8>
         Journal together with your volunteer partner(s) online by uploading responses to prompts.
       </Text>
 
-      {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
+      {/* {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt) => {
         return (
-          <Pressable onPress={() => navigation.navigate("ExpandThread")}>
+          <Pressable>
             <View>
               <Text>{prompt.prompt}</Text>
               <FontAwesome5 name={prompt.icon} size={20} />
             </View>
           </Pressable>)
       }) : <Text>Uh oh. No prompts, go make one</Text>
-      }
+      } */}
 
       <View flex right bottom>
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', {journal})} />
       </View>
     </View>
   );
 }
 
-export default ViewThreads;
+export default ExpandThread;

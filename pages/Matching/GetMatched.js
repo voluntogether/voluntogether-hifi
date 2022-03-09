@@ -1,16 +1,54 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { View, Text, Image, Button, Card} from "react-native-ui-lib";
+import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import wording from '../../assets/wording';
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import Styles from "../../Style.js";
 import { abs } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
 import { setMatch } from "../../state/userSlice";
+import { addJournal } from "../../state/journalingSlice";
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, route }) => {
     const { name } = route.params;
+
+    let defaultJournal = {
+        "date": Date.now(),
+        "organization": "Palo Alto Nursing Home",
+        "id": 4,
+        "users": [1, 2],
+        "prompts": [{
+            "prompt": "How are you doing today?",
+            "icon": "fa-smile-o",
+            "responses": [
+                {
+                    "message": {
+                        "user": 1,
+                        "body": "I'm doing great!"
+                    },
+                    "replies": [
+                        {
+                            "message": {
+                                "user": 1,
+                                "body": "I'm doing great!"
+                            }
+                        },
+                        {
+                            "message": {
+                                "user": 2,
+                                "body": "I'm doing great!"
+                            }
+                        }
+                    ]
+                }
+            ]
+
+        }
+        ]
+    }
+
+
     const dispatch = useDispatch();
     return (
         <View flex padding-page>
@@ -20,24 +58,28 @@ let GetMatched = ({ navigation, route }) => {
 
             <View centerH>
                 <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                    <Image style={{width: 280, height: 200, borderRadius: 10}} source={name == 'Emily' ? require("../../assets/images/Emily.png") : require("../../assets/images/Nathan.png")}/>
+                    <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={name == 'Emily' ? require("../../assets/images/Emily.png") : require("../../assets/images/Nathan.png")} />
                 </Card>
             </View>
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonAccept} onPress={() => {
-            navigation.navigate('OrganizationMatch', {
-                name: name,
-                organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
-            })
-            dispatch(setMatch( {
-                name: name,
-                organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
-            }))}} />
+                navigation.navigate('OrganizationMatch', {
+                    name: name,
+                    organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
+                })
+                dispatch(setMatch({
+                    name: name,
+                    organization: (name == 'Emily' ? 'Ecumenical Hunger Program' : 'Peninsula Humane Society')
+                }))
+                dispatch(addJournal(defaultJournal))
+
+
+            }} />
             {(name == 'Emily' ? <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('MatchingAlgorithm', {
                 rematch: true
             })} />
-            : <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('ReconsiderMatching'
-            )} />)}
+                : <Button style={[Styles.greenButton, Styles.boxShadow]} marginB-s4 label={pageWording.buttonReject} onPress={() => navigation.navigate('ReconsiderMatching'
+                )} />)}
 
         </View>
     );

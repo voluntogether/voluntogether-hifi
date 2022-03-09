@@ -13,7 +13,9 @@ import BackArrow from "../../components/BackArrow";
 let ViewPromptCategories = ({ navigation, route }) => {
 
 
-  let { journal } = route.params;
+  let { id } = route.params;
+  const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
+
 
   return (
     <View flex padding-page >
@@ -32,7 +34,7 @@ let ViewPromptCategories = ({ navigation, route }) => {
           <Pressable onPress={() => navigation.navigate('ViewPrompts',
             {
               category: 'Hardships',
-              journal
+              id: id
             })}>
             <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
               {/* insert image here */}
