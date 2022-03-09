@@ -18,7 +18,7 @@ const Styles = StyleSheet.create({
         maxWidth: "40%",
         justifyContent: 'center'
     },
-     yellowButton: {
+    yellowButton: {
         backgroundColor: "#F6CA44",
         minWidth: 54,
         width: 54,
@@ -29,7 +29,14 @@ const Styles = StyleSheet.create({
         borderRadius: 108,
         padding: 0,
         boxSizing: "border-box"
-    }, boxShadow: {
+    }, 
+    smallerYellowButton: {
+        backgroundColor: "#F6CA44",
+        borderRadius: 12,
+        minWidth: "45%",
+        color: "#10123D"
+    },
+    boxShadow: {
         shadowColor: '#10123D',
         shadowOffset: {width: 0, height: 4},
         shadowOpacity: 0.25,
@@ -40,7 +47,16 @@ const Styles = StyleSheet.create({
         height: 200,
         width: 330,
         paddingTop: 25,
-        marginBottom: 60,
+        marginBottom: 40,
+    },
+    challengeBlueCard: {
+        backgroundColor: "#A4C1E3",
+        height: 100,
+        width: 330,
+        paddingTop: 25,
+        paddingLeft: 25,
+        marginTop: 10,
+        marginBottom: 10,
     },
     yellowCard: {
         backgroundColor: "#FFCE00",
@@ -68,15 +84,17 @@ const Styles = StyleSheet.create({
     },
     greyCardChallenge: {
         backgroundColor: "#E4E4E4",
-        backgroundColor: "red",
-        //paddingTop: 200
+        //backgroundColor: "red",
+        paddingTop: 50,
+        borderRadius: 20,
+        //minWidth: 400,
         //height: 600,
         //width: "screenX",
         //width: "windowWidth"
 
     },
     nonButtonTag: {
-        backgroundColor: "#f4f4f4",
+        backgroundColor: "transparent",
         borderStyle: "solid",
         borderWidth: 1,
         borderRadius: 15,
@@ -121,18 +139,21 @@ const Styles = StyleSheet.create({
         justifyContent: "center",
     },
     challengeTitle: {
-        marginTop: 5,
+        marginTop: 0,
         marginBottom: 10
     },
     tagList: {
         flexDirection: "row",
-        justifyContent: "flex-start",
     },
     challenge: {
         width: "100%",
     },
     width322: {
         width: 322
+    },
+    alignRow: {
+        flexDirection: "row",
+        justifyContent: "space-between"
     }
 });
 
