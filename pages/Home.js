@@ -4,7 +4,7 @@ import { View, Text, Button, Incubator, Card, Image } from "react-native-ui-lib"
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector, useDispatch } from 'react-redux'
 import { rename, toggleOnboarding } from "../state/userSlice";
-import { Keyboard, TextInput, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
+import { Keyboard, TextInput, StyleSheet, KeyboardAvoidingView, Platform, Pressable } from "react-native";
 import DismissKeyboardView from '../components/DismissKeyboardView'
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import Styles from "../Style.js";
@@ -23,7 +23,7 @@ let Home = ({ navigation }) => {
                 <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>good morning.</Text>
             </View>
             <View centerH>
-                <Button centerH style={[Styles.invisibleBackgroundButton]} onPress={() => navigation.navigate('Matching')}>
+                <Pressable onPress={() => navigation.navigate('Matching')}>
                     <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
                         <Text heading center nonWhiteWhite marginB-s4>match with someone</Text>
                         <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,19 +32,19 @@ let Home = ({ navigation }) => {
                             <Circle cx="82.4614" cy="72.4614" r="50.4614" fill="#F6CA44" />
                         </Svg>
                     </Card>
-                </Button>
+                </Pressable>
             </View>
 
 
             <View centerH>
-                <Button centerH style={[Styles.invisibleBackgroundButton]} onPress={() => navigation.navigate('Challenges')}>
-                <Card style={[Styles.yellowCard, Styles.boxShadow]} paddingL-s8 paddingR-s8 >
-                    <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                        <Text bigBody nonBlackBlack marginB-s4>Explore a new challenge</Text>
-                        <Image marginL-s8 right style={{ width: 20, height: 20}} source={require("../assets/images/pencil.png")} />
-                    </View>
-                </Card>
-                </Button>
+                <Pressable onPress={() => navigation.navigate('Challenges')}>
+                    <Card style={[Styles.yellowCard, Styles.boxShadow]} paddingL-s8 paddingR-s8 >
+                        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                            <Text bigBody nonBlackBlack marginB-s4>Explore a new challenge</Text>
+                            <Image marginL-s8 right style={{ width: 20, height: 20}} source={require("../assets/images/pencil.png")} />
+                        </View>
+                    </Card>
+                </Pressable>
             </View>
 
             <View centerH>
