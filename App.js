@@ -62,6 +62,7 @@ const App = () => {
     subHeading: { fontSize: 18, fontWeight: '600' },
     buttonArrow: { fontSize: 18, fontWeight: "600" },
     buttonText: { fontSize: 16, fontWeight: '400' },
+    smallBody: { fontSize: 10, lineHeight: 21, fontWeight: '400' },
     body: { fontSize: 14, lineHeight: 21, fontWeight: '400' },
     bigBody: { fontSize: 16, lineHeight: 21, fontWeight: '600' },
     italic: { fontStyle: "italic" },
