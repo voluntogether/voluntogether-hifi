@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
-import wording from '../../assets/wording';
 import Styles from "../../Style.js";
 import { StyleSheet, Pressable } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
@@ -15,7 +14,6 @@ let JournalHome = ({ navigation }) => {
   let [journals, setJournals] = useState([])
   let stateJournals = useSelector(state => state.journaling.journals)
   let userName = useSelector(state => state.user.name)
-
 
   useEffect(() => {
     setJournals(stateJournals);
