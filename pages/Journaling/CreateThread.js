@@ -5,27 +5,17 @@ import Styles from "../../Style.js";
 import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
 import DismissKeyboardView from "../../components/DismissKeyboardView.js";
 import BackArrow from "../../components/BackArrow.js";
+import { useSelector, useDispatch } from 'react-redux';
+import { updateJournal } from "../../state/journalingSlice";
 
 
 let CreateThread = ({ navigation, route }) => {
 
+    const { prompt, journal } = route.params;
+
+    const dispatch = useDispatch();
+
     const [messages, setMessages] = useState([]);
-
-    const styles = StyleSheet.create({
-        toolbar: {
-            // borderRadius: 15,
-            // marginLeft: 8,
-            // marginRight: 8,
-            // backgroundColor: '#f4f4f4',
-            // borderColor: '#10123d',
-            // borderWidth: 1.5,
-            // borderTopWidth: 1.5,
-            // borderTopColor: '#10123d'
-            // paddingTop: 10,
-            // paddingBottom: 2
-        }
-    })
-
 
     const onSend = useCallback((messages = []) => {
         setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
@@ -33,27 +23,12 @@ let CreateThread = ({ navigation, route }) => {
 
     function renderInputToolbar(props) {
         return (
-            <InputToolbar {...props} primaryStyle={styles.toolbar} containerStyle={{
+            <InputToolbar {...props} containerStyle={{
                 backgroundColor: "#f4f4f4",
             }} accessoryStyle={{}} />
         )
     }
 
-    useEffect(() => {
-        setMessages([
-            {
-                _id: 1,
-                text: `Hey, let's volunteer at ${organization} soon. You down?`,
-                createdAt: new Date(),
-                user: {
-                    _id: 2,
-                    name: name,
-                    avatar: 'https://placeimg.com/140/140/any',
-                },
-            },
-        ])
-    }, [])
-    const { name, organization } = route.params;
     return (
         <>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -62,13 +37,12 @@ let CreateThread = ({ navigation, route }) => {
 
                     <View centerH>
                         <View>
-                            <Text style={[Styles.spacer]}></Text>
+                            <Text style={[Styles.spacer]}> </Text>
                         </View>
 
-                        <Text heading center nonBlackBlack marginB-s4>Chat with {name}</Text>
+                        <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
 
-                        <Text center italic fadedSubtext marginB-s8 >We recommend that you and {name} volunteer at {organization}. However, if you feel strongly, you can also discuss
-                            and select another organization yourselves.</Text>
+                        <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
 
                         <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
                     </View>
@@ -81,7 +55,27 @@ let CreateThread = ({ navigation, route }) => {
                 messages={messages}
                 onSend={messages => {
                     Keyboard.dismiss();
-                    navigation.navigate('MatchingComplete');
+                    console.log(messages);
+                    let journalClone = journal;
+                    journalClone.prompts.push(
+                        {
+                            prompt: prompt,
+                            icon: "arrow-left",
+                            responses: [{
+                                message: {
+                                    
+                                        user: 1,
+                                        body: messages[0].text
+                                },
+                                replies: []
+                            }]
+                        }
+                    )
+
+                    dispatch(updateJournal(journalClone))
+                    navigation.navigate('ViewThreads', {
+                        journal: journalClone
+                    });
                 }}
                 user={{
                     _id: 1,

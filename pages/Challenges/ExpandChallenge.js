@@ -8,7 +8,7 @@ import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
 
-let ExpandChallenge = ({ navigation, route}) => {
+let ExpandChallenge = ({ navigation, route }) => {
   return (
     <View flex padding-page >
       <View marginB-70 />
