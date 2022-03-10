@@ -14,49 +14,37 @@ let ViewThreads = ({ navigation, route }) => {
   const { id } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
-    <View flex >
-      <View marginB-70 />
-      <BackArrow navigation={navigation} />
-      
-      <Text heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
+      <View flex padding-page>
+          <BackArrow navigation={navigation} />
+          <Text heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
+
 
       {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt, index) => {
         return (
           // If there IS a thread entry!!!!
-          <Pressable onPress={() => navigation.navigate("ExpandThread", {
+          <View centerH><Pressable centerH onPress={() => navigation.navigate("ExpandThread", {
             id: id,
             index: index
           })}>
 
-            <View style={[Styles.journalBlankCard]} > 
-              <Card style={[Styles.blueCardPrompt]} > 
+              <Card style={[Styles.blueCardPrompt]} centerH>
                 <View centerH>
                   <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
-                  <Text bigBody marginT-s4>{prompt.prompt}</Text>
+                  <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text>
                 </View>
               </Card>
 
-            <View style={[Styles.alignRow]}> 
-              <View style={[Styles.alignRow]}centerH > 
-                {_.map(journal.users, (userID) => {
-                return (<ProfilePic id={userID} />)
-                })}
-                <Text>Created by King Bean</Text>
-              </View>
 
-            </View>
-              
 
-            </View>
 
-            
+
 
             {/* <View> <ProfilePic id={userID} /> </View> */}
-            
-          </Pressable>)
-          
-      }) : 
-      
+
+          </Pressable></View>)
+
+      }) :
+
       <View centerH>
         <Svg alignItems="center" justifyContent="center" width="267" height="263" viewBox="0 0 267 263" fill="none" xmlns="http://www.w3.org/2000/svg">
           <View justifyContent="center">
@@ -70,7 +58,7 @@ let ViewThreads = ({ navigation, route }) => {
             Journal together with your volunteer partner(s) online by uploading responses to prompts.
           </Text>
       </View>
-    
+
       }
 
       <View flex right bottom>

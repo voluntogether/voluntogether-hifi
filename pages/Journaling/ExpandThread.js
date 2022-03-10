@@ -56,10 +56,9 @@ let ExpandThread = ({ navigation, route }) => {
 
 
   return (
-    <View flex padding-page >
-      <View marginB-70 />
-      <BackArrow navigation={navigation} />
-      <Text heading center nonBlackBlack marginB-s4>Expand Thread</Text>
+      <View flex padding-page>
+          <BackArrow navigation={navigation} />
+          <Text heading center nonBlackBlack marginB-s4>Expand Thread</Text>
       <Text center body fadedSubtext marginB-s8>
 
       </Text>

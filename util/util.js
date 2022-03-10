@@ -17,10 +17,10 @@ let userLookup = (id, table) => {
 let timeOfDay = () => {
     console.log("HI")
     let data = [
-        [0, 4, "good night"],
+        [0, 4, "good evening"],
         [5, 11, "good morning"],          //Store messages in an array
         [12, 17, "good afternoon"],
-        [18, 24, "good night"]
+        [18, 24, "good evening"]
     ]
     let hr = new Date().getHours();
 
