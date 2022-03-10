@@ -100,20 +100,21 @@ const Styles = StyleSheet.create({
     challengeDescriptionCard: {
         backgroundColor: "transparent",
         minHeight: 200,
-        width: 200,
+        width: 330,
         padding: 20,
         marginBottom: 60,
         borderStyle: "solid",
         borderWidth: 0.20,
         borderRadius: 15,
         borderColor: "#10123D",
-
+        alignItems: "stretch",
         
     },
     challengeGraphicCard: {
         backgroundColor: "#A4C1E3",
-        height: 150,
-        width: 150,
+        height: 130,
+        width: 330,
+        marginBottom: 20,
         //padding: 20,
         //marginBottom: 60,
     },
