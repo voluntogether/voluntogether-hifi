@@ -6,6 +6,8 @@ import { StyleSheet, Pressable, Dimensions, TouchableOpacity, ImageBackground, S
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
+import BackArrow from "../../components/BackArrow";
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
