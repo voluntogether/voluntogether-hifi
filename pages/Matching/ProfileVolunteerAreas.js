@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import _, { map, size } from "underscore";
 import Styles from "../../Style.js";
 import BackArrow from "../../components/BackArrow.js";
-import Styles from "../../Style.js";
 
 let ChipsInput = Incubator.ChipsInput
 
@@ -120,11 +119,11 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                                     <Text key={interest.value}>{interest}</Text>
                                 </Button>
                             </View>
-                        ))} 
+                        ))}
                     </View>
                  </View>
 
-                
+
 
 
             </View>
