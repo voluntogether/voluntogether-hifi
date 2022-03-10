@@ -1,12 +1,12 @@
 import React from "react";
 import { Pressable } from "react-native";
 import { Button, Text, View } from "react-native-ui-lib";
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector } from "react-redux";
 import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
 import Styles from "../../Style.js";
-import Svg, { Path } from "react-native-svg"
 
 let ViewThreads = ({ navigation, route }) => {
   const { id } = route.params;
