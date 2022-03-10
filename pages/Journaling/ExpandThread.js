@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { View, Text, Image, Button, Card, Modal, TextField } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import { Pressable } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
+import { Button, Image, Modal, Text, TextField, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { RotateInUpLeft } from "react-native-reanimated";
+import { useDispatch, useSelector } from "react-redux";
+import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
 import Journal from "../../components/Journal";
-
 import { addMessage, addReply } from "../../state/journalingSlice.js";
+import Styles from "../../Style.js";
 
-import _ from "underscore"
-import { launchImageLibrary } from "react-native-image-picker";
+
 
 let ExpandThread = ({ navigation, route }) => {
 

@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import React, { useEffect, useState } from "react";
+import { Pressable, StyleSheet } from "react-native";
+import { Button, Card, Text, View } from "react-native-ui-lib";
+import { useDispatch, useSelector } from "react-redux";
 import _ from "underscore";
 import { resetJournals } from "../../state/journalingSlice";
+import Styles from "../../Style.js";
 
 let JournalHome = ({ navigation }) => {
 

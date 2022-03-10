@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { StateScreen } from 'react-native-ui-lib'
 
 const initialState = {
     name: "Peter",

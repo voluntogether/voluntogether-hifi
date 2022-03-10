@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import { LogBox } from 'react-native';
 import 'react-native-gesture-handler';
 import { Colors, Spacings, Typography } from "react-native-ui-lib";
 import { Provider } from 'react-redux';
@@ -16,7 +17,7 @@ import state from './state/store';
 
 
 
-
+LogBox.ignoreAllLogs()
 
 
 const App = () => {
@@ -50,10 +51,10 @@ const App = () => {
   });
 
   Spacings.loadSpacings({
-      page: 20,
-      card: 12,
-      gridGutter: 16
-    });
+    page: 20,
+    card: 12,
+    gridGutter: 16
+  });
 
 
   return (

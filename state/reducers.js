@@ -1,4 +1,4 @@
-import { createReducer, combineReducers } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
 import journalingSlice from './journalingSlice';
 import userSlice from './userSlice';
 

@@ -6,45 +6,45 @@
  * @flow strict-local
  */
 
-import React, { useState, useEffect } from 'react';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useSelector, useDispatch } from 'react-redux'
-
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
-import Home from './pages/Home';
-import MatchingIntro from './pages/Matching/MatchingIntro';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
-import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
-import ProfileAvailability from './pages/Matching/ProfileAvailability';
-import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
-import GetMatched from './pages/Matching/GetMatched'
-import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm'
-import MatchingChat from './pages/Matching/MatchingChat'
-import MatchingComplete from './pages/Matching/MatchingComplete'
-import OrganizationMatch from './pages/Matching/OrganizationMatch'
-import ReconsiderMatching from './pages/Matching/ReconsiderMatching'
-import GetNewMatch from './pages/Matching/GetNewMatch'
-import InviteFriend from './pages/Matching/InviteFriend'
-import JournalHome from './pages/Journaling/JournalHome'
-import ViewThreads from './pages/Journaling/ViewThreads'
-import ViewPromptCategories from './pages/Journaling/ViewPromptCategories'
-import ViewPrompts from './pages/Journaling/ViewPrompts'
+import Onboarding from 'react-native-onboarding-swiper';
+import { Incubator, Text, View } from "react-native-ui-lib";
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { useDispatch, useSelector } from 'react-redux';
+import ChallengeJoined from './pages/Challenges/ChallengeJoined';
+import ExpandChallenge from './pages/Challenges/ExpandChallenge';
+import ViewChallenges from './pages/Challenges/ViewChallenges';
+import Home from './pages/Home';
 import CreateThread from './pages/Journaling/CreateThread';
 import ExpandThread from './pages/Journaling/ExpandThread';
-import ViewChallenges from './pages/Challenges/ViewChallenges'
-import ExpandChallenge from './pages/Challenges/ExpandChallenge'
-import ChallengeJoined from './pages/Challenges/ChallengeJoined'
+import JournalHome from './pages/Journaling/JournalHome';
+import ViewPromptCategories from './pages/Journaling/ViewPromptCategories';
+import ViewPrompts from './pages/Journaling/ViewPrompts';
+import ViewThreads from './pages/Journaling/ViewThreads';
+import GetMatched from './pages/Matching/GetMatched';
+import GetMatchedIntro from './pages/Matching/GetMatchedIntro';
+import GetNewMatch from './pages/Matching/GetNewMatch';
+import InviteFriend from './pages/Matching/InviteFriend';
+import MatchingAlgorithm from './pages/Matching/MatchingAlgorithm';
+import MatchingChat from './pages/Matching/MatchingChat';
+import MatchingComplete from './pages/Matching/MatchingComplete';
+import MatchingIntro from './pages/Matching/MatchingIntro';
+import OrganizationMatch from './pages/Matching/OrganizationMatch';
+import ProfileAvailability from './pages/Matching/ProfileAvailability';
+import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
+import ReconsiderMatching from './pages/Matching/ReconsiderMatching';
+import { rename, toggleOnboarding } from './state/userSlice';
 
-import { Button, View, Text, Incubator } from "react-native-ui-lib";
+
+
 const { TextField } = Incubator;
 
 
-import { rename, toggleOnboarding } from './state/userSlice';
 
-import Onboarding from 'react-native-onboarding-swiper';
 
 
 const Intro = () => {

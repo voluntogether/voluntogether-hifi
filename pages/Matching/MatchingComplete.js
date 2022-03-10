@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
-import Styles from "../../Style.js";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-
+import Svg, { Path } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Styles from "../../Style.js";
+
 let MatchingComplete = ({ navigation }) => {
     return (
         <View flex padding-page backgroundColor={"#345F93"}>

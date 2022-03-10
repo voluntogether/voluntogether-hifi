@@ -1,8 +1,6 @@
 import React from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
-import Svg, {Path, G, Circle} from 'react-native-svg';
-import Styles from "../../Style.js";
-import BackArrow from "../../components/BackArrow.js";
+import Svg, { Circle, G, Path } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
 
 
 let ReconsiderMatching = ({ navigation }) => {

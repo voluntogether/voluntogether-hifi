@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
-import { TextInput, Keyboard, TouchableWithoutFeedback, StyleSheet } from "react-native";
-import Styles from "../../Style.js";
-import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
-import DismissKeyboardView from "../../components/DismissKeyboardView.js";
+import React, { useCallback, useEffect, useState } from "react";
+import { Keyboard, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import { GiftedChat, InputToolbar } from 'react-native-gifted-chat';
+import { Button, Text, View } from "react-native-ui-lib";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 
 let MatchingChat = ({ navigation, route }) => {

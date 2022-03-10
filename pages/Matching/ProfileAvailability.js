@@ -1,10 +1,10 @@
 import React from "react";
-import _, { map, size } from "underscore";
 import { StyleSheet } from "react-native";
-import { View, Text, Image, Button, Picker, TouchableOpacity } from "react-native-ui-lib";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import Styles from "../../Style.js";
+import Svg, { Circle, G, Rect } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
+import _ from "underscore";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 
 

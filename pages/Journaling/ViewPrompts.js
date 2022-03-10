@@ -8,8 +8,8 @@
 // import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import React from 'react';
-import { SafeAreaView, FlatList, StyleSheet, StatusBar, Pressable } from 'react-native';
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
+import { FlatList, Pressable, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { Text, View } from "react-native-ui-lib";
 import { useSelector } from 'react-redux';
 import BackArrow from '../../components/BackArrow';
 
