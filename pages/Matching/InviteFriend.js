@@ -10,7 +10,7 @@ let InviteFriend = ({ navigation }) => {
         <View flex padding-page>
             <BackArrow navigation={navigation} />
 
-            <View marginB-50/>
+            {/* <View marginB-50/> */}
             <Text heading center nonBlackBlack marginB-s4>Invite a Friend</Text>
             <Text body fadedSubtext center marginB-s8>Invite a friend to join you on voluntogether using your personalized invite link (tap to copy).</Text>
 

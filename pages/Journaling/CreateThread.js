@@ -43,7 +43,7 @@ let CreateThread = ({ navigation, route }) => {
                         <Card style={[Styles.fullyResizeableBlueCard, Styles.boxShadow]}>
                             <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
                         </Card>
-                        <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
+                        {/* <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} /> */}
                     </View>
 
                 </View>
