@@ -42,15 +42,15 @@ let CreateThread = ({ navigation, route }) => {
                         </View>
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
-                        <Card style={[Styles.blueCardPrompt]} > 
+
+                        <Card style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
                             <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
-                            <Text bigBody marginT-s4>{prompt.prompt}</Text>
+                            <Text center bigBody marginT-s4>Prompt: {prompt}</Text>
+                            {/* <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text> */}
                             </View>
                         </Card>
-                        <Card style={[Styles.fullyResizeableBlueCard, Styles.boxShadow]}>
-                            <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
-                        </Card>
+
                         {/* <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} /> */}
                     </View>
 
