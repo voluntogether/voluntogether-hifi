@@ -13,6 +13,7 @@ let Journal = ({ journal, index, openModal }) => {
 
     _.map(journal.prompts[index].responses, (message, index) => {
       return (
+
         <Pressable onPress={() => openModal(index)}>
 
           <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} > 
@@ -25,24 +26,29 @@ let Journal = ({ journal, index, openModal }) => {
 
 
               <Text marginH-s6>{message.message.body}</Text>
-
-
-              {/* REPLY */}
-              {_.map(message.replies, (reply) => {
-                return (
-                  <Pressable>
-                    <View>
-                    <View style={StylesExpand.verticalLine}/> 
-                      <Text>{reply.message.body}</Text>
-                      <Text> {'By ' + reply.message.user} </Text>
-
-                    </View>
-                  </Pressable>)
-              })
-              }
-
             </View>
+           
+            </Pressable>)
+                
+            })
+
+              {_.map(message.replies, (reply) => {
+                  return (
+                    <Pressable>
+                      <View>
+                      <View style={StylesExpand.verticalLine}/> 
+                        <Text>{reply.message.body}</Text>
+                        <Text> {'By ' + reply.message.user} </Text>
+
+                      </View>
+                    </Pressable>)
+                })
+              }
+          </View>
+
+            
           </View> 
+          
           
         </Pressable>)
     })

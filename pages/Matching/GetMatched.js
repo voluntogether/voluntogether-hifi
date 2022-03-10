@@ -13,39 +13,47 @@ let GetMatched = ({ navigation, route }) => {
 
     const { name } = route.params;
 
+    // let defaultJournal = {
+    //     "date": Date.now(),
+    //     "organization": "Ecumenical Hunger Program",
+    //     "id": 4,
+    //     "users": [1, 2],
+    //     "prompts": [{
+    //         "prompt": "How are you doing today?",
+    //         "icon": "fa-smile-o",
+    //         "responses": [
+    //             {
+    //                 "message": {
+    //                     "user": 1,
+    //                     "body": "I'm doing great!"
+    //                 },
+    //                 "replies": [
+    //                     {
+    //                         "message": {
+    //                             "user": 1,
+    //                             "body": "I'm doing great!"
+    //                         }
+    //                     },
+    //                     {
+    //                         "message": {
+    //                             "user": 2,
+    //                             "body": "I'm doing great!"
+    //                         }
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+
+    //     }
+    //     ]
+    // }
+
     let defaultJournal = {
         "date": Date.now(),
-        "organization": "Palo Alto Nursing Home",
+        "organization": "Ecumenical Hunger Program",
         "id": 4,
         "users": [1, 2],
-        "prompts": [{
-            "prompt": "How are you doing today?",
-            "icon": "fa-smile-o",
-            "responses": [
-                {
-                    "message": {
-                        "user": 1,
-                        "body": "I'm doing great!"
-                    },
-                    "replies": [
-                        {
-                            "message": {
-                                "user": 1,
-                                "body": "I'm doing great!"
-                            }
-                        },
-                        {
-                            "message": {
-                                "user": 2,
-                                "body": "I'm doing great!"
-                            }
-                        }
-                    ]
-                }
-            ]
-
-        }
-        ]
+        "prompts": []
     }
 
 

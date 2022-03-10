@@ -14,9 +14,6 @@ import Styles from "../../Style.js";
 
 let ExpandThread = ({ navigation, route }) => {
 
-
-
-
   const { id, index } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
 
@@ -27,7 +24,6 @@ let ExpandThread = ({ navigation, route }) => {
   let [response, setResponse] = useState("");
   let [images, setImages] = useState([]);
   const dispatch = useDispatch();
-
 
   const createReply = (message, promptIndex, messageIndex) => {
 
