@@ -55,6 +55,7 @@ const Styles = StyleSheet.create({
         width: 330,
         paddingTop: 25,
         paddingBottom: 25,
+        paddingHorizontal: 10,
         marginBottom: 40,
     },
     journalBlankCard: {

@@ -16,31 +16,32 @@ let Journal = ({ journal, index, openModal }) => {
         <Pressable onPress={() => openModal(index)}>
 
           <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} > 
-          <View  backgroundColor="D4D4D4" left>
-            <View style={[Styles.alignRow]} centerH> 
-              <ProfilePic id={message.message.user} />
-              <Text> {'Answered by ' + message.message.user} </Text>
+            <View  backgroundColor="D4D4D4" left>
+              <View marginH-s2 style={[Styles.alignRow]} centerH paddingB-s6> 
+                <ProfilePic id={message.message.user} />
+                <Text bold smallBody> {'Answered by ' + message.message.user} </Text>
+              </View>
+              
+
+
+              <Text marginH-s6>{message.message.body}</Text>
+
+
+              {/* REPLY */}
+              {_.map(message.replies, (reply) => {
+                return (
+                  <Pressable>
+                    <View>
+                    <View style={StylesExpand.verticalLine}/> 
+                      <Text>{reply.message.body}</Text>
+                      <Text> {'By ' + reply.message.user} </Text>
+
+                    </View>
+                  </Pressable>)
+              })
+              }
+
             </View>
-            
-
-
-            <Text>{message.message.body}</Text>
-            {_.map(message.replies, (reply) => {
-              return (
-                <Pressable>
-                  <View>
-                    <Text>{reply.message.body}</Text>
-                    <Text> {'By ' + reply.message.user} </Text>
-
-                  </View>
-                </Pressable>)
-            })
-
-
-            }
-
-          </View>
-          
           </View> 
           
         </Pressable>)
@@ -52,12 +53,17 @@ let Journal = ({ journal, index, openModal }) => {
 
 const StylesExpand = StyleSheet.create({
   threadCard: {
-    backgroundColor: "D4D4D4",
-    height: 100,
+    backgroundColor: "#DBDBDB",
+    height: 150,
     width: "100%",
     paddingTop: 10,
     marginBottom: 30,
   },
+  verticalLine: {
+    height: '100%',
+    width:1,
+    backgroundColor: "#818181"
+  }
 });
 
 export default Journal; 
