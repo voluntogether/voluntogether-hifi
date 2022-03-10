@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Card, Image, Text, View } from "react-native-ui-lib";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import wording from '../../assets/wording';
 import BackArrow from "../../components/BackArrow";
 import { addJournal } from "../../state/journalingSlice";
@@ -9,6 +9,8 @@ import Styles from "../../Style.js";
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, route }) => {
+    let interestArea = useSelector(state => state.user.interestArea)
+
     const { name } = route.params;
 
     let defaultJournal = {
@@ -54,7 +56,7 @@ let GetMatched = ({ navigation, route }) => {
             <Text heading center nonBlackBlack marginB-s4>{pageWording.header}</Text>
             <Text center body fadedSubtext marginB-s4>
                 Congratulations! The voluntogether algorithm has paired you with <Text bold>{name}</Text>, your new volunteer partner. {"\n\n"}
-                You and {name} both like {name == "Emily" ? "food sustainability" : "animal welfare"}.
+                You and {name} both like {interestArea}.
             </Text>
 
             <View centerH>

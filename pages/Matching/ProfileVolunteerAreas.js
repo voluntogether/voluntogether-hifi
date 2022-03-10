@@ -4,15 +4,17 @@ import { View, Text, Image, Button, Incubator, Card, TouchableHigh } from "react
 import Svg, { Path, G, Rect } from 'react-native-svg';
 import { useSelector, useDispatch } from "react-redux";
 import _, { map, size } from "underscore";
+import { setInterestArea } from "../../state/userSlice";
 import Styles from "../../Style.js";
 import BackArrow from "../../components/BackArrow.js";
-import Styles from "../../Style.js";
 
 let ChipsInput = Incubator.ChipsInput
 
 let ProfileVolunteerAreas = ({ navigation }) => {
 
     let dispatch = useDispatch();
+    // let interestAreaGlobal = useSelector(state => state.user.interestArea)
+
 
     // let [chips, setChips] = useState([
     //     { label: '🏀 Sports' },
@@ -47,9 +49,29 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         '  🥗 Sustainability  '
     ]
 
+    // let interests = [
+    //     '       🏀 Sports       ',
+    //     '   💻 Technology   ',
+    //     '🐳 Animal Welfare',
+    //     '    📚 Education     ',
+    //     '      🏥 Health        ',
+    //     '     🎭 The Arts      ',
+    //     '     📋 Politics        ',
+    //     '  🥗 Sustainability  '
+    // ]
+
     const [selected, setSelected] = React.useState([]);
-    const handlePress = interest =>
-    selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
+    const [interestAreaLocal, setInterestAreaLocal] = React.useState('');
+
+    // const [chosen, setChosen] = React.useState([false, false, false, false,]);
+    const handlePress = interest => {
+        selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
+        setInterestAreaLocal(interest);
+
+    }
+    
+
+
 
     return (
 
@@ -70,41 +92,14 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                     <Path fill-rule="evenodd" clip-rule="evenodd" d="M211.2 76.22C209.325 65.0634 221.005 55.6742 229.959 48.6758C237.445 42.8251 247.838 43.9256 256.762 40.6102C264.841 37.6085 271.314 28.7434 279.824 30.1501C288.342 31.5582 291.489 42.1432 298.254 47.4689C305.458 53.1395 318.594 53.4809 320.734 62.3546C322.907 71.3623 310.987 77.6266 307.612 86.2617C304.647 93.8449 307.787 103.556 302.274 109.575C296.677 115.687 287.376 116.402 279.113 117.38C271.011 118.34 262.626 118.579 255.236 115.146C247.881 111.729 244.386 103.791 238.322 98.4308C229.389 90.5339 213.169 87.9306 211.2 76.22Z" fill="#A4E3C6" />
                 </Svg>
             </View>
-            {/* <Button label={'🏀 Sports'}/>
-            <Button label={'💻 Technology'}/>
-            <Button label={'🐳 Animal Welfare'}/>
-            <Button label={'📚 Education'}/>
-            <Button label={'🏥 Health'}/>
-            <Button label={'🎭 The Arts'}/>
-            <Button label={'📋 Politics'}/>
-            <Button label={'🥗 Food Sustainability'}/> */}
             <View>
-                {/* <ChipsInput
-                    placeholder={'Add new passions...'}
-                    onChange={(newChips) => {
-                        setChips(newChips)
-                        Keyboard.dismiss()
-
-                    }}
-                    chips={chips}
-                /> */}
-
-                {/* <View display={'flex'} justifyContent={'space-around'} width={'100%'}>
-                    {_.map(interests, interest => (
-                        <View marginT-s3 centerH width={'100%'} margin={5}>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(interest)} backgroundColor={selected.includes(interest) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={interest.value}>{interest}</Text>
-                            </Button>
-                        </View>
-                    ))}
-                </View> */}
 
                 <View marginB-50 />
 
 
                 <View style={Flex.container}>
                     <View style={Flex.leftCol}>
-                        {_.map(interestsLeft, interest => (
+                        {_.map(interestsLeft, (interest) => (
                             <View marginT-s3 centerH width={'100%'} margin={5}>
                                 <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(interest)} backgroundColor={selected.includes(interest) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
                                     <Text key={interest.value}>{interest}</Text>
@@ -130,7 +125,11 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             </View>
 
             <View flex right bottom alignItems={'center'}>
-                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={'➔'} onPress={() => navigation.navigate('ProfileAvailability')} />
+                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={'➔'} onPress={() => {
+                    navigation.navigate('ProfileAvailability');
+                    dispatch(setInterestArea({ interestArea: interestAreaLocal.trim() }));
+                }
+                } />
             </View>
 
         </View>

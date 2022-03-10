@@ -13,6 +13,7 @@ const initialState = {
     partner: null,
     organization: null,
     hasMatched: false,
+    interestArea: null,
     users: [{
         id: 2,
         name: "Emily",
@@ -58,12 +59,14 @@ export const userSlice = createSlice({
             state.partner = action.payload.partner
             state.organization = action.payload.organization
             state.hasMatched = true
+        },
+        setInterestArea: (state, action) => {
+            state.interestArea = action.payload.interestArea
         }
-
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, resetState } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, setInterestArea, resetState } = userSlice.actions
 
 export default userSlice.reducer

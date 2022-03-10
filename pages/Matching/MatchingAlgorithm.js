@@ -5,7 +5,6 @@ import BackArrow from "../../components/BackArrow.js";
 import Styles from "../../Style.js";
 
 
-
 let MatchingAlgorithm = ({ navigation, route }) => {
     let { rematch } = route.params;
     console.log(rematch);
