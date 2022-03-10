@@ -105,10 +105,16 @@ const Styles = StyleSheet.create({
         marginBottom: 60,
     },
     greyCardChallenge: {
-        backgroundColor: "#E4E4E4",
+        backgroundColor: "#D4D4D4",
         //backgroundColor: "red",
         paddingTop: 50,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 50,
         borderRadius: 20,
+        width: "100%",
+        marginLeft: 0,
+        marginRight: 0
         //minWidth: 400,
         //height: 600,
         //width: "screenX",
@@ -180,6 +186,10 @@ const Styles = StyleSheet.create({
     },
     participationCount: {
 
+    },
+    noHorizontalPadding: {
+        paddingLeft: 0,
+        paddingRight: 0
     }
 });
 

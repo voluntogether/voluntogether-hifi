@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import { useSelector, useDispatch } from "react-redux";
 import Styles from "../../Style.js";
-import { StyleSheet, Pressable, Dimensions } from "react-native";
+import { StyleSheet, Pressable, Dimensions, ScrollView } from "react-native";
 import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { RotateInUpLeft } from "react-native-reanimated";
@@ -14,64 +14,56 @@ const windowHeight = Dimensions.get('window').height;
 
 let ExpandChallenge = ({ navigation, route}) => {
   return (
-    <View padding-page >
-    <BackArrow navigation={navigation} />
+    <View padding-page style={[Styles.noHorizontalPadding]}>
+        <BackArrow navigation={navigation} />
+        <Text heading center nonBlackBlack marginB-s4>Explore Challenges</Text>
+        <ScrollView>
+            <View centerv style={[Styles.greyCardChallenge]}>
+                <View centerH marginB-s4 style={[Styles.challenge]}>
 
-      <View />
-        <Text heading center nonBlackBlack marginB-s4> Explore Challenges </Text>
+                <View centerH>
+                    <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
+                </View>
 
-        <View centerv style={[Styles.greyCardChallenge]}>
-        {/* <View> */}
-          <View centerH>
-              <Card style={[Styles.blueCard, Styles.boxShadow]} centerH >
-                  { /* TODO: add the actual variable to this to choose an image */ }
-                  <Image style={{ width: 280, height: 200, borderRadius: 10 }} source={"a" == 'a' ? require("../../assets/images/ocean-cleanup.jpg") : require("../../assets/images/tree-planting.jpg")} />
-              </Card>
-          </View>
+                <View style={[Styles.width322, Styles.alignRow]}>
+                    <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+                    <Text>
+                        <Text bold style={[Styles.participationCount]}>25  </Text> {/* extra two spaces at the end of this is intentional */}
+                        <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
+                    </Text>
+                </View>
 
-          <View style={[Styles.alignRow]}>
-            <Text marginL-s3 subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
-            <Text>
-                <Text bold style={[Styles.participationCount]}>25  </Text> {/* extra two spaces at the end of this is intentional */}
-                <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
-            </Text>
-          </View>
+                <View style={[Styles.width322, Styles.tagList]} marginB-s4>
+                    <Text style={[Styles.nonButtonTag]} marginR-s2>
+                        <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
+                    </Text>
+                    <Text style={[Styles.nonButtonTag]}>
+                        <Text smallBody nonBlackBlack>🌍 Environment</Text>
+                    </Text>
+                </View>
 
-          <View marginL-s3 style={[Styles.tagList]}>
-            <Text style={[Styles.nonButtonTag]} marginR-s2>
-              <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
-            </Text>
-            <Text style={[Styles.nonButtonTag]}>
-              <Text smallBody nonBlackBlack>🌍 Environment</Text>
-            </Text>
-          </View>
+                <View style={[Styles.width322]} marginB-s2>
+                    <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+                </View>
 
-          <View centerH>
-            <Text fadedSubtext body>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
-              { /* <Text buttonText>Tags</Text> */ }
+                <View style={[Styles.alignRow]} marginB-s2>
+                    <Card style={[Styles.challengeBlueCard, Styles.boxShadow]} left >
+                        <Text bold nonWhiteWhite marginB-s2 bigBody>Challenge details</Text>
+                        <View style={[Styles.alignRow]}>
+                            <Text nonBlackBlack marginB-s1>Total Hours Required Per Person: 5</Text>
+                        </View>
 
-              {/* trouble adding space in between text elements in parent space */}
-              {/* <View justifyContent="space-between"> */}
-              <View style={[Styles.alignRow]}>
-              <Card style={[Styles.challengeBlueCard, Styles.boxShadow]} left >
-                  <Text bold nonWhiteWhite marginB-s2 bigBody>Challenge details</Text>
-                  <View flexDirection="row">
-                    <Text nonBlackBlack marginB-s1 >Total Hours Required</Text>
-                    <Text nonBlackBlack >5</Text>
-                  </View>
+                        <View flexDirection="row">
+                            <Text nonBlackBlack>Participants: 25</Text>
+                        </View>
+                    </Card>
+                </View>
 
-                  {/* <View> */}
-                  <View flexDirection="row">
-                    <Text nonBlackBlack>Participants</Text>
-                    <Text nonBlackBlack>25</Text>
-                  </View>
-              </Card>
-              </View>
-                <Button style={[Styles.smallerYellowButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
-              </View>
-          </View>
+                <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
 
-        {/* Need some way to query the state to check if there are any journals */}
+            </View>
+        </View>
+        </ScrollView>
     </View>
   );
 }
