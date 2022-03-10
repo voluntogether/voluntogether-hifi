@@ -11,6 +11,7 @@ let Journal = ({ journal, index, openModal }) => {
 
     _.map(journal.prompts[index].responses, (message, index) => {
       return (
+
         <Pressable onPress={() => openModal(index)}>
           <View>
             <Text>{message.message.body}</Text>
@@ -25,6 +26,7 @@ let Journal = ({ journal, index, openModal }) => {
 
                   </View>
                 </Pressable>)
+                
             })
 
 
