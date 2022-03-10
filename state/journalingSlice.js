@@ -133,11 +133,34 @@ export const journaling = createSlice({
                     state.journals[i].prompts.push(action.payload.prompt)
                 }
             }
+        },
+
+        addReply: (state, action) => {
+            // takes a journal id, a prompt index, and a message index
+            for (let i = 0; i < state.journals.length; i++) {
+                if (state.journals[i].id === action.payload.id) {
+                    state.journals[i].prompts[action.payload.promptIndex]
+                        .responses[action.payload.messageIndex]
+                        .replies.push(action.payload.reply)
+                }
+            }
+        },
+
+        addMessage: (state, action) => {
+            // takes a journal id, a prompt index, and a message index
+            for (let i = 0; i < state.journals.length; i++) {
+                if (state.journals[i].id === action.payload.id) {
+                    state.journals[i].prompts[action.payload.promptIndex]
+                        .responses.push(action.payload.message)
+                }
+            }
         }
+
+
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { addJournal, updateJournal, updateJournals, resetJournals, addJournalPrompt } = journaling.actions
+export const { addJournal, updateJournal, updateJournals, resetJournals, addJournalPrompt, addMessage, addReply } = journaling.actions
 
 export default journaling.reducer
