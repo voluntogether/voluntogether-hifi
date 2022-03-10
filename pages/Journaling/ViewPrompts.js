@@ -56,7 +56,7 @@ const ViewPrompts = ({ navigation, route }) => {
   );
 
   return (
-    <SafeAreaView style={stylesPrompts.container}>
+<View flex padding-page >
       <BackArrow navigation={navigation} />
       <View marginB-10/>
 
@@ -83,7 +83,7 @@ const ViewPrompts = ({ navigation, route }) => {
       </View>
 
 
-    </SafeAreaView>
+    </View>
   );
 }
 
