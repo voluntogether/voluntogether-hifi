@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    name: "Peter",
+    name: "Pablo",
     email: "nada",
     photo: "https://www.clipartmax.com/png/full/215-2155161_think-fish-profile-pics-for-discord.png",
     id: 1,
