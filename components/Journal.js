@@ -2,6 +2,7 @@ import React from "react";
 import { Pressable } from "react-native";
 import { Text, View } from "react-native-ui-lib";
 import _ from "underscore";
+import ProfilePic from "./ProfilePic";
 
 
 let Journal = ({ journal, index, openModal }) => {
@@ -13,7 +14,8 @@ let Journal = ({ journal, index, openModal }) => {
         <Pressable onPress={() => openModal(index)}>
           <View>
             <Text>{message.message.body}</Text>
-            <Text> {'By ' + message.message.user} </Text>
+            {/* <Text> {'By ' + message.message.user} </Text> */}
+            <ProfilePic id={message.message.user} />
             {_.map(message.replies, (reply) => {
               return (
                 <Pressable>

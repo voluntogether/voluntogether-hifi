@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     name: "Peter",
     email: "nada",
-    photo: null,
+    photo: "https://www.clipartmax.com/png/full/215-2155161_think-fish-profile-pics-for-discord.png",
     id: 1,
     photoType: "uri",
     passions: [],
@@ -46,6 +46,9 @@ export const userSlice = createSlice({
             state = action.payload
         },
         toggleOnboarding: (state) => {
+            state.isOnboarding = !state.isOnboarding
+        },
+        resetState: (state) => {
             state = initialState
         },
         setChips: (state, action) => {
@@ -61,6 +64,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, resetState } = userSlice.actions
 
 export default userSlice.reducer
