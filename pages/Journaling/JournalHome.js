@@ -40,9 +40,13 @@ let JournalHome = ({ navigation }) => {
                           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
                             <Text>{new Date(journal.date).toLocaleDateString("en-US")}</Text>
                             {/* <Text>{userName} and Emily</Text> */}
-                            {_.map(journal.users, (userID) => {
+
+                            <View style={[Styles.alignRow]} > 
+                              {_.map(journal.users, (userID) => {
                               return (<ProfilePic id={userID} />)
-                            })}
+                              })}
+                            </View>
+                            
                             {/* insert image here */}
                           </Card>
                         </Pressable>
