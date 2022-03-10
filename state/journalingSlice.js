@@ -147,7 +147,7 @@ export const journaling = createSlice({
         },
 
         addMessage: (state, action) => {
-            // takes a journal id, a prompt index, and a message index
+            // takes a journal id, a prompt index, and a message
             for (let i = 0; i < state.journals.length; i++) {
                 if (state.journals[i].id === action.payload.id) {
                     state.journals[i].prompts[action.payload.promptIndex]

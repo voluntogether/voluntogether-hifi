@@ -9,7 +9,7 @@ import { RotateInUpLeft } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
 import Journal from "../../components/Journal";
 
-import { addReply } from "../../state/journalingSlice.js";
+import { addMessage, addReply } from "../../state/journalingSlice.js";
 
 import _ from "underscore"
 
@@ -21,7 +21,9 @@ let ExpandThread = ({ navigation, route }) => {
   const { id, index } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
 
-  let [openModal, setOpenModal] = useState(false);
+  let [openReplyModal, setOpenReplyModal] = useState(false);
+  let [openMessageModal, setOpenMessageModal] = useState(false);
+
   let [modifiedMessageIndex, setModifiedMessageIndex] = useState(null);
   let [response, setResponse] = useState("");
   const dispatch = useDispatch();
@@ -33,12 +35,27 @@ let ExpandThread = ({ navigation, route }) => {
       message: {
         body: message,
         user: 1,
-      },
-      replies: [],
+      }
     }
 
     console.log(message, promptIndex, messageIndex)
     dispatch(addReply({ reply: newReply, promptIndex, messageIndex, id }));
+  }
+
+  const createMessage = (message) => {
+
+    let newMessage = {
+      message: {
+        body: message,
+        user: 1,
+      },
+      replies: []
+    }
+
+
+    dispatch(addMessage({ message: newMessage, promptIndex: index, id }));
+
+
   }
 
 
@@ -53,20 +70,20 @@ let ExpandThread = ({ navigation, route }) => {
 
       <Journal navigation={navigation} openModal={(messageIndex) => {
 
-        setOpenModal(true);
+        setOpenReplyModal(true);
         setModifiedMessageIndex(messageIndex);
 
 
 
       }} index={index} journal={journal} />
 
-      <Modal visible={openModal} onBackgroundPress={() => console.log('background pressed')}>
+      <Modal visible={openReplyModal} onBackgroundPress={() => console.log('background pressed')}>
         <Modal.TopBar
-          title="another example"
-          onCancel={() => setOpenModal(false)}
+          title="New Reply"
+          onCancel={() => setOpenReplyModal(false)}
           onDone={() => {
             createReply(response, index, modifiedMessageIndex)
-            setOpenModal(false);
+            setOpenReplyModal(false);
           }
           }
           cancelIcon={null}
@@ -80,8 +97,28 @@ let ExpandThread = ({ navigation, route }) => {
         />
       </Modal>
 
+      <Modal visible={openMessageModal} onBackgroundPress={() => console.log('background pressed')}>
+        <Modal.TopBar
+          title="New Message"
+          onCancel={() => setOpenMessageModal(false)}
+          onDone={() => {
+            createMessage(response)
+            setOpenMessageModal(false);
+          }
+          }
+          cancelIcon={null}
+          cancelLabel="back"
+        />
+        <TextField
+          placeholder={'Enter your new message'}
+          floatingPlaceholder
+          onChangeText={(message) => setResponse(message)}
+
+        />
+      </Modal>
+
       <View flex right bottom>
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { journal })} />
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />
       </View>
     </View>
   );
