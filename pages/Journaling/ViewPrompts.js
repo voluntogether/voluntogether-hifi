@@ -58,10 +58,10 @@ const ViewPrompts = ({ navigation, route }) => {
   return (
     <SafeAreaView style={stylesPrompts.container}>
       <BackArrow navigation={navigation} />
-      <View marginB-70 />
+      <View marginB-10 />
       
       <View> 
-        <Text heading center nonBlackBlack marginB-s4>{category + ' Prompts'}</Text>
+        <Text heading center nonBlackBlack marginB-s10>{category + ' Prompts'}</Text>
       </View> 
       
       <View marginL-s7 centerH style={stylesPrompts.backgroundCard}> 
@@ -74,8 +74,6 @@ const ViewPrompts = ({ navigation, route }) => {
           </Svg>
         </View>
   
-        <View style={Styles.spacer}> </View>
-
         <FlatList
         data={DATA}
         renderItem={renderItem}

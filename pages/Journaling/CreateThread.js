@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import BackArrow from "../../components/BackArrow.js";
 import { addJournalPrompt } from "../../state/journalingSlice";
 import Styles from "../../Style.js";
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 
 
 let CreateThread = ({ navigation, route }) => {
@@ -40,6 +42,12 @@ let CreateThread = ({ navigation, route }) => {
                         </View>
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
+                        <Card style={[Styles.blueCardPrompt]} > 
+                            <View centerH>
+                            <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
+                            <Text bigBody marginT-s4>{prompt.prompt}</Text>
+                            </View>
+                        </Card>
                         <Card style={[Styles.fullyResizeableBlueCard, Styles.boxShadow]}>
                             <Text center italic fadedSubtext marginB-s8 > {prompt} </Text>
                         </Card>
