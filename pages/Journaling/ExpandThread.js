@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import { View, Text, Image, Button, Card, Modal, TextField } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import { Pressable } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
+import { Button, Image, Modal, Text, TextField, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { RotateInUpLeft } from "react-native-reanimated";
+import { useDispatch, useSelector } from "react-redux";
+import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
 import Journal from "../../components/Journal";
-
 import { addMessage, addReply } from "../../state/journalingSlice.js";
+import Styles from "../../Style.js";
 
-import _ from "underscore"
+
 
 let ExpandThread = ({ navigation, route }) => {
 
@@ -26,6 +25,7 @@ let ExpandThread = ({ navigation, route }) => {
 
   let [modifiedMessageIndex, setModifiedMessageIndex] = useState(null);
   let [response, setResponse] = useState("");
+  let [images, setImages] = useState([]);
   const dispatch = useDispatch();
 
 
@@ -115,6 +115,23 @@ let ExpandThread = ({ navigation, route }) => {
           onChangeText={(message) => setResponse(message)}
 
         />
+        <Pressable onPress={() => {
+          launchImageLibrary({
+            mediaType: 'photo',
+
+          }, ({ didCancel, errorCode, errorMessage, assets }) => {
+            console.log(didCancel, errorCode, errorMessage, assets)
+            if (!didCancel) {
+              setImages(images.concat(assets))
+            }
+          })
+        }}>
+          <FontAwesome5 name={'image'} size={20} />
+          {_.map(images, (image) => {
+            return <Image source={{ uri: image.uri }} style={{ width: 50, height: 50 }} />
+          })}
+        </Pressable>
+
       </Modal>
 
       <View flex right bottom>

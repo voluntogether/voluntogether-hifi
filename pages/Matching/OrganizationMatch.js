@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import Styles from "../../Style.js";
+import { Button, Card, Image, Text, View } from "react-native-ui-lib";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 
 

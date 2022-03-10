@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Button, Incubator } from "react-native-ui-lib";
+import React, { useEffect, useState } from "react";
+import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, TextInput } from "react-native";
+import { Button, Incubator, Text, View } from "react-native-ui-lib";
 // import { View, Text } from 'react-native-ui-lib';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+import DismissKeyboardView from '../components/DismissKeyboardView';
 import { rename, toggleOnboarding } from "../state/userSlice";
-import { Keyboard, TextInput, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
-import DismissKeyboardView from '../components/DismissKeyboardView'
 
 
 let TextField = Incubator.TextField;

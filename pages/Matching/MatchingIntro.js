@@ -1,9 +1,7 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
+import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
 import Styles from "../../Style.js";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 let MatchingIntro = ({ navigation }) => {
   return (

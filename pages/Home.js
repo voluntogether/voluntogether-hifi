@@ -1,14 +1,11 @@
-import React, { luseState, useEffect } from "react";
-import { View, Text, Button, Incubator, Card, Image } from "react-native-ui-lib";
-import { ScrollView } from "react-native";
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { useSelector, useDispatch } from 'react-redux'
-import { rename, toggleOnboarding } from "../state/userSlice";
-import { Keyboard, TextInput, StyleSheet, KeyboardAvoidingView, Platform, Pressable } from "react-native";
-import DismissKeyboardView from '../components/DismissKeyboardView'
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import Styles from "../Style.js";
+import React from "react";
+import { Pressable, ScrollView } from "react-native";
+import Svg, { Circle, Path } from 'react-native-svg';
+import { Button, Card, Incubator, Text, View } from "react-native-ui-lib";
+import { useDispatch, useSelector } from 'react-redux';
 import { resetJournals } from "../state/journalingSlice";
+import { toggleOnboarding } from "../state/userSlice";
+import Styles from "../Style.js";
 
 let TextField = Incubator.TextField;
 

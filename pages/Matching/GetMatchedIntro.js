@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import Styles from "../../Style.js";
+import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 // import wording from 'assets/wording';
 // let pageWording = wording.matched.getMatchedIntro;

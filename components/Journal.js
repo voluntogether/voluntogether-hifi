@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { StyleSheet, Pressable } from "react-native";
-import _ from "underscore"
+import { Pressable } from "react-native";
+import { Text, View } from "react-native-ui-lib";
+import _ from "underscore";
 
 
 let Journal = ({ journal, index, openModal }) => {

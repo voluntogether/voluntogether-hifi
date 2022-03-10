@@ -1,12 +1,9 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable, ScrollView} from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import { Pressable, ScrollView } from "react-native";
+import { Image, Text, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { RotateInUpLeft } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
+import Styles from "../../Style.js";
 
 let ViewChallenges = ({ navigation, route}) => {
   return (

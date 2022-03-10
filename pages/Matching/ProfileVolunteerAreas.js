@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { TouchableHighlight, Keyboard } from 'react-native';
-import { View, Text, Image, Button, Incubator, Card, TouchableHigh } from "react-native-ui-lib";
-import Svg, { Path, G, Rect } from 'react-native-svg';
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
+import { Keyboard } from 'react-native';
+import Svg, { G, Path, Rect } from 'react-native-svg';
+import { Button, Incubator, Text, View } from "react-native-ui-lib";
+import { useDispatch } from "react-redux";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 let ChipsInput = Incubator.ChipsInput
 

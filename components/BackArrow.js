@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, Incubator } from "react-native-ui-lib";
+import { View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 let BackArrow = ({ navigation }) => {
     return (

@@ -1,13 +1,11 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import { Pressable } from "react-native";
+import { Button, Text, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { RotateInUpLeft } from "react-native-reanimated";
+import { useSelector } from "react-redux";
+import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
-import _ from "underscore"
+import Styles from "../../Style.js";
 
 let ViewThreads = ({ navigation, route }) => {
   const { id } = route.params;
