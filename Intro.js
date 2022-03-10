@@ -169,8 +169,10 @@ const Intro = () => {
                     },
                     tabBarActiveTintColor: '#345f93',
                     tabBarInactiveTintColor: 'gray',
+                    // THIS IS CAUSING WEIRD LINE BUG
                     tabBarStyle: {
-                        marginTop: 10
+                        paddingTop: 10,
+                        backgroundColor: '#fff',
                     }
                 })}
             >

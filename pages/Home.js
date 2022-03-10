@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { resetJournals } from "../state/journalingSlice";
 import { resetState, toggleOnboarding } from "../state/userSlice";
 import Styles from "../Style.js";
+import { timeOfDay } from "../util/util";
 
 let TextField = Incubator.TextField;
 
@@ -22,7 +23,7 @@ let Home = ({ navigation }) => {
 
             <View flex padding-page>
                 <View marginT-s10>
-                    <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>good morning, {userName}.</Text>
+                    <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>{timeOfDay()}, {userName}.</Text>
                 </View>
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}

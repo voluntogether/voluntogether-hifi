@@ -48,7 +48,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
 
     const [selected, setSelected] = React.useState([]);
     const handlePress = interest =>
-    selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
+        selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
 
     return (
 
@@ -121,11 +121,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                             </View>
                         ))}
                     </View>
-                 </View>
-
-
-
-
+                </View>
             </View>
 
             <View flex right bottom alignItems={'center'}>
