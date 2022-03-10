@@ -19,7 +19,7 @@ let ChallengeJoined = ({ navigation, route}) => {
       </View>
 
       <View right marginR-s4>
-        <Pressable centerH onPress={() => navigation.navigate('ViewChallenge')}>
+        <Pressable centerH onPress={() => navigation.navigate('ViewChallenges')}>
           <Text marginT-s2>Leave challenge</Text>
         </Pressable>
       </View>
