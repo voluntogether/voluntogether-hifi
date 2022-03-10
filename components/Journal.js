@@ -4,60 +4,46 @@ import { Text, View } from "react-native-ui-lib";
 import _ from "underscore";
 import ProfilePic from "./ProfilePic";
 import Styles from "../Style.js";
-
-
-
 let Journal = ({ journal, index, openModal }) => {
-
   return (
-
     _.map(journal.prompts[index].responses, (message, index) => {
       return (
-
         <Pressable onPress={() => openModal(index)}>
+          <View style={StylesExpand.container}> 
 
-          <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} > 
-            <View  backgroundColor="D4D4D4" left>
-              <View marginH-s2 style={[Styles.alignRow]} centerH paddingB-s6> 
-                <ProfilePic id={message.message.user} />
-                <Text bold smallBody> {'Answered by ' + message.message.user} </Text>
-              </View>
-              
-
-
-              <Text marginH-s6>{message.message.body}</Text>
+          <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} >
+          <View  backgroundColor="D4D4D4" left>
+            <View style={[Styles.alignRow]} centerH paddingB-s6>
+              <ProfilePic id={message.message.user} />
+              <Text bold smallBody> {'Answered by ' + message.message.user} </Text>
             </View>
-           
-            </Pressable>)
-                
+            <Text>{message.message.body}</Text>
+
+            {/* REPLY */}
+            {_.map(message.replies, (reply) => {
+              return (
+                <Pressable style={[StylesExpand.verticalLine]}s>
+                  {/* <View> */}
+                  <View tyle={[StylesExpand.replyLine]}>
+                    <Text marginH-s6>{reply.message.body}</Text>
+                    <Text> {'By ' + reply.message.user} </Text>
+                  </View>
+                </Pressable>)
             })
-
-              {_.map(message.replies, (reply) => {
-                  return (
-                    <Pressable>
-                      <View>
-                      <View style={StylesExpand.verticalLine}/> 
-                        <Text>{reply.message.body}</Text>
-                        <Text> {'By ' + reply.message.user} </Text>
-
-                      </View>
-                    </Pressable>)
-                })
-              }
+            }
+          </View>
           </View>
 
-            
-          </View> 
-          
-          
+          </View>
         </Pressable>)
     })
-
   );
-
 }
-
 const StylesExpand = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'red',
+  },
   threadCard: {
     backgroundColor: "#DBDBDB",
     height: 150,
@@ -67,9 +53,13 @@ const StylesExpand = StyleSheet.create({
   },
   verticalLine: {
     height: '100%',
-    width:1,
-    backgroundColor: "#818181"
+    width:5,
+    backgroundColor: "#818181",
+    //marginLeft: 10,
+  },
+  replyLine: {
+    borderLeftWidth: 1, 
+    borderLeftColor: "#818181",
   }
 });
-
-export default Journal; 
+export default Journal;
