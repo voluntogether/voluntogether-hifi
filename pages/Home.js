@@ -17,6 +17,7 @@ let Home = ({ navigation }) => {
 
     let userName = useSelector(state => state.user.name);
     let dispatch = useDispatch();
+    let hasMatched = useSelector(state => state.user.hasMatched);
 
     return (
         <ScrollView>
@@ -28,9 +29,9 @@ let Home = ({ navigation }) => {
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}
                 <View centerH>
-                    <Pressable onPress={() => navigation.navigate('Matching')}>
+                    <Pressable onPress={() => navigation.navigate(!hasMatched ? 'Matching' : 'Journaling')}>
                         <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
-                            <Text heading center nonWhiteWhite marginB-s4>match with someone</Text>
+                            <Text heading center nonWhiteWhite marginB-s4>{!hasMatched ? "match with someone" : "journal with your partner"}</Text>
                             <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <Circle cx="194.461" cy="164.461" r="50.4614" fill="#F6CA44" />
                                 <Path fill-rule="evenodd" clip-rule="evenodd" d="M180.176 204.384C211.255 204.384 236.45 179.19 236.45 148.11C236.45 143.991 236.007 139.974 235.167 136.106C241.296 144.361 244.923 154.586 244.923 165.658C244.923 193.061 222.708 215.276 195.305 215.276C181.603 215.276 169.199 209.722 160.22 200.743C166.422 203.096 173.148 204.384 180.176 204.384Z" fill="#FAE269" />
