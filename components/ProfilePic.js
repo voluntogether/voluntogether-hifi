@@ -25,8 +25,8 @@ let ProfilePic = ({ id }) => {
             <Image
                 source={user.photoType == "base64" ? { uri: 'data:image/png;base64,' + user.photo } : { uri: user.photo }}
                 style={{
-                    width: 50,
-                    height: 50,
+                    width: 40,
+                    height: 40,
                     borderRadius: 50
                 }}
             />
