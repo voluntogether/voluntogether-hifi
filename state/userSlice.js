@@ -1,14 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = {
     name: "Peter",
     email: "nada",
+    photo: "https://www.clipartmax.com/png/full/215-2155161_think-fish-profile-pics-for-discord.png",
+    id: 1,
+    photoType: "uri",
     passions: [],
     isOnboarding: true,
     chips: [],
     partner: null,
     organization: null,
-    hasMatched: false
+    hasMatched: false,
+    users: [{
+        id: 2,
+        name: "Emily",
+        photo: require("../assets/images/emily.json").photo,
+        photoType: "base64"
+
+    }, {
+        id: 3,
+        name: "Nathan",
+        photo: require("../assets/images/nathan.json").photo,
+        photoType: "base64"
+
+    }]
 }
 
 export const userSlice = createSlice({
@@ -31,6 +48,9 @@ export const userSlice = createSlice({
         toggleOnboarding: (state) => {
             state.isOnboarding = !state.isOnboarding
         },
+        resetState: (state) => {
+            state = initialState
+        },
         setChips: (state, action) => {
             state.chips = action.payload
         },
@@ -44,6 +64,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, resetState } = userSlice.actions
 
 export default userSlice.reducer
