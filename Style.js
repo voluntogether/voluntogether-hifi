@@ -97,6 +97,26 @@ const Styles = StyleSheet.create({
         paddingTop: 25,
         marginBottom: 60,
     },
+    challengeDescriptionCard: {
+        backgroundColor: "transparent",
+        minHeight: 200,
+        width: 200,
+        padding: 20,
+        marginBottom: 60,
+        borderStyle: "solid",
+        borderWidth: 0.20,
+        borderRadius: 15,
+        borderColor: "#10123D",
+
+        
+    },
+    challengeGraphicCard: {
+        backgroundColor: "#A4C1E3",
+        height: 150,
+        width: 150,
+        //padding: 20,
+        //marginBottom: 60,
+    },
     blueCardJournal: {
         backgroundColor: "#A4C1E3",
         height: 200,
