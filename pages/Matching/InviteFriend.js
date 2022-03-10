@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, Image, Button } from "react-native-ui-lib";
-import StyleSheet from 'react-native';
-import Styles from "../../Style.js";
-import Svg, {Path, G, Rect, Circle} from 'react-native-svg';
+import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
+import { Button, Text, View } from "react-native-ui-lib";
 import BackArrow from "../../components/BackArrow";
+import Styles from "../../Style.js";
 
 let InviteFriend = ({ navigation }) => {
     const [copied, setCopied] = React.useState(false);

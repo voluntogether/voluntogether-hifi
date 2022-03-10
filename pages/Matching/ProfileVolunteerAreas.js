@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import _, { map, size } from "underscore";
 import Styles from "../../Style.js";
 import BackArrow from "../../components/BackArrow.js";
+import Styles from "../../Style.js";
 
 let ChipsInput = Incubator.ChipsInput
 

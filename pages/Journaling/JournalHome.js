@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import Styles from "../../Style.js";
-import { StyleSheet, Pressable } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import React, { useEffect, useState } from "react";
+import { Pressable, StyleSheet } from "react-native";
+import { Button, Card, Text, View } from "react-native-ui-lib";
+import { useDispatch, useSelector } from "react-redux";
 import _ from "underscore";
+import ProfilePic from "../../components/ProfilePic";
 import { resetJournals } from "../../state/journalingSlice";
+import Styles from "../../Style.js";
 
 let JournalHome = ({ navigation }) => {
 
@@ -14,6 +13,7 @@ let JournalHome = ({ navigation }) => {
   let [journals, setJournals] = useState([])
   let stateJournals = useSelector(state => state.journaling.journals)
   let userName = useSelector(state => state.user.name)
+  let users = useSelector(state => state.user.users)
 
   useEffect(() => {
     setJournals(stateJournals);
@@ -39,8 +39,10 @@ let JournalHome = ({ navigation }) => {
                         <Pressable onPress={() => navigation.navigate('ViewThreads', { id: journal.id })}>
                           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
                             <Text>{new Date(journal.date).toLocaleDateString("en-US")}</Text>
-                            <Text>{userName} and Emily</Text>
-
+                            {/* <Text>{userName} and Emily</Text> */}
+                            {_.map(journal.users, (userID) => {
+                              return (<ProfilePic id={userID} />)
+                            })}
                             {/* insert image here */}
                           </Card>
                         </Pressable>

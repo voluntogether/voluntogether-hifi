@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { TextInput, Keyboard, TouchableWithoutFeedback, StyleSheet } from "react-native";
-import Styles from "../../Style.js";
-import { GiftedChat, InputToolbar } from 'react-native-gifted-chat'
-import DismissKeyboardView from "../../components/DismissKeyboardView.js";
+import React, { useCallback, useState } from "react";
+import { Keyboard, TouchableWithoutFeedback } from "react-native";
+import { GiftedChat, InputToolbar } from 'react-native-gifted-chat';
+import { Button, Card, Text, View } from "react-native-ui-lib";
+import { useDispatch } from 'react-redux';
 import BackArrow from "../../components/BackArrow.js";
-import { useSelector, useDispatch } from 'react-redux';
 import { addJournalPrompt } from "../../state/journalingSlice";
+import Styles from "../../Style.js";
 
 
 let CreateThread = ({ navigation, route }) => {

@@ -1,13 +1,11 @@
 import React from "react";
+import { Button, Card, Image, Text, View } from "react-native-ui-lib";
 import { useDispatch } from "react-redux";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
 import wording from '../../assets/wording';
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
-import Styles from "../../Style.js";
-import { abs } from "react-native-reanimated";
 import BackArrow from "../../components/BackArrow";
-import { setMatch } from "../../state/userSlice";
 import { addJournal } from "../../state/journalingSlice";
+import { setMatch } from "../../state/userSlice";
+import Styles from "../../Style.js";
 
 let pageWording = wording.matched.getMatched;
 let GetMatched = ({ navigation, route }) => {

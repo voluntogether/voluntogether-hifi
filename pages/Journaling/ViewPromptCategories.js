@@ -1,13 +1,11 @@
 import React from "react";
-import { View, Text, Image, Button, Card } from "react-native-ui-lib";
-import { useSelector, useDispatch } from "react-redux";
-import { StyleSheet, Pressable, FlatList } from "react-native";
-import Svg, { Path, G, Rect, Circle } from 'react-native-svg';
+import { Pressable, StyleSheet } from "react-native";
+import Svg, { Path } from 'react-native-svg';
+import { Card, Text, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { RotateInUpLeft } from "react-native-reanimated";
-import Styles from "../../Style.js";
+import { useSelector } from "react-redux";
 import BackArrow from "../../components/BackArrow";
-import ViewNativeComponent from "react-native/Libraries/Components/View/ViewNativeComponent";
+import Styles from "../../Style.js";
 
 
 let ViewPromptCategories = ({ navigation, route }) => {
