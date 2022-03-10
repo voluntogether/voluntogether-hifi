@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
 import Styles from "../../Style.js";
-import Svg, { Path } from "react-native-svg"
 
 let ViewThreads = ({ navigation, route }) => {
   const { id } = route.params;
