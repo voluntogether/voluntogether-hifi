@@ -12,8 +12,8 @@ let InviteFriend = ({ navigation }) => {
             <BackArrow navigation={navigation} />
 
             <View marginB-50/>
-            <Text heading center nonBlackBlack marginB-s4> Invite a Friend </Text>
-            <Text body fadedSubtext center marginB-s8> Invite a friend to join you on voluntogether using your personalized invite link (tap to copy). </Text>
+            <Text heading center nonBlackBlack marginB-s4>Invite a Friend</Text>
+            <Text body fadedSubtext center marginB-s8>Invite a friend to join you on voluntogether using your personalized invite link (tap to copy).</Text>
 
             <View marginB-s8 marginT-s3 center style={[Styles.boxShadow]}>
               <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">

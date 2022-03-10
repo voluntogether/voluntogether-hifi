@@ -16,8 +16,8 @@ let MatchingAlgorithm = ({ navigation, route }) => {
             <Text heading center nonBlackBlack marginB-s4>Success!</Text>
             <Text center={true} body fadedSubtext marginB-s4>{
                 rematch ?
-                    'Please wait while our algorithm finds you a new volunteer partner!'
-                    : 'Please wait while our algorithm finds you a volunteer partner!'}</Text>
+                    'Our algorithm found you a new volunteer partner. Click the arrow below to find out who they are!'
+                    : 'Our algorithm found you a volunteer partner. Click the arrow below to find out who they are!'}</Text>
             <View>
                 <Svg width="358" height="352" viewBox="0 0 358 352" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <Path fill-rule="evenodd" clip-rule="evenodd" d="M249.72 83.3462C268.996 104.262 255.484 137.768 260.506 166.245C266.345 199.356 295.288 229.713 281.036 260.922C265.338 295.299 226.94 320.897 190.019 320.601C155.206 320.322 137.67 282.391 112.042 259.566C89.2103 239.231 58.2432 226.33 50.4646 196.308C41.7152 162.538 46.6755 123.209 69.5913 95.7229C92.0465 68.7892 129.179 63.2161 163.385 60.8657C194.579 58.7224 228.875 60.7292 249.72 83.3462Z" fill="#C1E3A4" />

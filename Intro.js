@@ -57,17 +57,12 @@ const Intro = () => {
 
         return (
             <MatchingNavigator.Navigator
-                screenOptions={() => ({
+                screenOptions={{
                     headerShown: false,
-                    header: ({ navigation, route, options, back }) => {
-                        return (
-                            <View>
-                                <Text> HELLO</Text>
-                                {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
-                            </View>
-                        );
-                    }
-                })}
+                    gestureEnabled: true,
+                    gestureDirection: 'horizontal',
+                    // gestureResponseDistance: 150
+                }}
             >
                 <MatchingNavigator.Screen name="MatchingIntro" component={MatchingIntro} />
                 <MatchingNavigator.Screen name="InviteFriend" component={InviteFriend} />
@@ -95,6 +90,8 @@ const Intro = () => {
             <JournalingNavigator.Navigator
                 screenOptions={() => ({
                     headerShown: false,
+                    gestureEnabled: true,
+                    gestureDirection: 'horizontal',
                     header: ({ navigation, route, options, back }) => {
 
                         return (
@@ -128,16 +125,8 @@ const Intro = () => {
             <ChallengesNavigator.Navigator
                 screenOptions={() => ({
                     headerShown: false,
-                    header: ({ navigation, route, options, back }) => {
-
-                        return (
-                            <View>
-                                <Text> HELLO</Text>
-                                {/* <Button label={'<'} bold nonBlackBlack style={[Styles.yellowButton]} onPress={ navigation.goBack} /> */}
-                            </View>
-
-                        );
-                    }
+                    gestureEnabled: true,
+                    gestureDirection: 'horizontal',
                 })}
             >
                 <ChallengesNavigator.Screen name="ViewChallenges" component={ViewChallenges} />
@@ -223,7 +212,7 @@ const Intro = () => {
                             floatingPlaceholder
                             onChangeText={(message) => dispatch(rename(message))}
 
-                                />
+                        />
                     </View>),
                 },
             ]}
