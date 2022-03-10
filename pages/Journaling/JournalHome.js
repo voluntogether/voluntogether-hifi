@@ -81,7 +81,6 @@ let JournalHome = ({ navigation }) => {
 
         }
       </View>
-      <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => dispatch(resetJournals())} />
     </View>
 
   );
