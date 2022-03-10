@@ -69,9 +69,6 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         setInterestAreaLocal(interest);
 
     }
-    
-
-
 
     return (
 
@@ -115,13 +112,9 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                                     <Text key={interest.value}>{interest}</Text>
                                 </Button>
                             </View>
-                        ))} 
+                        ))}
                     </View>
-                 </View>
-
-                
-
-
+                </View>
             </View>
 
             <View flex right bottom alignItems={'center'}>

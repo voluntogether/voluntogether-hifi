@@ -4,12 +4,15 @@ import { GiftedChat, InputToolbar } from 'react-native-gifted-chat';
 import { Button, Text, View } from "react-native-ui-lib";
 import BackArrow from "../../components/BackArrow.js";
 import Styles from "../../Style.js";
+import { userLookup } from "../../util/util.js";
+import { useSelector } from "react-redux"
 
 
 let MatchingChat = ({ navigation, route }) => {
 
 
     const [messages, setMessages] = useState([]);
+    let users = useSelector(state => state.user);
 
     const styles = StyleSheet.create({
         toolbar: {
@@ -48,7 +51,7 @@ let MatchingChat = ({ navigation, route }) => {
                 user: {
                     _id: 2,
                     name: name,
-                    avatar: 'https://placeimg.com/140/140/any',
+                    avatar: 'data:image/png;base64,' + userLookup(2, users).photo,
                 },
             },
         ])
@@ -60,7 +63,7 @@ let MatchingChat = ({ navigation, route }) => {
                 <View flex padding-page>
                     <BackArrow navigation={navigation} />
 
-                    <View centerH>  
+                    <View centerH>
                         <View>
                             <Text style={[Styles.spacer]}></Text>
                         </View>
@@ -72,7 +75,7 @@ let MatchingChat = ({ navigation, route }) => {
 
                         <Button label={'Skip chat'} style={[Styles.smallGreenButton, Styles.boxShadow]} onPress={() => navigation.navigate('MatchingComplete')} />
                     </View>
-                    
+
                 </View>
             </TouchableWithoutFeedback>
 

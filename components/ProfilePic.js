@@ -15,18 +15,18 @@ let ProfilePic = ({ id }) => {
     return (
         <View style={{
             borderRadius: 50,
-            width: 100,
-            height: 100,
+            width: 20,
+            height: 20,
             backgroundColor: '#fff',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: 10
+            margin: 20
         }}>
             <Image
                 source={user.photoType == "base64" ? { uri: 'data:image/png;base64,' + user.photo } : { uri: user.photo }}
                 style={{
-                    width: 100,
-                    height: 100,
+                    width: 50,
+                    height: 50,
                     borderRadius: 50
                 }}
             />

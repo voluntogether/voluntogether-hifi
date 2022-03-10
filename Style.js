@@ -49,6 +49,29 @@ const Styles = StyleSheet.create({
         paddingTop: 25,
         marginBottom: 40,
     },
+    blueCardPrompt: {
+        backgroundColor: "#A4C1E3",
+        minHeight: 90,
+        width: 330,
+        paddingTop: 25,
+        paddingBottom: 25,
+        marginBottom: 40,
+    },
+    journalBlankCard: {
+        backgroundColor: "DDDDDD",
+        minHeight: 100,
+        width: 600,
+        paddingBottom: 20,
+        marginTop: 20,
+        marginBottom: 20,
+        borderStyle: "solid",
+        borderWidth: 0.20,
+        borderRadius: 0,
+        borderColor: "#686565",
+        justifyContent: "center",
+        //alignItems: "center"
+
+    },
     challengeBlueCard: {
         backgroundColor: "#A4C1E3",
         minHeight: 100,
@@ -108,7 +131,6 @@ const Styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: "#10123D",
         alignItems: "stretch",
-        
     },
     challengeGraphicCard: {
         backgroundColor: "#A4C1E3",
@@ -140,7 +162,6 @@ const Styles = StyleSheet.create({
         //height: 600,
         //width: "screenX",
         //width: "windowWidth"
-
     },
     nonButtonTag: {
         backgroundColor: "transparent",
