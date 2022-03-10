@@ -122,10 +122,6 @@ let ProfileVolunteerAreas = ({ navigation }) => {
                         ))}
                     </View>
                 </View>
-
-
-
-
             </View>
 
             <View flex right bottom alignItems={'center'}>

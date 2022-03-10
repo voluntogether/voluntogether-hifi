@@ -203,7 +203,7 @@ const Styles = StyleSheet.create({
     },
     alignRow: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "stretch"
     },
     participationCount: {
 
