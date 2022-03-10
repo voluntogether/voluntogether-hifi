@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Keyboard } from 'react-native';
-import Svg, { G, Path, Rect } from 'react-native-svg';
-import { Button, Incubator, Text, View } from "react-native-ui-lib";
-import { useDispatch } from "react-redux";
+import { TouchableHighlight, Keyboard, ActivityIndicator, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Image, Button, Incubator, Card, TouchableHigh } from "react-native-ui-lib";
+import Svg, { Path, G, Rect } from 'react-native-svg';
+import { useSelector, useDispatch } from "react-redux";
+import _, { map, size } from "underscore";
+import Styles from "../../Style.js";
 import BackArrow from "../../components/BackArrow.js";
 import Styles from "../../Style.js";
 
@@ -12,20 +14,42 @@ let ProfileVolunteerAreas = ({ navigation }) => {
 
     let dispatch = useDispatch();
 
-    let [chips, setChips] = useState([
-        { label: '🏀 Sports' },
-        { label: '💻 Technology' },
-        { label: '🐳 Animal Welfare' },
-        { label: '📚 Education' },
-        { label: '🏥 Health' },
-        { label: '🎭 The Arts' },
-        { label: '📋 Politics' },
-        { label: '🥗 Food Sustainability' },
-    ]);
+    // let [chips, setChips] = useState([
+    //     { label: '🏀 Sports' },
+    //     { label: '💻 Technology' },
+    //     { label: '🐳 Animal Welfare' },
+    //     { label: '📚 Education' },
+    //     { label: '🏥 Health' },
+    //     { label: '🎭 The Arts' },
+    //     { label: '📋 Politics' },
+    //     { label: '🥗 Food Sustainability' },
+    // ]);
 
+    let interestsLeft = [
+        '       🏀 Sports       ',
+        '   💻 Technology   ',
+        '🐳 Animal Welfare',
+        '    📚 Education     ',
+        // '🏀 Sports',
+        // '💻 Technology',
+        // '🐳 Animal Welfare',
+        // '📚 Education',
+        // '🏥 Health',
+        // '🎭 The Arts',
+        // '📋 Politics',
+        // '🥗 Sustainability'
+    ]
 
+    let interestsRight = [
+        '      🏥 Health        ',
+        '     🎭 The Arts      ',
+        '     📋 Politics        ',
+        '  🥗 Sustainability  '
+    ]
 
-
+    const [selected, setSelected] = React.useState([]);
+    const handlePress = interest =>
+    selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
 
     return (
 
@@ -55,7 +79,7 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             <Button label={'📋 Politics'}/>
             <Button label={'🥗 Food Sustainability'}/> */}
             <View>
-                <ChipsInput
+                {/* <ChipsInput
                     placeholder={'Add new passions...'}
                     onChange={(newChips) => {
                         setChips(newChips)
@@ -63,7 +87,46 @@ let ProfileVolunteerAreas = ({ navigation }) => {
 
                     }}
                     chips={chips}
-                />
+                /> */}
+
+                {/* <View display={'flex'} justifyContent={'space-around'} width={'100%'}>
+                    {_.map(interests, interest => (
+                        <View marginT-s3 centerH width={'100%'} margin={5}>
+                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(interest)} backgroundColor={selected.includes(interest) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                <Text key={interest.value}>{interest}</Text>
+                            </Button>
+                        </View>
+                    ))}
+                </View> */}
+
+                <View marginB-50 />
+
+
+                <View style={Flex.container}>
+                    <View style={Flex.leftCol}>
+                        {_.map(interestsLeft, interest => (
+                            <View marginT-s3 centerH width={'100%'} margin={5}>
+                                <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(interest)} backgroundColor={selected.includes(interest) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                    <Text key={interest.value}>{interest}</Text>
+                                </Button>
+                            </View>
+                        ))}
+                    </View>
+
+                    <View style={Flex.rightCol}>
+                        {_.map(interestsRight, interest => (
+                            <View marginT-s3 centerH width={'100%'} margin={5}>
+                                <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(interest)} backgroundColor={selected.includes(interest) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                    <Text key={interest.value}>{interest}</Text>
+                                </Button>
+                            </View>
+                        ))} 
+                    </View>
+                 </View>
+
+                
+
+
             </View>
 
             <View flex right bottom alignItems={'center'}>
@@ -73,5 +136,18 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         </View>
     );
 }
+
+const Flex = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+    },
+    leftCol: {
+        flex: 3
+    },
+    rightCol: {
+        flex: 3
+    }
+});
+
 
 export default ProfileVolunteerAreas;
