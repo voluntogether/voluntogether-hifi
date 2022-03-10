@@ -17,7 +17,6 @@ let ViewPromptCategories = ({ navigation, route }) => {
 
   return (
     <View flex padding-page >
-      <View />
       <BackArrow navigation={navigation} />
 
       <Text heading center nonBlackBlack marginB-s4>Pick a Category</Text>
