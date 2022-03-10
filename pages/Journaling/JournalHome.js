@@ -3,7 +3,7 @@ import { Pressable, StyleSheet } from "react-native";
 import { Button, Card, Text, View } from "react-native-ui-lib";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "underscore";
-import ProfilePic from "../../components/ProfilePic";
+import MiniProfilePic from "../../components/MiniProfilePic";
 import { resetJournals } from "../../state/journalingSlice";
 import Styles from "../../Style.js";
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
@@ -54,7 +54,7 @@ let JournalHome = ({ navigation }) => {
 
                               <View alignSelf="center" style={[Styles.alignRow]} >
                               {_.map(journal.users, (userID) => {
-                              return (<ProfilePic id={userID} />)
+                              return (<MiniProfilePic id={userID} style={[StylesJournal.miniProfilePic]}/>)
                               })}
                               </View>
                             </Svg>
@@ -81,7 +81,6 @@ let JournalHome = ({ navigation }) => {
 
         }
       </View>
-      <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => dispatch(resetJournals())} />
     </View>
 
   );
@@ -105,7 +104,11 @@ const StylesJournal = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between"
-  }
+},
+    miniProfilePic: {
+        maxHeight: 10,
+        maxWidth: 10
+    }
 });
 
 export default JournalHome;
