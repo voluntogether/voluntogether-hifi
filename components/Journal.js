@@ -12,21 +12,21 @@ let Journal = ({ journal, index, openModal }) => {
           <View style={StylesExpand.container}> 
 
           <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} >
-          <View  backgroundColor="D4D4D4" left>
-            <View style={[Styles.alignRow]} centerH paddingB-s6>
-              <ProfilePic id={message.message.user} />
+          <View  backgroundColor="D4D4D4" left marginL-s4>
+            <View style={[Styles.alignRow]} centerH paddingB-s6 >
+              <ProfilePic  id={message.message.user} />
               <Text bold smallBody> {'Answered by ' + message.message.user} </Text>
             </View>
-            <Text>{message.message.body}</Text>
+            <Text marginB-s2 >{message.message.body}</Text>
 
             {/* REPLY */}
             {_.map(message.replies, (reply) => {
               return (
-                <Pressable style={[StylesExpand.verticalLine]}s>
+                <Pressable >
                   {/* <View> */}
-                  <View tyle={[StylesExpand.replyLine]}>
+                  <View style={[StylesExpand.replyLine]}>
+                    <Text bold smallBody> {'Reply by ' + message.message.user} </Text>
                     <Text marginH-s6>{reply.message.body}</Text>
-                    <Text> {'By ' + reply.message.user} </Text>
                   </View>
                 </Pressable>)
             })
@@ -51,15 +51,12 @@ const StylesExpand = StyleSheet.create({
     paddingTop: 10,
     marginBottom: 30,
   },
-  verticalLine: {
-    height: '100%',
-    width:5,
-    backgroundColor: "#818181",
-    //marginLeft: 10,
-  },
   replyLine: {
+    marginLeft: 20,
     borderLeftWidth: 1, 
     borderLeftColor: "#818181",
+    borderTopLeftRadius: 0,
+
   }
 });
 export default Journal;

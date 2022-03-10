@@ -20,7 +20,7 @@ let ProfilePic = ({ id }) => {
             backgroundColor: '#fff',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: 20
+            margin: 10
         }}>
             <Image
                 source={user.photoType == "base64" ? { uri: 'data:image/png;base64,' + user.photo } : { uri: user.photo }}
