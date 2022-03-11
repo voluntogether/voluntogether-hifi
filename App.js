@@ -17,7 +17,7 @@ import state from './state/store';
 
 
 
-LogBox.ignoreAllLogs()
+// LogBox.ignoreAllLogs()
 
 
 const App = () => {
