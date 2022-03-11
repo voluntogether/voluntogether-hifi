@@ -12,7 +12,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 let CreateThread = ({ navigation, route }) => {
 
-    const { prompt, id } = route.params;
+    const { prompt, id, category, icon } = route.params;
 
     const dispatch = useDispatch();
 
@@ -42,11 +42,19 @@ let CreateThread = ({ navigation, route }) => {
                         </View>
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
+                        <Text center nonBlackBlack marginB-s4>Reflect on your volunteering experience and answer the prompt below.</Text>
 
                         <Card marginT-s6 style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
-                            <FontAwesome5 name={'dumbbell'} size={30} color={"#FFFFFF"}/>
-                            <Text center bigBody marginT-s4>{prompt}</Text>
+                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"white"}/>}
+                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"white"}/>}
+                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"white"}/>}
+                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"white"}/>}
+
+
+
+
+                            <Text center bigBody marginT-s4>Prompt: {prompt}</Text>
                             {/* <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text> */}
                             </View>
                         </Card>
@@ -66,7 +74,7 @@ let CreateThread = ({ navigation, route }) => {
                         id: id,
                         prompt: {
                             prompt: prompt,
-                            icon: "arrow-left",
+                            icon: icon,
                             responses: [{
                                 message: {
 
