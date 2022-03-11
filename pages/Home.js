@@ -78,12 +78,7 @@ let Home = ({ navigation }) => {
                 </View>
 
                 {/* "TODO: REMOVE THESE BEFORE DEPLOYMENT" */}
-                <View flex right bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"O"} onPress={() => dispatch(toggleOnboarding())} />
-                </View>
-                <View flex left bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"J"} onPress={() => dispatch(resetJournals())} />
-                </View>
+                
             </View>
         </ScrollView>
     );
