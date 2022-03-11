@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet } from "react-native";
-import { Text, View } from "react-native-ui-lib";
+import { Text, View, Image } from "react-native-ui-lib";
 import _ from "underscore";
 import ProfilePic from "./ProfilePic";
 import Styles from "../Style.js";
@@ -20,6 +20,12 @@ let Journal = ({ journal, index, openModal }) => {
                 <View style={[Styles.alignRow]} centerH paddingB-s6>
                   <ProfilePic id={message.message.user} />
                   <Text bold smallBody> {userLookup(message.message.user, users).name + "'s journal entry"} </Text>
+                  {_.map(message.message.images, (image) => {
+                    return (
+                      <Pressable onPress={() => {
+                        
+                      }}><Image source={{ uri: image.uri }} style={{ width: 50, height: 50 }} /></Pressable>)
+                  })}
                 </View>
                 <Text marginB-s2>{message.message.body}</Text>
 

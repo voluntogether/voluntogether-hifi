@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Pressable } from "react-native";
-import { Modal, TextField, Image } from "react-native-ui-lib"
+import { Modal, TextField, Image, Text } from "react-native-ui-lib"
 import { launchImageLibrary } from "react-native-image-picker";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import _ from "underscore"
-let MessageModal = ({ openMessageModal, onChangeText, onDone, onCancel }) => {
-    let [images, setImages] = useState([]);
+let MessageModal = ({ prompt, openMessageModal, onChangeText, onDone, onCancel, images, imageCallback }) => {
 
 
     return (
@@ -17,7 +16,9 @@ let MessageModal = ({ openMessageModal, onChangeText, onDone, onCancel }) => {
                 cancelIcon={null}
                 cancelLabel="Back"
             />
-            
+
+            <Text>{prompt.prompt}</Text>
+            <FontAwesome5 name={prompt.icon} size={20} color={"white"} />
             <TextField
                 placeholder={'Enter your new message'}
                 floatingPlaceholder
@@ -31,7 +32,7 @@ let MessageModal = ({ openMessageModal, onChangeText, onDone, onCancel }) => {
                 }, ({ didCancel, errorCode, errorMessage, assets }) => {
                     console.log(didCancel, errorCode, errorMessage, assets)
                     if (!didCancel) {
-                        setImages(images.concat(assets))
+                        imageCallback(assets)
                     }
                 })
             }}>

@@ -147,7 +147,7 @@ const Styles = StyleSheet.create({
         minHeight: 150,
         width: 330,
         padding: 20,
-        marginBottom: 60,
+        marginBottom: 20,
         borderStyle: "solid",
         borderWidth: 0.20,
         borderRadius: 15,
@@ -258,6 +258,10 @@ const Styles = StyleSheet.create({
     noHorizontalPadding: {
         paddingLeft: 0,
         paddingRight: 0
+    },
+    backArrowContainerForPageWithoutPadding: {
+        padding: 0,
+        paddingLeft: 20
     }
 });
 
