@@ -16,7 +16,7 @@ let JournalHome = ({ navigation }) => {
   let stateJournals = useSelector(state => state.journaling.journals)
   let userName = useSelector(state => state.user.name)
   let users = useSelector(state => state.user.users)
-  let niceHex = ["#EEC9BC", "#C1E3A4", "#94BFCD", "#DECBE6"]
+  let niceHex = ["#C1E3A4", "#C3EAE7", "#6D9AD0", "#CACAE5"]
   useEffect(() => {
     setJournals(stateJournals);
   }, [stateJournals])
@@ -57,9 +57,9 @@ let JournalHome = ({ navigation }) => {
                                     return (<MiniProfilePic id={userID} style={[StylesJournal.miniProfilePic]} />)
                                   })}
                                 </View>
-                              </Svg>
-                              
+                                
 
+                              </Svg>
                               <Text center >{new Date(journal.date).toLocaleDateString("en-US")}</Text>
 
 

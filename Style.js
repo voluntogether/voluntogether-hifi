@@ -161,7 +161,7 @@ const Styles = StyleSheet.create({
         marginBottom: 60,
     },
     greyCardChallenge: {
-        backgroundColor: "#D4D4D4",
+        backgroundColor: "#E4E4E4",
         //backgroundColor: "red",
         paddingTop: 50,
         paddingLeft: 10,
