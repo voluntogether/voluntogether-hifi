@@ -45,10 +45,10 @@ let CreateThread = ({ navigation, route }) => {
 
                         <Card marginT-s6 style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
-                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"#FFFFFF"}/>}
-                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"#FFFFFF"}/>}
-                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"#FFFFFF"}/>}
-                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"#FFFFFF"}/>}
+                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"white"}/>}
+                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"white"}/>}
+                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"white"}/>}
+                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"white"}/>}
 
 
 
