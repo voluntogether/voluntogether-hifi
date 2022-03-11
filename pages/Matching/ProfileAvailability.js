@@ -1,33 +1,17 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import Svg, { Circle, G, Rect } from 'react-native-svg';
-import { Button, Text, View } from "react-native-ui-lib";
+import { Button, Text, View, Incubator } from "react-native-ui-lib";
 import _ from "underscore";
 import BackArrow from "../../components/BackArrow.js";
 import Styles from "../../Style.js";
 
-
+let Toast = Incubator.Toast
 
 let ProfileAvailability = ({ navigation }) => {
 
-    const options = [
-        { label: 'JavaScript', value: 'js', disabled: false },
-        { label: 'Java', value: 'java', disabled: false },
-        { label: 'Python', value: 'python' },
-        { label: 'C++', value: 'c++', disabled: true },
-        { label: 'Perl', value: 'perl' }
-    ];
 
 
-    // let timesMorning = [
-    //     'Mon morning',
-    //     'Tue morning',
-    //     'Wed morning',
-    //     'Thu morning',
-    //     'Fri morning',
-    //     'Sat morning',
-    //     'Sun morning',
-    // ]
 
     let daysLeft = [
         'Mon',
@@ -62,6 +46,7 @@ let ProfileAvailability = ({ navigation }) => {
     const [selectedLeft, setSelectedLeft] = React.useState([]);
     const [selectedMid, setSelectedMid] = React.useState([]);
     const [selectedRight, setSelectedRight] = React.useState([]);
+    const [toast, setToast] = React.useState(false);
 
 
     const handlePressLeft = day =>
@@ -131,59 +116,37 @@ let ProfileAvailability = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-{/* 
-            <View style={Flex.container}>
-                <View style={Flex.col}>
-                    {_.map(days, day => (
-                        <View marginT-s3 centerH>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={day.value}>{day}</Text>
-                            </Button>
-                        </View>
-                    ))}
-                </View>
-
-                <View style={Flex.col}>
-                    {_.map(days, day => (
-                        <View marginT-s3 centerH>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={day.value}>{day}</Text>
-                            </Button>
-                        </View>
-                    ))}
-                </View>
-            </View>
-
-            <View style={Flex.col}>
-                    {_.map(days, day => (
-                        <View marginT-s3 centerH>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={day.value}>{day}</Text>
-                            </Button>
-                        </View>
-                    ))}
-                </View> */}
 
             <View flex right bottom>
-                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
-                    rematch: false
-                 })}/>
+                {selectedLeft.length > 0 || selectedMid.length > 0 || selectedRight.length > 0 ?
+                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
+                        rematch: false
+                    })} /> :
+                    <Button buttonArrow nonBlackBlack style={[Styles.grayButton]} label={'➔'} onPress={() => {
+
+                        setToast(true);
+
+
+                    }
+                    } />
+
+                }
+
             </View>
+
+            <Toast
+                visible={toast}
+                position={'top'}
+                backgroundColor={"#FF9494"}
+                autoDismiss={5000}
+                message={'Please select at least one time'}
+                centerMessage={true}
+                onDismiss={() => setToast(false)}
+            />
 
 
         </View >
     );
 }
-
-const Flex = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-    col: {
-        flex: 1
-    }
-});
 
 export default ProfileAvailability;
