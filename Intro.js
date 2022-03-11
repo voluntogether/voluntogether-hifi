@@ -214,34 +214,36 @@ const Intro = () => {
                     backgroundColor: '#f4f4f4',
                     title: 'Welcome to voluntogether!',
                     image: <OnboardBlob1 width={250} height={250} />,
-                    subtitle: <Text>We are happy to see you taking a step towards bettering your community.</Text>,
+                    subtitle: <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4 >We are happy to see you taking a step towards bettering your community.</Text>,
                 },
                 {
                     backgroundColor: '#f4f4f4',
-                    subtitle: 'In voluntogether, you get matched with a partner who has similar goals as you.',
+                    subtitle: <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4 >In voluntogether, you get matched with a partner who has similar goals as you.</Text>,
                     image: <OnboardBlob2 width={250} height={250} />,
                 },
                 {
                     backgroundColor: '#f4f4f4',
-                    subtitle: 'Then, work together to volunteer at an organization related to your interests, and come back to the app to reflect on your experience.',
+                    subtitle:  <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4 >Then, work together to volunteer at an organization related to your interests, and come back to the app to reflect on your experience.</Text>,
                     image: <OnboardBlob3 width={250} height={250} />,
                 },
                 {
                     backgroundColor: '#f4f4f4',
-                    subtitle: 'If you are looking for some inspiration, you can find community challenges to join!',
+                    subtitle: <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4>If you are looking for some inspiration, you can find community challenges to join!</Text>,
                     image: <OnboardBlob4 width={250} height={250} />,
                 },
                 {
                     backgroundColor: '#345F93',
-                    subtitle: 'Partner journal to better connect, reflect, and serve your community.',
-                    image: <><Text>Now go voluntogether!</Text><OnboardBlob5 width={250} height={250} /></>,
+                    subtitle:  <Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>Partner journal to better connect, reflect, and serve your community.</Text>,
+                    image: <><Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>Now go voluntogether!</Text><OnboardBlob5 width={250} height={250} /></>,
                 },
                 {
-                    backgroundColor: '#f4f4f4',
-                    title: 'Triangle',
+                    backgroundColor: '#345F93',
+                    //title: '',
+                    image: <><Text style={{ color: '#FFFFFF', fontSize: 20 }} center marginH-s4>Welcome!</Text><OnboardBlob5 width={250} height={250} /></>,
                     subtitle: (<View>
-                        <Text>Put your name in here:</Text>
+                        <Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>How would you liked to be called?</Text>
                         <TextField
+                            style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4
                             placeholder={'Placeholder'}
                             floatingPlaceholder
                             onChangeText={(message) => dispatch(rename(message))}
