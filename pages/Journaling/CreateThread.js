@@ -43,10 +43,10 @@ let CreateThread = ({ navigation, route }) => {
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
 
-                        <Card style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
+                        <Card marginT-s6 style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
-                            <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
-                            <Text center bigBody marginT-s4>Prompt: {prompt}</Text>
+                            <FontAwesome5 name={'dumbbell'} size={30} color={"#FFFFFF"}/>
+                            <Text center bigBody marginT-s4>{prompt}</Text>
                             {/* <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text> */}
                             </View>
                         </Card>
