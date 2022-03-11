@@ -46,7 +46,13 @@ let ExpandChallenge = ({ navigation, route}) => {
                         <Text smallBody nonBlackBlack>🌍 Environment</Text>
                     </Text>
 </>
-                    ) : (<Text style={[Styles.nonButtonTag]}>
+                    ) : 
+                    
+                    
+                    
+                    
+                    
+                    (<Text style={[Styles.nonButtonTag]}>
                         <Text smallBody nonBlackBlack>🌍 Environment</Text>
                     </Text>)
                     
@@ -64,11 +70,13 @@ let ExpandChallenge = ({ navigation, route}) => {
                     <Card style={[Styles.challengeBlueCard, Styles.boxShadow]} left >
                         <Text bold nonWhiteWhite marginB-s2 bigBody>Challenge details</Text>
                         <View style={[Styles.alignRow]}>
-                            <Text nonBlackBlack marginB-s1>Total Hours Required Per Person: 5</Text>
+                        { challenge === 'SF Beach Cleanup' ? <Text nonBlackBlack marginB-s1>Total Hours Required by Community: 20</Text> :
+                        <Text nonBlackBlack marginB-s1>Total Hours Required by Community: 10</Text>}
                         </View>
 
                         <View flexDirection="row">
-                            <Text nonBlackBlack>Participants: 25</Text>
+                        { challenge === 'SF Beach Cleanup' ? <Text nonBlackBlack>Participant Goal: 30</Text> :
+                        <Text nonBlackBlack>Participant Goal: 20</Text>}
                         </View>
                     </Card>
                 </View>

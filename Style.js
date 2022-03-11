@@ -18,6 +18,18 @@ const Styles = StyleSheet.create({
         maxWidth: "40%",
         justifyContent: 'center'
     },
+    grayButton: {
+        backgroundColor: "#808080",
+        minWidth: 54,
+        width: 54,
+        maxWidth: 54,
+        minHeight: 54,
+        height: 54,
+        maxHeight: 54,
+        borderRadius: 108,
+        padding: 0,
+        boxSizing: "border-box"
+    },
     yellowButton: {
         backgroundColor: "#F6CA44",
         minWidth: 54,
