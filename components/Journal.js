@@ -1,42 +1,47 @@
 import React from "react";
-import { Pressable , StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import { Text, View } from "react-native-ui-lib";
 import _ from "underscore";
 import ProfilePic from "./ProfilePic";
 import Styles from "../Style.js";
+import { userLookup } from "../util/util";
+import { useSelector } from "react-redux";
+
 let Journal = ({ journal, index, openModal }) => {
-    return (
-        _.map(journal.prompts[index].responses, (message, index) => {
-            return (
-                <Pressable onPress={() => openModal(index)}>
-                    <View style={StylesExpand.container}>
-                        <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]}>
-                            <View left>
-                                <View style={[Styles.alignRow]} centerH paddingB-s6>
-                                    <ProfilePic id={message.message.user}/>
-                                    <Text bold smallBody> {message.message.user + "'s journal entry"} </Text>
-                                </View>
-                                <Text marginB-s2>{message.message.body}</Text>
 
-                                {/* REPLY */}
-                                {_.map(message.replies, (reply) => {
-                                  return (
-                                    <Pressable >
-                                      {/* <View> */}
-                                      <View style={[StylesExpand.replyLine]}>
-                                        <Text marginH-s6>{message.message.user + ": " + reply.message.body}</Text>
-                                      </View>
-                                    </Pressable>)
-                                })
-                                }
-                            </View>
-                        </View>
+  let users = useSelector(state => state.user);
+  return (
+    _.map(journal.prompts[index].responses, (message, index) => {
+      return (
+        <Pressable onPress={() => openModal(index)}>
+          <View style={StylesExpand.container}>
+            <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]}>
+              <View left>
+                <View style={[Styles.alignRow]} centerH paddingB-s6>
+                  <ProfilePic id={message.message.user} />
+                  <Text bold smallBody> {userLookup(message.message.user, users).name + "'s journal entry"} </Text>
+                </View>
+                <Text marginB-s2>{message.message.body}</Text>
 
-                    </View>
-                </Pressable>
-            )
-        })
-    );
+                {/* REPLY */}
+                {_.map(message.replies, (reply) => {
+                  return (
+                    <Pressable >
+                      {/* <View> */}
+                      <View style={[StylesExpand.replyLine]}>
+                        <Text marginH-s6>{userLookup(message.message.user, users).name + ": " + reply.message.body}</Text>
+                      </View>
+                    </Pressable>)
+                })
+                }
+              </View>
+            </View>
+
+          </View>
+        </Pressable>
+      )
+    })
+  );
 }
 const StylesExpand = StyleSheet.create({
   container: {

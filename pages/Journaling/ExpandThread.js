@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import _ from "underscore";
 import BackArrow from "../../components/BackArrow";
 import Journal from "../../components/Journal";
+import ReplyModal from "../../components/ReplyModal";
+import MessageModal from "../../components/MessageModal";
+
 import { addMessage, addReply } from "../../state/journalingSlice.js";
 import Styles from "../../Style.js";
 
@@ -22,7 +25,6 @@ let ExpandThread = ({ navigation, route }) => {
 
   let [modifiedMessageIndex, setModifiedMessageIndex] = useState(null);
   let [response, setResponse] = useState("");
-  let [images, setImages] = useState([]);
   const dispatch = useDispatch();
 
   const createReply = (message, promptIndex, messageIndex) => {
@@ -69,62 +71,28 @@ let ExpandThread = ({ navigation, route }) => {
 
       }} index={index} journal={journal} />
 
-      <Modal visible={openReplyModal} onBackgroundPress={() => console.log('background pressed')}>
-        <Modal.TopBar
-          title="New Reply"
-          onCancel={() => setOpenReplyModal(false)}
-          onDone={() => {
-            createReply(response, index, modifiedMessageIndex)
-            setOpenReplyModal(false);
-          }
-          }
-          cancelIcon={null}
-          cancelLabel="Back"
-        />
-        <TextField
-          placeholder={'Enter your response'}
-          floatingPlaceholder
-          onChangeText={(message) => setResponse(message)}
 
-        />
-      </Modal>
+      <ReplyModal openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
+        onDone={() => {
+          createReply(response, index, modifiedMessageIndex)
+          setOpenReplyModal(false);
+        }}
+        onChangeText={(message) => {
+          setResponse(message);
+        }}
+      />
 
-      <Modal visible={openMessageModal} onBackgroundPress={() => console.log('background pressed')}>
-        <Modal.TopBar
-          title="New Message"
-          onCancel={() => setOpenMessageModal(false)}
-          onDone={() => {
-            createMessage(response)
-            setOpenMessageModal(false);
-          }
-          }
-          cancelIcon={null}
-          cancelLabel="Back"
-        />
-        <TextField
-          placeholder={'Enter your new message'}
-          floatingPlaceholder
-          onChangeText={(message) => setResponse(message)}
 
-        />
-        <Pressable onPress={() => {
-          launchImageLibrary({
-            mediaType: 'photo',
+      <MessageModal openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
+        onChangeText={(message) => setResponse(message)} onDone={() => {
+          createMessage(response)
+          setOpenMessageModal(false);
+        }}
+      />
 
-          }, ({ didCancel, errorCode, errorMessage, assets }) => {
-            console.log(didCancel, errorCode, errorMessage, assets)
-            if (!didCancel) {
-              setImages(images.concat(assets))
-            }
-          })
-        }}>
-          <FontAwesome5 name={'image'} size={20} />
-          {_.map(images, (image) => {
-            return <Image source={{ uri: image.uri }} style={{ width: 50, height: 50 }} />
-          })}
-        </Pressable>
 
-      </Modal>
+
+
 
       <View flex right bottom>
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />

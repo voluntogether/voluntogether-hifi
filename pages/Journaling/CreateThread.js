@@ -43,12 +43,12 @@ let CreateThread = ({ navigation, route }) => {
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
 
-                        <Card style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
+                        <Card marginT-s6 style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
-                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"#000"}/>}
-                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"#000"}/>}
-                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"#000"}/>}
-                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"#000"}/>}
+                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"#FFFFFF"}/>}
+                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"#FFFFFF"}/>}
+                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"#FFFFFF"}/>}
+                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"#FFFFFF"}/>}
 
 
 
