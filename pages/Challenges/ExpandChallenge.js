@@ -13,7 +13,9 @@ let ExpandChallenge = ({ navigation, route}) => {
     const { challenge } = route.params;
   return (
     <View padding-page style={[Styles.noHorizontalPadding]}>
-        <BackArrow navigation={navigation} />
+        <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
+            <BackArrow navigation={navigation} />
+        </View>
         <Text heading center nonBlackBlack marginB-s4>Explore Challenges</Text>
         <ScrollView>
             <View centerv style={[Styles.greyCardChallenge]}>
@@ -32,11 +34,11 @@ let ExpandChallenge = ({ navigation, route}) => {
                     </Text>
                 </View>
 
-                
+
 
                 <View style={[Styles.width322, Styles.tagList]} marginB-s4>
 
-                    { challenge === 'SF Beach Cleanup' ? 
+                    { challenge === 'SF Beach Cleanup' ?
                     (
                     <>
                      <Text style={[Styles.nonButtonTag]} marginR-s2>
@@ -46,23 +48,23 @@ let ExpandChallenge = ({ navigation, route}) => {
                         <Text smallBody nonBlackBlack>🌍 Environment</Text>
                     </Text>
 </>
-                    ) : 
-                    
-                    
-                    
-                    
-                    
+                    ) :
+
+
+
+
+
                     (<Text style={[Styles.nonButtonTag]}>
                         <Text smallBody nonBlackBlack>🌍 Environment</Text>
                     </Text>)
-                    
+
                     }
 
 
                 </View>
 
                 <View style={[Styles.width322]} marginB-s2>
-                    { challenge === 'SF Beach Cleanup' ? <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text> : 
+                    { challenge === 'SF Beach Cleanup' ? <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text> :
                     <Text body marginT-s2>Our ecosystems need our help. Come out for a session of tree planting on your own or join a group with EcoTreeHealth.</Text> }
                 </View>
 

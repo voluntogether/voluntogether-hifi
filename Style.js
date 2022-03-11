@@ -70,6 +70,15 @@ const Styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginBottom: 40,
     },
+    blueCardThreadPrompt: {
+        backgroundColor: "#A4C1E3",
+        minHeight: 90,
+        width: 330,
+        paddingTop: 25,
+        paddingBottom: 25,
+        paddingHorizontal: 20,
+        marginBottom: 10,
+    },
     journalBlankCard: {
         backgroundColor: "DDDDDD",
         minHeight: 100,
@@ -138,7 +147,7 @@ const Styles = StyleSheet.create({
         minHeight: 150,
         width: 330,
         padding: 20,
-        marginBottom: 60,
+        marginBottom: 20,
         borderStyle: "solid",
         borderWidth: 0.20,
         borderRadius: 15,
@@ -239,12 +248,20 @@ const Styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between"
     },
+    alignColumn: {
+        flexDirection: "column",
+        //justifyContent: "space-between"
+    },
     participationCount: {
 
     },
     noHorizontalPadding: {
         paddingLeft: 0,
         paddingRight: 0
+    },
+    backArrowContainerForPageWithoutPadding: {
+        padding: 0,
+        paddingLeft: 20
     }
 });
 
