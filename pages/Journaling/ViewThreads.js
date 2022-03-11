@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable } from "react-native";
+import { Pressable, ScrollView } from "react-native";
 import { Button, Text, View, Card} from "react-native-ui-lib";
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -15,6 +15,7 @@ let ViewThreads = ({ navigation, route }) => {
 
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
+    <ScrollView>
       <View flex padding-page>
           <BackArrow navigation={navigation} />
           <Text marginT-s10 heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
@@ -28,10 +29,10 @@ let ViewThreads = ({ navigation, route }) => {
             index: index
           })}>
 
-              <Card marginT-s8 style={[Styles.blueCardPrompt]} centerH>
+              <Card marginT-s8 style={[Styles.blueCardThreadPrompt]} centerH>
                 <View centerH>
                     <FontAwesome5 name={prompt.icon} size={30} color={"#ffffff"}/>
-                  <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text>
+                  <Text center bigBody marginT-s4>Prompt: {prompt.prompt}</Text>
                 </View>
               </Card>
 
@@ -70,6 +71,7 @@ let ViewThreads = ({ navigation, route }) => {
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
       </View>
     </View>
+    </ScrollView>
   );
 }
 

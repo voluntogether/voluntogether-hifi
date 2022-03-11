@@ -70,6 +70,15 @@ const Styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginBottom: 40,
     },
+    blueCardThreadPrompt: {
+        backgroundColor: "#A4C1E3",
+        minHeight: 90,
+        width: 330,
+        paddingTop: 25,
+        paddingBottom: 25,
+        paddingHorizontal: 20,
+        marginBottom: 10,
+    },
     journalBlankCard: {
         backgroundColor: "DDDDDD",
         minHeight: 100,
