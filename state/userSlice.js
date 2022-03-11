@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     name: "Pablo",
     email: "nada",
-    photo: "https://www.clipartmax.com/png/full/215-2155161_think-fish-profile-pics-for-discord.png",
+    photo: "https://www.boozebears.io/images/IMG_8132.jpg",
     id: 1,
     photoType: "uri",
     passions: [],

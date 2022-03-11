@@ -56,9 +56,9 @@ let ExpandThread = ({ navigation, route }) => {
 
 
   return (
-      <View flex padding-page style={[Styles.noHorizontalPadding]}>
-          <BackArrow navigation={navigation} />
-          <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
+    <View flex padding-page >
+      <BackArrow navigation={navigation} />
+      <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
 
       <Journal navigation={navigation} openModal={(messageIndex) => {
 
@@ -79,7 +79,7 @@ let ExpandThread = ({ navigation, route }) => {
           }
           }
           cancelIcon={null}
-          cancelLabel="back"
+          cancelLabel="Back"
         />
         <TextField
           placeholder={'Enter your response'}
@@ -99,7 +99,7 @@ let ExpandThread = ({ navigation, route }) => {
           }
           }
           cancelIcon={null}
-          cancelLabel="back"
+          cancelLabel="Back"
         />
         <TextField
           placeholder={'Enter your new message'}
