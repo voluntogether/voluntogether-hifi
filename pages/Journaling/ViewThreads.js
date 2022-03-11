@@ -16,7 +16,7 @@ let ViewThreads = ({ navigation, route }) => {
   return (
       <View flex padding-page>
           <BackArrow navigation={navigation} />
-          <Text heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
+          <Text marginT-s10 heading center nonBlackBlack marginB-s4>{journal.organization}</Text>
 
 
       {journal.prompts.length > 0 ? _.map(journal.prompts, (prompt, index) => {
@@ -54,7 +54,7 @@ let ViewThreads = ({ navigation, route }) => {
           <Path fill-rule="evenodd" clip-rule="evenodd" d="M127.99 66.7154C147.526 70.3212 158.971 87.6397 171.259 103.228C183.393 118.62 196.838 133.652 196.192 153.231C195.356 178.533 190.483 208.94 167.423 219.455C144.541 229.888 121.712 208.596 99.1581 197.475C77.0795 186.588 49.7269 180.583 41.5521 157.388C32.5907 131.961 40.0022 101.96 58.6142 82.4364C75.8165 64.3915 103.457 62.1872 127.99 66.7154Z" fill="#A4E3A7" />
          </Svg>
          <View style={{justifyContent: 'center',alignItems: 'center', marginTop: -150}}>
-           <FontAwesome5 style={{justifyContent: 'center',alignItems: 'center'}} centerH name={'book'} size={40} color={"white"} />
+           <FontAwesome5 style={{justifyContent: 'center',alignItems: 'center'}} centerH name={'book'} size={50} color={"white"} />
          </View>
          <View style={{justifyContent: 'center',alignItems: 'center', marginTop: 150}}>
              <Text center body fadedSubtext marginB-s8 marginT-s10>

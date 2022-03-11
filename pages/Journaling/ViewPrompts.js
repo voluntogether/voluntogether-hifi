@@ -61,7 +61,7 @@ const ViewPrompts = ({ navigation, route }) => {
       <View marginB-10/>
 
       <View>
-        <Text heading center nonBlackBlack marginB-s10>{category + ' Prompts'}</Text>
+        <Text heading center nonBlackBlack marginB-s10 marginT-s8>{category + ' Prompts'}</Text>
       </View>
       <View centerH>
       <View paddingT-s6 centerH style={stylesPrompts.backgroundCard}>
