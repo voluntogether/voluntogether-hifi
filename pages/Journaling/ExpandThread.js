@@ -19,10 +19,10 @@ let ExpandThread = ({ navigation, route }) => {
 
   const { id, index } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
-
+  let prompt = journal.prompts[index];
   let [openReplyModal, setOpenReplyModal] = useState(false);
   let [openMessageModal, setOpenMessageModal] = useState(false);
-
+  let [images, setImages] = useState([]);
   let [modifiedMessageIndex, setModifiedMessageIndex] = useState(null);
   let [response, setResponse] = useState("");
   const dispatch = useDispatch();
@@ -40,12 +40,13 @@ let ExpandThread = ({ navigation, route }) => {
     dispatch(addReply({ reply: newReply, promptIndex, messageIndex, id }));
   }
 
-  const createMessage = (message) => {
+  const createMessage = (message, images) => {
 
     let newMessage = {
       message: {
         body: message,
         user: 1,
+        images: images
       },
       replies: []
     }
@@ -54,6 +55,15 @@ let ExpandThread = ({ navigation, route }) => {
     dispatch(addMessage({ message: newMessage, promptIndex: index, id }));
 
 
+  }
+
+  const messageLookup = (journal, promptIndex, messageIndex) => {
+
+    console.log(journal, promptIndex, messageIndex)
+    let prompt = journal.prompts[promptIndex];
+    let message = prompt.responses[messageIndex];
+
+    return message;
   }
 
 
@@ -72,7 +82,9 @@ let ExpandThread = ({ navigation, route }) => {
       }} index={index} journal={journal} />
 
 
-      <ReplyModal openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
+
+
+      {modifiedMessageIndex !== null && <ReplyModal message={messageLookup(journal, index, modifiedMessageIndex)} openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
         onDone={() => {
           createReply(response, index, modifiedMessageIndex)
           setOpenReplyModal(false);
@@ -80,12 +92,10 @@ let ExpandThread = ({ navigation, route }) => {
         onChangeText={(message) => {
           setResponse(message);
         }}
-      />
-
-
-      <MessageModal openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
+      />}
+      <MessageModal prompt={prompt} images={images} imageCallback={(assets) => setImages(images.concat(assets))} openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
         onChangeText={(message) => setResponse(message)} onDone={() => {
-          createMessage(response)
+          createMessage(response, images)
           setOpenMessageModal(false);
         }}
       />
