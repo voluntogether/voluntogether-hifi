@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		327BD99C22DF6329FF6CC383 /* libPods-voluntogether-voluntogetherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C903BCBE4FB89FDBD38242 /* libPods-voluntogether-voluntogetherTests.a */; };
+		1A0E80E3761F5DDF719C0FA3 /* libPods-voluntogether-voluntogetherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8880DDEE127ABA8B618B96BB /* libPods-voluntogether-voluntogetherTests.a */; };
+		62DDACBE279E1FCA91345398 /* libPods-voluntogether.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B874F0E7E024B3A3341A190 /* libPods-voluntogether.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E18E86F15667F9A267F15EEA /* libPods-voluntogether.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD7F14A802EB294D3D7B2 /* libPods-voluntogether.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +30,20 @@
 		00E356EE1AD99517003FC87E /* voluntogetherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voluntogetherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* voluntogetherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voluntogetherTests.m; sourceTree = "<group>"; };
-		090B906EE92667047324F432 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether-voluntogetherTests.debug.xcconfig"; path = "Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* voluntogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voluntogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = voluntogether/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = voluntogether/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = voluntogether/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = voluntogether/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = voluntogether/main.m; sourceTree = "<group>"; };
-		29C903BCBE4FB89FDBD38242 /* libPods-voluntogether-voluntogetherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-voluntogether-voluntogetherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E279890586A0CDD6E182C6E /* Pods-voluntogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether.debug.xcconfig"; path = "Target Support Files/Pods-voluntogether/Pods-voluntogether.debug.xcconfig"; sourceTree = "<group>"; };
-		35FCD7F14A802EB294D3D7B2 /* libPods-voluntogether.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-voluntogether.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B17E521D1FBBF51CCD899E9 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether-voluntogetherTests.release.xcconfig"; path = "Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests.release.xcconfig"; sourceTree = "<group>"; };
+		1ED3606B8A0AD43FB07E82A8 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether-voluntogetherTests.release.xcconfig"; path = "Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests.release.xcconfig"; sourceTree = "<group>"; };
+		1F50F346861B58130AABE577 /* Pods-voluntogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether.debug.xcconfig"; path = "Target Support Files/Pods-voluntogether/Pods-voluntogether.debug.xcconfig"; sourceTree = "<group>"; };
+		33D82F9579F6029781B62029 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether-voluntogetherTests.debug.xcconfig"; path = "Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B874F0E7E024B3A3341A190 /* libPods-voluntogether.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-voluntogether.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = voluntogether/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8CCD04FC62A6939849F0281D /* Pods-voluntogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether.release.xcconfig"; path = "Target Support Files/Pods-voluntogether/Pods-voluntogether.release.xcconfig"; sourceTree = "<group>"; };
+		8880DDEE127ABA8B618B96BB /* libPods-voluntogether-voluntogetherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-voluntogether-voluntogetherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F3E2C110F1D5EDBAAA587E68 /* Pods-voluntogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voluntogether.release.xcconfig"; path = "Target Support Files/Pods-voluntogether/Pods-voluntogether.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				327BD99C22DF6329FF6CC383 /* libPods-voluntogether-voluntogetherTests.a in Frameworks */,
+				1A0E80E3761F5DDF719C0FA3 /* libPods-voluntogether-voluntogetherTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18E86F15667F9A267F15EEA /* libPods-voluntogether.a in Frameworks */,
+				62DDACBE279E1FCA91345398 /* libPods-voluntogether.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,18 +83,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0986BBF9390CB1A1D1AB1D15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E279890586A0CDD6E182C6E /* Pods-voluntogether.debug.xcconfig */,
-				8CCD04FC62A6939849F0281D /* Pods-voluntogether.release.xcconfig */,
-				090B906EE92667047324F432 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */,
-				6B17E521D1FBBF51CCD899E9 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* voluntogether */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +100,21 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				35FCD7F14A802EB294D3D7B2 /* libPods-voluntogether.a */,
-				29C903BCBE4FB89FDBD38242 /* libPods-voluntogether-voluntogetherTests.a */,
+				6B874F0E7E024B3A3341A190 /* libPods-voluntogether.a */,
+				8880DDEE127ABA8B618B96BB /* libPods-voluntogether-voluntogetherTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A3C012D51A0B03E3EF34131 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F50F346861B58130AABE577 /* Pods-voluntogether.debug.xcconfig */,
+				F3E2C110F1D5EDBAAA587E68 /* Pods-voluntogether.release.xcconfig */,
+				33D82F9579F6029781B62029 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */,
+				1ED3606B8A0AD43FB07E82A8 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -133,7 +132,7 @@
 				00E356EF1AD99517003FC87E /* voluntogetherTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				0986BBF9390CB1A1D1AB1D15 /* Pods */,
+				4A3C012D51A0B03E3EF34131 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "voluntogetherTests" */;
 			buildPhases = (
-				C29B26F23B832A77F2368E1F /* [CP] Check Pods Manifest.lock */,
+				502D815B74548835F7BA8EC5 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				04A25017B66EE39DBEF1B6CB /* [CP] Embed Pods Frameworks */,
-				7094585ADA06B40439A9EF01 /* [CP] Copy Pods Resources */,
+				8735853A221C437F125D04AC /* [CP] Embed Pods Frameworks */,
+				183E9FC6D350A686B29C16E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "voluntogether" */;
 			buildPhases = (
-				8FA33C3AABCD1A12B427059E /* [CP] Check Pods Manifest.lock */,
+				527D3E8C01E5EB4E4F54A9E1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				10E746775C4BC4D87213E457 /* [CP] Embed Pods Frameworks */,
-				2BD0479A95D1CE4015FD7C4A /* [CP] Copy Pods Resources */,
+				C898AD65E356E4523F6C77B1 /* [CP] Embed Pods Frameworks */,
+				FA8D4FB75702204B33CBCF4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,58 +264,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		04A25017B66EE39DBEF1B6CB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		10E746775C4BC4D87213E457 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2BD0479A95D1CE4015FD7C4A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7094585ADA06B40439A9EF01 /* [CP] Copy Pods Resources */ = {
+		183E9FC6D350A686B29C16E0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,7 +281,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FA33C3AABCD1A12B427059E /* [CP] Check Pods Manifest.lock */ = {
+		502D815B74548835F7BA8EC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-voluntogether-voluntogetherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		527D3E8C01E5EB4E4F54A9E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,26 +325,55 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C29B26F23B832A77F2368E1F /* [CP] Check Pods Manifest.lock */ = {
+		8735853A221C437F125D04AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-voluntogether-voluntogetherTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether-voluntogetherTests/Pods-voluntogether-voluntogetherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C898AD65E356E4523F6C77B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA8D4FB75702204B33CBCF4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-voluntogether/Pods-voluntogether-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,9 +428,10 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 090B906EE92667047324F432 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */;
+			baseConfigurationReference = 33D82F9579F6029781B62029 /* Pods-voluntogether-voluntogetherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BB86SHHXMB;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -456,10 +456,11 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B17E521D1FBBF51CCD899E9 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */;
+			baseConfigurationReference = 1ED3606B8A0AD43FB07E82A8 /* Pods-voluntogether-voluntogetherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = BB86SHHXMB;
 				INFOPLIST_FILE = voluntogetherTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,23 +481,25 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E279890586A0CDD6E182C6E /* Pods-voluntogether.debug.xcconfig */;
+			baseConfigurationReference = 1F50F346861B58130AABE577 /* Pods-voluntogether.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB86SHHXMB;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = voluntogether/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.adam.voluntogether;
 				PRODUCT_NAME = voluntogether;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -506,22 +509,24 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CCD04FC62A6939849F0281D /* Pods-voluntogether.release.xcconfig */;
+			baseConfigurationReference = F3E2C110F1D5EDBAAA587E68 /* Pods-voluntogether.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB86SHHXMB;
 				INFOPLIST_FILE = voluntogether/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.adam.voluntogether;
 				PRODUCT_NAME = voluntogether;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
