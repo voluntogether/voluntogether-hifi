@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Image, Text, View } from "react-native-ui-lib";
+import { useSelector } from "react-redux";
 import BackArrow from "../../components/BackArrow.js";
 import Styles from "../../Style.js";
 
@@ -7,6 +8,9 @@ import Styles from "../../Style.js";
 
 let OrganizationMatch = ({ route, navigation }) => {
     const { name, organization } = route.params;
+
+    let interestArea = useSelector(state => state.user.interestArea);
+
     return (
         <View flex padding-page>
             <BackArrow navigation={navigation} />
@@ -25,7 +29,7 @@ let OrganizationMatch = ({ route, navigation }) => {
             </View>
             <View centerH>
                 <Text style={[Styles.nonButtonTag]}>
-                    <Text body nonBlackBlack>{organization == "Ecumenical Hunger Program" ? "🥗 Food Sustainability" : "🐳 Animal Welfare"}</Text>
+                    <Text body nonBlackBlack>{interestArea}</Text>
                 </Text>
             </View>
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Coordinate volunteering'} onPress={() => navigation.navigate('MatchingChat', {
