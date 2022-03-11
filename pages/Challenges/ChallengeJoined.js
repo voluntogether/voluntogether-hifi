@@ -35,14 +35,9 @@ let ChallengeJoined = ({ navigation, route}) => {
         }
       </View>
 
-      <View right marginR-s4>
-        <Pressable centerH onPress={() => navigation.navigate('ViewChallenges')}>
-          <Text marginT-s2>Leave challenge</Text>
-        </Pressable>
-      </View>
+      <View centerH>
 
-
-      <Card style={[Styles.challengeBlankCard]} marginL-s8 >
+      <Card style={[Styles.challengeBlankCard]} >
         <Text bold nonBlackBlack marginB-s2 body>Started February 2022</Text>
 
         { challenge === 'SF Beach Cleanup' ? <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 5 / 20 hours </Text> :
@@ -65,9 +60,6 @@ let ChallengeJoined = ({ navigation, route}) => {
       </Card>
 
 
-      <View marginL-s8>
-
-
 
         <Card style={[Styles.challengeDescriptionCard]} centerH>
           <View justifyContent="space-between" marginB-s4>
@@ -87,6 +79,10 @@ let ChallengeJoined = ({ navigation, route}) => {
                 <Text bold fadedSubtext>12</Text>}
             </View>
         </Card>
+
+          <Pressable centerH onPress={() => navigation.navigate('ViewChallenges')}>
+            <Text>Quit challenge</Text>
+          </Pressable>
 
 
       </View>
