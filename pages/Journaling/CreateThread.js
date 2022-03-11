@@ -12,7 +12,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 let CreateThread = ({ navigation, route }) => {
 
-    const { prompt, id } = route.params;
+    const { prompt, id, category } = route.params;
 
     const dispatch = useDispatch();
 
@@ -45,7 +45,14 @@ let CreateThread = ({ navigation, route }) => {
 
                         <Card style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
-                            <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
+                            {category === 'Hardships' && <FontAwesome5 name={'dumbbell'} size={30} color={"#000"}/>}
+                            {category === 'Lessons' && <FontAwesome5 name={'chalkboard-teacher'} size={30} color={"#000"}/>}
+                            {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"#000"}/>}
+                            {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"#000"}/>}
+
+
+
+
                             <Text center bigBody marginT-s4>Prompt: {prompt}</Text>
                             {/* <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text> */}
                             </View>

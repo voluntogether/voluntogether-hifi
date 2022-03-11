@@ -14,7 +14,7 @@ const initialState = {
                     {
                         "message": {
                             "user": 1,
-                            "body": "I'm doing great!"
+                            "body": "I'm doing meh!"
                         },
                         "replies": [
                             {
