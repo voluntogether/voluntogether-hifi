@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, ScrollView } from "react-native";
+import { Dimensions, ScrollView, Alert } from "react-native";
 import { Button, Card, Image, Text, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import BackArrow from "../../components/BackArrow";
@@ -9,8 +9,11 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-let ExpandChallenge = ({ navigation, route}) => {
+let ExpandChallenge = ({ navigation, route }) => {
     const { challenge } = route.params;
+
+ 
+
   return (
     <View padding-page style={[Styles.noHorizontalPadding]}>
         <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
@@ -83,7 +86,10 @@ let ExpandChallenge = ({ navigation, route}) => {
                     </Card>
                 </View>
 
-                <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined', { challenge: challenge })} />
+                <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() =>
+                    navigation.navigate('ChallengeJoined', { challenge: challenge })
+                }/>
+                    
 
             </View>
         </View>

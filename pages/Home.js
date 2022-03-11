@@ -57,8 +57,6 @@ let Home = ({ navigation }) => {
 
                     <CountDown
                         until={12000}
-                        // onFinish={() => { }}
-                        // onPress={() => { }}
                         size={32}
                     />
 
@@ -74,9 +72,6 @@ let Home = ({ navigation }) => {
                         </Card>
                     </Pressable>
                 </View>
-
-                {/* "TODO: REMOVE THESE BEFORE DEPLOYMENT" */}
-                
             </View>
         </ScrollView>
     );

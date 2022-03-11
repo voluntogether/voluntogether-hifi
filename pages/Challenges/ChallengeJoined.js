@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, ImageBackground, Pressable, ScrollView } from "react-native";
+import { Dimensions, ImageBackground, Pressable, ScrollView, Alert } from "react-native";
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { Card, Text, View } from "react-native-ui-lib";
 import Styles from "../../Style.js";
@@ -11,8 +11,22 @@ import BackArrowLight from "../../components/BackArrowLight";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-let ChallengeJoined = ({ navigation, route}) => {
+let ChallengeJoined = ({ navigation, route }) => {
   const { challenge } = route.params;
+
+  const leaveChallengeAlert = () =>
+  Alert.alert(
+    "Warning:",
+    'Are you sure you want to quit ' + challenge + '?',
+    [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel"
+      },
+      { text: "Quit Challenge", onPress: () => navigation.navigate('ViewChallenges')}
+    ]
+  );
   return (
     <ScrollView>
     <View flex >
@@ -93,7 +107,10 @@ let ChallengeJoined = ({ navigation, route}) => {
             </View>
         </Card>
 
-          <Pressable centerH onPress={() => navigation.navigate('ViewChallenges')}>
+          <Pressable centerH onPress={() => {
+            leaveChallengeAlert();
+            }  
+          }> 
             <Text>Quit challenge</Text>
           </Pressable>
 

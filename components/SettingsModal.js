@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pressable } from "react-native"
-import { Modal, Incubator, Text, View, Button } from "react-native-ui-lib"
+import { Modal, Incubator, Text, View, Button, Colors } from "react-native-ui-lib"
 import ProfilePic from "./ProfilePic";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { launchImageLibrary } from "react-native-image-picker";
@@ -33,8 +33,9 @@ let SettingsModal = ({ visible, onDone, onCancel }) => {
                     dispatch(setEmail(localEmail));
                     onDone()
                 }}
-                // cancelIcon={<FontAwesome5 name="x" />}
-                cancelLabel="Exit"
+                doneButtonProps={{ color: "#000" }}
+                cancelButtonProps={{ iconStyle: { tintColor: "#000" } }}
+                cancelLabel={<Text color="#000">abcd</Text>}
             />
 
             <Pressable onPress={() => {

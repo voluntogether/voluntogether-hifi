@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Keyboard, TouchableWithoutFeedback } from "react-native";
+import { Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import { GiftedChat, InputToolbar } from 'react-native-gifted-chat';
 import { Button, Card, Text, View } from "react-native-ui-lib";
 import { useDispatch } from 'react-redux';
@@ -29,6 +29,29 @@ let CreateThread = ({ navigation, route }) => {
             }} accessoryStyle={{}} />
         )
     }
+
+    const threadCreatedAlert = () =>
+    Alert.alert(
+        [
+      "Entry Created!",
+      "An entry with the prompt \'" + {prompt} + "\' has been created",
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "Go to entry!", onPress: () => console.log('Lol')}
+      ]
+    );
+
+    const leaveChallengeAlert = () =>
+    Alert.alert(
+      "Entry Created!",
+      "An entry with the prompt \'" + prompt + "\' has been created",
+      [
+        { text: "OK", onPress: () => console.log("OK Pressed")}
+      ]
+    );
 
     return (
         <>
@@ -90,6 +113,7 @@ let CreateThread = ({ navigation, route }) => {
                     navigation.navigate('ViewThreads', {
                         id: id
                     });
+                    leaveChallengeAlert();
                 }}
                 user={{
                     _id: 1,
