@@ -58,7 +58,7 @@ let JournalHome = ({ navigation }) => {
                                       return (<MiniProfilePic id={userID} style={[StylesJournal.miniProfilePic]} />)
                                     })}
                                   </View>
-                                  <Text body center nonBlackBlack>{journal.organization}</Text>
+                                  <Text marginH-s2 body center nonBlackBlack>{journal.organization}</Text>
                                 </View>
 
 
