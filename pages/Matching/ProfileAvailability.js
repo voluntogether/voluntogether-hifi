@@ -10,24 +10,8 @@ let Toast = Incubator.Toast
 
 let ProfileAvailability = ({ navigation }) => {
 
-    const options = [
-        { label: 'JavaScript', value: 'js', disabled: false },
-        { label: 'Java', value: 'java', disabled: false },
-        { label: 'Python', value: 'python' },
-        { label: 'C++', value: 'c++', disabled: true },
-        { label: 'Perl', value: 'perl' }
-    ];
 
 
-    // let timesMorning = [
-    //     'Mon morning',
-    //     'Tue morning',
-    //     'Wed morning',
-    //     'Thu morning',
-    //     'Fri morning',
-    //     'Sat morning',
-    //     'Sun morning',
-    // ]
 
     let daysLeft = [
         'Mon',
@@ -164,16 +148,5 @@ let ProfileAvailability = ({ navigation }) => {
         </View >
     );
 }
-
-const Flex = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-    col: {
-        flex: 1
-    }
-});
 
 export default ProfileAvailability;
