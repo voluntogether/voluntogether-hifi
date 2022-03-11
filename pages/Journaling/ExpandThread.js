@@ -58,8 +58,10 @@ let ExpandThread = ({ navigation, route }) => {
 
 
   return (
-    <View flex padding-page >
-      <BackArrow navigation={navigation} />
+      <View padding-page style={[Styles.noHorizontalPadding]}>
+    <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
+        <BackArrow navigation={navigation} />
+    </View>
       <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
 
       <Journal navigation={navigation} openModal={(messageIndex) => {
