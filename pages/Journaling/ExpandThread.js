@@ -81,16 +81,13 @@ let ExpandThread = ({ navigation, route }) => {
         setImageModalOpen(true);
 
       }}
+      
         navigation={navigation} openModal={(messageIndex) => {
 
           setOpenReplyModal(true);
           setModifiedMessageIndex(messageIndex);
 
-
-
         }} index={index} journal={journal} />
-
-
 
       {modifiedMessageIndex !== null && <ReplyModal message={messageLookup(journal, index, modifiedMessageIndex)} openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
         onDone={() => {
@@ -101,14 +98,18 @@ let ExpandThread = ({ navigation, route }) => {
           setResponse(message);
         }}
       />}
+
       <MessageModal prompt={prompt} images={images} imageCallback={(assets) => setImages(images.concat(assets))} openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
         onChangeText={(message) => setResponse(message)} onDone={() => {
           createMessage(response, images)
           setOpenMessageModal(false);
         }}
       />
+      
+      
 
-      <View flex right bottom>
+      <View style={{marginTop: 380}} marginR-s4 flex right bottom>
+        
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />
       </View>
     </View>

@@ -67,7 +67,7 @@ let ViewThreads = ({ navigation, route }) => {
 
       }
 
-      <View flex right bottom>
+      <View style={{marginTop: 320}}  flex right bottom >
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
       </View>
     </View>

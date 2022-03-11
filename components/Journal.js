@@ -6,6 +6,7 @@ import ProfilePic from "./ProfilePic";
 import Styles from "../Style.js";
 import { userLookup } from "../util/util";
 import { useSelector } from "react-redux";
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import ImageModal from 'react-native-image-modal';
 
 
@@ -17,8 +18,8 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
     _.map(journal.prompts[index].responses, (message, index) => {
       return (
         <Pressable onPress={() => openModal(index)}>
-          <View style={StylesExpand.container}>
-            <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]}>
+          <View style={StylesExpand.container} marginH-s4>
+            <View style={[StylesExpand.threadCard, Styles.noHorizontalPadding]} >
               <View left>
                 <View style={[Styles.alignRow]} centerH paddingB-s6>
                   <ProfilePic id={message.message.user} />
@@ -41,12 +42,12 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
                         /></Pressable>)
                   })}
                 </View>
-                <Text marginB-s2>{message.message.body}</Text>
+                <Text marginB-s4>{message.message.body}</Text>
 
                 {/* REPLY */}
                 {_.map(message.replies, (reply) => {
                   return (
-                    <Pressable >
+                    <Pressable  >
                       {/* <View> */}
                       <View style={[StylesExpand.replyLine]}>
                         <Text marginH-s6>{userLookup(message.message.user, users).name + ": " + reply.message.body}</Text>
@@ -54,8 +55,10 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
                     </Pressable>)
                 })
                 }
+
               </View>
             </View>
+            <FontAwesome5 style={{marginLeft: 300}} name={'reply'} size={20} color={"#000"} />
 
           </View>
         </Pressable>
