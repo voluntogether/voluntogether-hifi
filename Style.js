@@ -249,6 +249,10 @@ const Styles = StyleSheet.create({
     noHorizontalPadding: {
         paddingLeft: 0,
         paddingRight: 0
+    },
+    backArrowContainerForPageWithoutPadding: {
+        padding: 0,
+        paddingLeft: 20
     }
 });
 
