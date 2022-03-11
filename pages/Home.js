@@ -42,8 +42,6 @@ let Home = ({ navigation }) => {
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}
                 <View centerH>
-
-
                     <Pressable onPress={() => navigation.navigate(!hasMatched ? 'Matching' : 'Journaling')}>
                         <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
                             <Text heading center nonWhiteWhite marginB-s4>{!hasMatched ? "match with someone" : "journal with your partner"}</Text>

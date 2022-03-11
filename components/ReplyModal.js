@@ -15,6 +15,7 @@ let ReplyModal = ({ message, openReplyModal, onChangeText, onDone, onCancel }) =
                 onDone={onDone}
                 cancelIcon={null}
                 cancelLabel="Back"
+    
             />
             <View marginT-s10 marginH-s8 > 
             <View style={[Styles.alignRow]}>
