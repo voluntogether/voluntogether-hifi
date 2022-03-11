@@ -93,9 +93,9 @@ let ProfileAvailability = ({ navigation }) => {
             </View>
 
             <View paddingLeft={16} paddingRight={15} flexDirection={'row'} justifyContent={'space-between'}>
-                <View flexDirection={'column'}>
-                    <Text> Morning </Text>
-                    <View >
+                <View flexDirection={'column'} centerH>
+                    <Text subHeading>Morning</Text>
+                    <View>
                         {_.map(daysLeft, day => (
                             <View marginT-s3 centerH>
                                 <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressLeft(day)} backgroundColor={selectedLeft.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
@@ -106,9 +106,9 @@ let ProfileAvailability = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View flexDirection={'column'}>
-                    <Text> Afternoon </Text>
-                    <View >
+                <View flexDirection={'column'} centerH bold>
+                    <Text subHeading>Afternoon</Text>
+                    <View>
                         {_.map(daysMid, day => (
                             <View marginT-s3 centerH>
                                 <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressMid(day)} backgroundColor={selectedMid.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
@@ -119,9 +119,9 @@ let ProfileAvailability = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View flexDirection={'column'}>
-                    <Text> Evening </Text>
-                    <View >
+                <View flexDirection={'column'} centerH bold>
+                    <Text subHeading>Evening</Text>
+                    <View>
                         {_.map(daysRight, day => (
                             <View marginT-s3 centerH>
                                 <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressRight(day)} backgroundColor={selectedRight.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
