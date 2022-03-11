@@ -17,7 +17,7 @@ let ChallengeJoined = ({ navigation, route}) => {
     <ScrollView>
     <View flex >
       <View>
-        { challenge === 'SF Beach Cleanup' ? 
+        { challenge === 'SF Beach Cleanup' ?
         (
 
           <ImageBackground  style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/ocean-cleanup.jpg")} >
@@ -25,7 +25,7 @@ let ChallengeJoined = ({ navigation, route}) => {
             <Text center megaHeading bold color="#F7FDF8">Beach Cleanup</Text>
           </ImageBackground>
         ) :
-        ( 
+        (
           <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/tree-planting.jpg")} >
             <Text center megaHeading bold color="#F7FDF8">Tree Planting</Text>
           </ImageBackground>
@@ -47,7 +47,7 @@ let ChallengeJoined = ({ navigation, route}) => {
 
         { challenge === 'SF Beach Cleanup' ? <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 5 / 20 hours </Text> :
         <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 8 / 10 hours </Text>}
-          
+
 
           <Svg width="288" height="14" viewBox="0 0 288 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <Rect width="288" height="14" rx="7" fill="#C4C4C4"/>
@@ -59,19 +59,14 @@ let ChallengeJoined = ({ navigation, route}) => {
               </linearGradient>
             </defs> */}
           </Svg>
-          
+
           { challenge === 'SF Beach Cleanup' ? <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 5 hours on this challenge.</Text> :
            <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 8 hours on this challenge.</Text>}
       </Card>
-      
 
-      <View marginL-s8> 
-      <Card style={[Styles.challengeGraphicCard, Styles.boxShadow]} centerH marginR-s8 marginB-s8>
-              <Svg width="300" height="400" viewBox="0 95 378 455" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <Circle cx="194.461" cy="164.461" r="50.4614" fill="#F6CA44" />
-                <Path fill-rule="evenodd" clip-rule="evenodd" d="M180.176 204.384C211.255 204.384 236.45 179.19 236.45 148.11C236.45 143.991 236.007 139.974 235.167 136.106C241.296 144.361 244.923 154.586 244.923 165.658C244.923 193.061 222.708 215.276 195.305 215.276C181.603 215.276 169.199 209.722 160.22 200.743C166.422 203.096 173.148 204.384 180.176 204.384Z" fill="#FAE269" />
-              </Svg>
-      </Card>
+
+      <View marginL-s8>
+
 
 
         <Card style={[Styles.challengeDescriptionCard]} centerH>
@@ -80,23 +75,23 @@ let ChallengeJoined = ({ navigation, route}) => {
             {challenge === 'SF Beach Cleanup' ? <Text nonBlackBlack body>Looking for service and serenity? Join this Beach Cleanup challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text> : <Text nonBlackBlack body>Our ecosystems need our help. Come out for a session of tree planting on your own or join a group with EcoTreeHealth.</Text>}
           </View>
 
-            <View style={[Styles.alignRow]}> 
+            <View style={[Styles.alignRow]}>
               <Text bold nonBlackBlack marginB-s2>Total Hours Required</Text>
               { challenge === 'SF Beach Cleanup' ? <Text bold fadedSubtext>20</Text> :
               <Text bold fadedSubtext>10</Text> }
             </View>
 
-            <View style={[Styles.alignRow]}>  
+            <View style={[Styles.alignRow]}>
                 <Text bold nonBlackBlack>Participants</Text>
                 { challenge === 'SF Beach Cleanup' ? <Text bold fadedSubtext>25</Text>:
                 <Text bold fadedSubtext>12</Text>}
             </View>
         </Card>
 
-        
+
       </View>
-      
-      
+
+
 
 
     </View>
