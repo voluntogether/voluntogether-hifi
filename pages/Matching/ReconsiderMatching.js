@@ -9,7 +9,7 @@ let ReconsiderMatching = ({ navigation }) => {
             <View marginB-70 />
 
             <Text heading center nonBlackBlack marginB-s4>Get Matched</Text>
-            <Text center={true} body fadedSubtext marginB-s4>Picky, aren’t you? Unfortunately our prototype has a limited number of partners for you to match with. Why don’t you reconsider Emily?</Text>
+            <Text center={true} body fadedSubtext marginB-s4>Unfortunately our prototype has a limited number of partners for you to match with. Why don’t you reconsider Emily?</Text>
             <View center marginB-s4>
                 <Svg width="333" height="327" viewBox="0 0 333 327" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <G filter="url(#filter0_d_192_8431)">
