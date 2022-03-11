@@ -39,7 +39,9 @@ let ChallengeJoined = ({ navigation, route }) => {
                 <BackArrowLight navigation={navigation} />
             </View>
             <View centerH marginT-s10>
-                <Text megaHeading nonWhiteWhiteOnNonBlackBlack>Beach Cleanup</Text>
+                <View style={[Styles.transparentWhiteBackground, Styles.roundedEdges]}>
+                    <Text megaHeading nonBlackBlack style={{ padding: 10 }}>Beach Cleanup</Text>
+                </View>
             </View>
         </ImageBackground>
         ) :
@@ -49,7 +51,9 @@ let ChallengeJoined = ({ navigation, route }) => {
               <BackArrowLight  navigation={navigation} />
           </View>
           <View centerH marginT-s10>
-              <Text megaHeading nonWhiteWhiteOnNonBlackBlack>Tree Planting</Text>
+              <View style={[Styles.transparentWhiteBackground, Styles.roundedEdges]}>
+                  <Text megaHeading nonBlackBlack style={{ padding: 10 }}>Tree Planting</Text>
+              </View>
           </View>
           </ImageBackground>
 

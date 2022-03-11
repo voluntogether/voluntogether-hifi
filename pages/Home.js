@@ -42,8 +42,6 @@ let Home = ({ navigation }) => {
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}
                 <View centerH>
-
-
                     <Pressable onPress={() => navigation.navigate(!hasMatched ? 'Matching' : 'Journaling')}>
                         <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
                             <Text heading center nonWhiteWhite marginB-s4>{!hasMatched ? "match with someone" : "journal with your partner"}</Text>
@@ -59,8 +57,6 @@ let Home = ({ navigation }) => {
 
                     <CountDown
                         until={12000}
-                        // onFinish={() => { }}
-                        // onPress={() => { }}
                         size={32}
                     />
 
@@ -75,14 +71,6 @@ let Home = ({ navigation }) => {
 
                         </Card>
                     </Pressable>
-                </View>
-
-                {/* "TODO: REMOVE THESE BEFORE DEPLOYMENT" */}
-                <View flex right bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"O"} onPress={() => dispatch(toggleOnboarding())} />
-                </View>
-                <View flex left bottom>
-                    <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"J"} onPress={() => dispatch(resetJournals())} />
                 </View>
             </View>
         </ScrollView>

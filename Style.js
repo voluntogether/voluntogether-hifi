@@ -140,7 +140,8 @@ const Styles = StyleSheet.create({
         minHeight: 200,
         width: 330,
         paddingTop: 25,
-        marginBottom: 60,
+        marginBottom: 25,
+        marginTop: 25,
     },
     challengeDescriptionCard: {
         backgroundColor: "transparent",
@@ -266,6 +267,12 @@ const Styles = StyleSheet.create({
     backArrowContainerForPageWithoutPadding: {
         padding: 0,
         paddingLeft: 20
+    },
+    transparentWhiteBackground: {
+        backgroundColor: "#F7FDF890"
+    },
+    roundedEdges: {
+        borderRadius: 12
     }
 });
 

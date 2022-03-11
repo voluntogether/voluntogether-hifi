@@ -108,7 +108,7 @@ let ExpandThread = ({ navigation, route }) => {
       
       
 
-      <View style={{marginTop: 380}} marginR-s4 flex right bottom>
+      <View style={{marginTop: 350}} marginR-s4 flex right bottom>
         
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />
       </View>
