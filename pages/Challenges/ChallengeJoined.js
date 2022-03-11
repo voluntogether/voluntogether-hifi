@@ -39,7 +39,10 @@ let ChallengeJoined = ({ navigation, route}) => {
 
       <Card style={[Styles.challengeBlankCard]} marginL-s8 >
         <Text bold nonBlackBlack marginB-s2 body>Started February 2022</Text>
-          <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 5 / 20 hours </Text>
+
+        { challenge === 'SF Beach Cleanup' ? <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 5 / 20 hours </Text> :
+        <Text bold nonBlackBlack marginB-s2 bigBody>Progress: 8 / 10 hours </Text>}
+          
           <Svg width="288" height="14" viewBox="0 0 288 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <Rect width="288" height="14" rx="7" fill="#C4C4C4"/>
             <Rect width="85" height="14" rx="7" fill="url(#paint0_linear_185_3550)"/>
@@ -50,7 +53,8 @@ let ChallengeJoined = ({ navigation, route}) => {
               </linearGradient>
             </defs> */}
           </Svg>
-          <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 5 hours on this challenge.</Text>
+          { challenge === 'SF Beach Cleanup' ? <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 5 hours on this challenge.</Text> :
+           <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 8 hours on this challenge.</Text>}
       </Card>
       
 
@@ -71,12 +75,14 @@ let ChallengeJoined = ({ navigation, route}) => {
 
             <View style={[Styles.alignRow]}> 
               <Text bold nonBlackBlack marginB-s2>Total Hours Required</Text>
-              <Text bold fadedSubtext>5</Text>
+              { challenge === 'SF Beach Cleanup' ? <Text bold fadedSubtext>20</Text> :
+              <Text bold fadedSubtext>10</Text> }
             </View>
 
             <View style={[Styles.alignRow]}>  
                 <Text bold nonBlackBlack>Participants</Text>
-                <Text bold fadedSubtext>25</Text>
+                { challenge === 'SF Beach Cleanup' ? <Text bold fadedSubtext>25</Text>:
+                <Text bold fadedSubtext>12</Text>}
             </View>
         </Card>
 
