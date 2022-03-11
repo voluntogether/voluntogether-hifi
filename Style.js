@@ -140,7 +140,8 @@ const Styles = StyleSheet.create({
         minHeight: 200,
         width: 330,
         paddingTop: 25,
-        marginBottom: 60,
+        marginBottom: 25,
+        marginTop: 25,
     },
     challengeDescriptionCard: {
         backgroundColor: "transparent",
