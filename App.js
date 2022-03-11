@@ -47,7 +47,6 @@ const App = () => {
     body: { fontSize: 14, lineHeight: 21, fontWeight: '400' },
     bigBody: { fontSize: 16, lineHeight: 21, fontWeight: '600' },
     italic: { fontStyle: "italic" },
-    nonWhiteWhiteOnNonBlackBlack: { color: "#10123D", backgroundColor: "#F7FDF880", padding: 10 }
   });
 
   Spacings.loadSpacings({
