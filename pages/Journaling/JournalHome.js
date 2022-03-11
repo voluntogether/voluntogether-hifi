@@ -42,7 +42,7 @@ let JournalHome = ({ navigation }) => {
                           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
 
 
-                            <View style={Styles.alignColumn} paddingH-s2>
+                            <View style={Styles.alignColumn} centerH>
                               <Svg width="108" height="139" viewBox="0 0 85 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <Rect x="5.119" y="0.397752" width="78.5211" height="100.05" rx="3.57977" fill={niceHex[(i * 2 + j) % 4]} stroke="#A6A6A6" stroke-width="0.795504" />
                                 <Rect x="3.97579" y="2.29983" width="78.9189" height="100.448" rx="3.77864" fill="#F5F5F5" stroke="#A6A6A6" stroke-width="0.397752" />
@@ -53,7 +53,7 @@ let JournalHome = ({ navigation }) => {
                                 <Path d="M10.4056 104.564C10.5065 104.227 10.8162 103.997 11.1676 103.997H13.9765C14.5274 103.997 14.9114 104.543 14.725 105.062C14.4085 105.942 14.1475 106.668 13.8074 107.614C13.6838 107.958 13.3421 108.173 12.9788 108.136L10.4009 107.875C9.90377 107.825 9.57553 107.334 9.71895 106.856L10.4056 104.564Z" fill="#A6A6A6" />
 
                                 <View> 
-                                  <View style={Styles.alignRow} >
+                                  <View marginL-s4 style={Styles.alignProfilePicsRow} >
                                     {_.map(journal.users, (userID) => {
                                       return (<MiniProfilePic id={userID} style={[StylesJournal.miniProfilePic]} />)
                                     })}
