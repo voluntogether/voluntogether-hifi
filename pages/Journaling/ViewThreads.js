@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, ScrollView } from "react-native";
+import { Pressable, ScrollView, Dimensions, useWindowDimensions } from "react-native";
 import { Button, Text, View, Card} from "react-native-ui-lib";
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -9,6 +9,10 @@ import BackArrow from "../../components/BackArrow";
 import Styles from "../../Style.js";
 import ProfilePic from "../../components/ProfilePic";
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+// const { height, width } = useWindowDimensions();
 
 let ViewThreads = ({ navigation, route }) => {
   let { id } = route.params;
@@ -67,11 +71,23 @@ let ViewThreads = ({ navigation, route }) => {
 
       }
 
-      <View style={{marginTop: 320}}  flex right bottom >
-        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
-      </View>
+       
+      
     </View>
+
+    <View  style={{marginTop: 300}} right marginR-s8>  
+      {/* <View style={{ height: window.Height }} > */}
+        <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
+    </View>
+
+        
     </ScrollView>
+
+    
+    
+    
+
+    
   );
 }
 

@@ -47,6 +47,17 @@ let ReplyModal = ({ message, openReplyModal, onChangeText, onDone, onCancel }) =
                 onDone={confirmSendResponse}
                 cancelIcon={null}
                 cancelLabel="Back"
+<<<<<<< HEAD
+=======
+    
+            />
+            <View marginT-s10 marginH-s8 > 
+            <View style={[Styles.alignProfilePicsRow]} centerH>
+                <ProfilePic marginR-s4 id={message.message.user}/>
+                <Text marginL-s2 marginH-s8>{message.message.body}</Text>
+                
+            </View> 
+>>>>>>> 4aeea367efad57468af6f1d305da138c27f02e4d
 
             />
             <View marginT-s10 marginH-s8 >
