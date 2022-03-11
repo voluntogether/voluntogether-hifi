@@ -42,6 +42,7 @@ let CreateThread = ({ navigation, route }) => {
                         </View>
 
                         <Text heading center nonBlackBlack marginB-s4>New Entry</Text>
+                        <Text center nonBlackBlack marginB-s4>Reflect on your volunteering experience and answer the prompt below.</Text>
 
                         <Card marginT-s6 style={[Styles.blueCardPrompt, Styles.boxShadow]} centerH>
                             <View centerH>
