@@ -8,38 +8,20 @@ import { setInterestArea } from "../../state/userSlice";
 import Styles from "../../Style.js";
 import BackArrow from "../../components/BackArrow.js";
 
+let Toast = Incubator.Toast
 let ChipsInput = Incubator.ChipsInput
 
 let ProfileVolunteerAreas = ({ navigation }) => {
 
     let dispatch = useDispatch();
-    // let interestAreaGlobal = useSelector(state => state.user.interestArea)
 
-
-    // let [chips, setChips] = useState([
-    //     { label: '🏀 Sports' },
-    //     { label: '💻 Technology' },
-    //     { label: '🐳 Animal Welfare' },
-    //     { label: '📚 Education' },
-    //     { label: '🏥 Health' },
-    //     { label: '🎭 The Arts' },
-    //     { label: '📋 Politics' },
-    //     { label: '🥗 Food Sustainability' },
-    // ]);
 
     let interestsLeft = [
         '       🏀 Sports       ',
         '   💻 Technology   ',
         '🐳 Animal Welfare',
         '    📚 Education     ',
-        // '🏀 Sports',
-        // '💻 Technology',
-        // '🐳 Animal Welfare',
-        // '📚 Education',
-        // '🏥 Health',
-        // '🎭 The Arts',
-        // '📋 Politics',
-        // '🥗 Sustainability'
+
     ]
 
     let interestsRight = [
@@ -49,25 +31,18 @@ let ProfileVolunteerAreas = ({ navigation }) => {
         '  🥗 Sustainability  '
     ]
 
-    // let interests = [
-    //     '       🏀 Sports       ',
-    //     '   💻 Technology   ',
-    //     '🐳 Animal Welfare',
-    //     '    📚 Education     ',
-    //     '      🏥 Health        ',
-    //     '     🎭 The Arts      ',
-    //     '     📋 Politics        ',
-    //     '  🥗 Sustainability  '
-    // ]
-
     const [selected, setSelected] = React.useState([]);
     const [interestAreaLocal, setInterestAreaLocal] = React.useState('');
+    const [toast, setToast] = React.useState(false);
 
     // const [chosen, setChosen] = React.useState([false, false, false, false,]);
     const handlePress = interest => {
+
         selected.includes(interest) ? setSelected(selected.filter(s => s !== interest)) : setSelected([...selected, interest]);
         setInterestAreaLocal(interest);
-
+        console.log(selected);
+        // console.log(interestAreaLocal);
+        // console.log(selected);
     }
 
     return (
@@ -118,12 +93,33 @@ let ProfileVolunteerAreas = ({ navigation }) => {
             </View>
 
             <View flex right bottom alignItems={'center'}>
-                <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={'➔'} onPress={() => {
-                    navigation.navigate('ProfileAvailability');
-                    dispatch(setInterestArea({ interestArea: interestAreaLocal.trim() }));
+                {
+                    selected.length > 0 ? <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={'➔'} onPress={() => {
+                        navigation.navigate('ProfileAvailability');
+                        dispatch(setInterestArea({ interestArea: interestAreaLocal.trim() }));
+                    }
+
+                    } /> :
+                        <Button buttonArrow nonBlackBlack style={[Styles.grayButton]} label={'➔'} onPress={() => {
+
+                            setToast(true);
+
+
+                        }
+                        } />
                 }
-                } />
             </View>
+            <Toast
+                visible={toast}
+                position={'top'}
+                backgroundColor={"#FF9494"}
+                autoDismiss={5000}
+                message={'Please select at least one interest area'}
+                centerMessage={true}
+                onDismiss={() => setToast(false)}
+            />
+            {/* <Text>{"Please select at least one interest area"}</Text> */}
+            {/* </Toast> */}
 
         </View>
     );

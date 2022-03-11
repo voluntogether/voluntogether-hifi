@@ -8,25 +8,19 @@ const initialState = {
             "id": 1,
             "users": [1, 2],
             "prompts": [{
-                "prompt": "How are you doing today?",
+                "prompt": "Why did you find your service meaningful?",
                 "icon": "fa-smile-o",
                 "responses": [
                     {
                         "message": {
                             "user": 1,
-                            "body": "I'm doing meh!"
+                            "body": "I got to help out where my grandparents live. It was great to meet their friends and see more of what day-to-day life is like for them."
                         },
                         "replies": [
                             {
                                 "message": {
                                     "user": 1,
-                                    "body": "I'm doing great!"
-                                }
-                            },
-                            {
-                                "message": {
-                                    "user": 2,
-                                    "body": "I'm doing great!"
+                                    "body": "Wow, I'm glad you got to connect with them :)"
                                 }
                             }
                         ]

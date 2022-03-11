@@ -29,17 +29,6 @@ let GetMatchedIntro = ({ navigation }) => {
 
             <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
 
-            {/* <Text body fadedSubtext marginB-s4 center>
-                    To be matched with another volunteer, first create a profile so our algorithm can work its magic ✨
-            </Text>
-
-            <View style={{ marginHorizontal: 15, alignContent:'space-between'}}>
-                <Card height={300} center padding-card marginB-s4>
-                    <Text heading center todo> ADD BLOB HERE!!!! </Text>
-                </Card>
-                <Button backgroundColor={'#9DB865'} label={'Complete profile'} onPress={() => navigation.navigate('ProfileVolunteerAreas')} />
-             </View> */}
-
         </View>
     );
 }

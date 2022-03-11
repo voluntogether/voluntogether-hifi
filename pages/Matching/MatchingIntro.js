@@ -12,9 +12,7 @@ let MatchingIntro = ({ navigation }) => {
         There are two ways to connect with other people on voluntogether. You can either invite a friend or match with a stranger who is already on the app.
       </Text>
 
-      {/* <Card height={100} center padding-card marginB-s4>
-              <Text heading center todo> ADD BLOB HERE </Text>
-            </Card> */}
+    
       <View marginB-s10 center style={[Styles.boxShadow]}>
         <Svg width="278" height="255" viewBox="0 0 278 255" fill="none" xmlns="http://www.w3.org/2000/svg">
           <G filter="url(#filter0_d_192_3072)">
@@ -27,7 +25,7 @@ let MatchingIntro = ({ navigation }) => {
       </View>
 
       <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Get matched'} onPress={() => navigation.navigate('GetMatchedIntro')} marginB-s4 />
-      <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Invite a friend'} onPress={() => navigation.navigate('InviteFriend')} marginB-s4 marginB-s4 />
+      <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Invite a friend'} onPress={() => navigation.navigate('InviteFriend')} marginB-s4/>
       { /* <Text>{useSelector((state) => state.user.name)}</Text> */}
     </View>
   );

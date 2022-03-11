@@ -12,7 +12,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
 import Onboarding from 'react-native-onboarding-swiper';
-import { Incubator, Text, View } from "react-native-ui-lib";
+import { Incubator, Text, View, Button } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useDispatch, useSelector } from 'react-redux';
 import ChallengeJoined from './pages/Challenges/ChallengeJoined';
@@ -39,6 +39,13 @@ import ProfileVolunteerAreas from './pages/Matching/ProfileVolunteerAreas';
 import ReconsiderMatching from './pages/Matching/ReconsiderMatching';
 import { rename, toggleOnboarding } from './state/userSlice';
 
+import OnboardBlob1 from "./assets/blobs/onboard1.svg"
+import OnboardBlob2 from "./assets/blobs/onboard2.svg"
+import OnboardBlob3 from "./assets/blobs/onboard3.svg"
+import OnboardBlob4 from "./assets/blobs/onboard4.svg"
+import OnboardBlob5 from "./assets/blobs/onboard5.svg"
+import { Circle } from 'react-native-svg';
+import Styles from "./Style"
 
 
 const { TextField } = Incubator;
@@ -193,19 +200,44 @@ const Intro = () => {
                 setIsOnboarding(false)
                 dispatch(toggleOnboarding())
             }}
+            showSkip={false}
+            // DotComponent={({ selected }) => {
+            //     console.log(selected)
+            //     return selected ? <Button style={[Styles.yellowButton, Styles.boxShadow]} size={1} onPress={() => { }} /> : <Text>N</Text>
+            // }}
+            DoneButtonComponent={(sumthin) => {
+                console.log(sumthin)
+                return <Button style={[Styles.yellowButton, Styles.boxShadow]} label={"✓"} size={1} onPress={sumthin.onPress} />
+            }}
             pages={[
                 {
-                    backgroundColor: '#fff',
-                    title: 'Onboarding',
-                    subtitle: 'Done with React Native Onboarding Swiper',
+                    backgroundColor: '#f4f4f4',
+                    title: 'Welcome to voluntogether!',
+                    image: <OnboardBlob1 width={250} height={250} />,
+                    subtitle: <Text>We are happy to see you taking a step towards bettering your community.</Text>,
                 },
                 {
-                    backgroundColor: '#fe6e58',
-                    title: 'The Title',
-                    subtitle: 'This is the subtitle that sumplements the title.',
+                    backgroundColor: '#f4f4f4',
+                    subtitle: 'In voluntogether, you get matched with a partner who has similar goals as you.',
+                    image: <OnboardBlob2 width={250} height={250} />,
                 },
                 {
-                    backgroundColor: '#999',
+                    backgroundColor: '#f4f4f4',
+                    subtitle: 'Then, work together to volunteer at an organization related to your interests, and come back to the app to reflect on your experience.',
+                    image: <OnboardBlob3 width={250} height={250} />,
+                },
+                {
+                    backgroundColor: '#f4f4f4',
+                    subtitle: 'If you are looking for some inspiration, you can find community challenges to join!',
+                    image: <OnboardBlob4 width={250} height={250} />,
+                },
+                {
+                    backgroundColor: '#345F93',
+                    subtitle: 'Partner journal to better connect, reflect, and serve your community.',
+                    image: <><Text>Now go voluntogether!</Text><OnboardBlob5 width={250} height={250} /></>,
+                },
+                {
+                    backgroundColor: '#f4f4f4',
                     title: 'Triangle',
                     subtitle: (<View>
                         <Text>Put your name in here:</Text>
