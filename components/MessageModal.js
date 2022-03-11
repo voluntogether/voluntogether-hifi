@@ -17,6 +17,7 @@ let MessageModal = ({ openMessageModal, onChangeText, onDone, onCancel }) => {
                 cancelIcon={null}
                 cancelLabel="Back"
             />
+            
             <TextField
                 placeholder={'Enter your new message'}
                 floatingPlaceholder

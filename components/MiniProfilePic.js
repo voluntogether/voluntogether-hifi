@@ -15,12 +15,14 @@ let MiniProfilePic = ({ id }) => {
     return (
         <View style={{
             borderRadius: 50,
-            width: 10,
-            height: 10,
-            backgroundColor: '#fff',
+            width: 5,
+            height: 2,
+            // backgroundColor: '#fff',
+            backgroundColor: 'red',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: 10,
+            marginHorizontal: 25,
+            marginBottom: 20,
             marginTop: 30
         }}>
             <Image
@@ -28,7 +30,8 @@ let MiniProfilePic = ({ id }) => {
                 style={{
                     width: 25,
                     height: 25,
-                    borderRadius: 50
+                    borderRadius: 50,
+                
                 }}
             />
         </View>
