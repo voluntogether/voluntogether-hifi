@@ -52,15 +52,13 @@ let JournalHome = ({ navigation }) => {
                                 <Rect x="0.397752" y="4.59966" width="78.5211" height="100.05" rx="3.57977" fill={niceHex[(i * 2 + j) % 4]} stroke="#A6A6A6" stroke-width="0.795504" />
                                 <Path d="M10.4056 104.564C10.5065 104.227 10.8162 103.997 11.1676 103.997H13.9765C14.5274 103.997 14.9114 104.543 14.725 105.062C14.4085 105.942 14.1475 106.668 13.8074 107.614C13.6838 107.958 13.3421 108.173 12.9788 108.136L10.4009 107.875C9.90377 107.825 9.57553 107.334 9.71895 106.856L10.4056 104.564Z" fill="#A6A6A6" />
 
-                                <View style={Styles.alignColumn} > 
+                                <View> 
                                   <View style={Styles.alignRow} >
                                     {_.map(journal.users, (userID) => {
                                       return (<MiniProfilePic id={userID} style={[StylesJournal.miniProfilePic]} />)
                                     })}
-
-                                    <Text body nonBlackBlack>{journal.organization}</Text>
-
                                   </View>
+                                  <Text body center nonBlackBlack>{journal.organization}</Text>
                                 </View>
 
 
