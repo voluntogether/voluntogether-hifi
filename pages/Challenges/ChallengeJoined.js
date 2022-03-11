@@ -3,7 +3,7 @@ import { Dimensions, ImageBackground, Pressable, ScrollView } from "react-native
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { Card, Text, View } from "react-native-ui-lib";
 import Styles from "../../Style.js";
-import BackArrow from "../../components/BackArrow";
+import BackArrowLight from "../../components/BackArrowLight";
 
 
 
@@ -20,14 +20,19 @@ let ChallengeJoined = ({ navigation, route}) => {
         { challenge === 'SF Beach Cleanup' ?
         (
 
-          <ImageBackground  style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/ocean-cleanup.jpg")} >
-            {/* <BackArrow  navigation={navigation} /> */}
-            <Text center megaHeading bold color="#F7FDF8">Beach Cleanup</Text>
+          <ImageBackground style={{ width: windowWidth, height: 300 }} source={require("../../assets/images/ocean-cleanup.jpg")} >
+            <View padding-page>
+                <BackArrowLight  navigation={navigation} />
+            </View>
+            <Text center megaHeading nonWhiteWhite marginT-s10>Beach Cleanup</Text>
           </ImageBackground>
         ) :
         (
-          <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/tree-planting.jpg")} >
-            <Text center megaHeading bold color="#F7FDF8">Tree Planting</Text>
+          <ImageBackground style={{ width: windowWidth, height: 300 }} source={require("../../assets/images/tree-planting.jpg")} >
+          <View padding-page>
+              <BackArrowLight  navigation={navigation} />
+          </View>
+            <Text center megaHeading nonWhiteWhite marginT-s10>Tree Planting</Text>
           </ImageBackground>
 
         )
