@@ -8,8 +8,8 @@ const initialState = {
             "id": 1,
             "users": [1, 2],
             "prompts": [{
-                "prompt": "Why did you find your service meaningful?",
-                "icon": "fa-smile-o",
+                "prompt": "Reflect on a notable moment during your experience.",
+                "icon": "lightbulb",
                 "responses": [
                     {
                         "message": {
@@ -36,8 +36,8 @@ const initialState = {
             "id": 2,
             "users": [1, 2],
             "prompts": [{
-                "prompt": "How are you doing today?",
-                "icon": "fa-smile-o",
+                "prompt": "Describe a hardship you faced during this experience.",
+                "icon": "dumbbell",
                 "responses": [
                     {
                         "message": {
@@ -70,8 +70,8 @@ const initialState = {
             "id": 3,
             "users": [1, 2],
             "prompts": [{
-                "prompt": "How are you doing today?",
-                "icon": "fa-smile-o",
+                "prompt": "In what ways did this opportunity align with your personal goals?",
+                "icon": "lightbulb",
                 "responses": [
                     {
                         "message": {

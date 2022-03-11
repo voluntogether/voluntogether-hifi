@@ -13,32 +13,34 @@ import { useSelector } from 'react-redux';
 import BackArrow from '../../components/BackArrow';
 
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Describe a hardship you faced during this experience.',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'How did you resolve conflict when volunteering',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'What is a personal challenge you overcame when volunteering?',
-  },
-];
+// const DATA = [
+//   {
+//     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+//     title: 'Describe a hardship you faced during this experience.',
+//   },
+//   {
+//     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+//     title: 'How did you resolve conflict when volunteering',
+//   },
+//   {
+//     id: '58694a0f-3da1-471f-bd96-145571e29d72',
+//     title: 'What is a personal challenge you overcame when volunteering?',
+//   },
+// ];
 
 
 const ViewPrompts = ({ navigation, route }) => {
 
-  let { id } = route.params;
+  let { id, data, category, icon } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
 
   const Item = ({ title }) => (
     <Pressable onPress={() => {
       navigation.navigate("CreateThread", {
         prompt: title,
-        id
+        id,
+        category: category,
+        icon: icon
       })
     }}>
       <View style={stylesPrompts.item}>
@@ -48,12 +50,12 @@ const ViewPrompts = ({ navigation, route }) => {
 
   );
 
-  const { category } = route.params;
-
   const renderItem = ({ item }) => (
 
     <Item title={item.title} />
   );
+
+
 
   return (
 <View flex padding-page >
@@ -64,6 +66,9 @@ const ViewPrompts = ({ navigation, route }) => {
         <Text heading center nonBlackBlack marginB-s10 marginT-s8>{category + ' Prompts'}</Text>
       </View>
       <View centerH>
+
+      {category === 'Hardships' && 
+      (
       <View paddingT-s6 centerH style={stylesPrompts.backgroundCard}>
         <View style={{justifyContent: 'center',alignItems: 'center'}}>
           <Svg marginT-s8 style={{justifyContent: 'center',alignItems: 'center'}} width="101" height="108" viewBox="0 0 101 108" fill="none" xmlns="http://www.w3.org/2000/svg" style={[Styles.boxShadow]}>
@@ -75,11 +80,76 @@ const ViewPrompts = ({ navigation, route }) => {
         </View>
 
         <FlatList
-        data={DATA}
+        data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id}
         />
       </View>
+      )}
+
+  {category === 'Lessons' && 
+      (
+        <View paddingT-s6 centerH style={stylesPrompts.backgroundCard}>
+          <View style={{justifyContent: 'center',alignItems: 'center'}}>
+          <Svg style={{justifyContent: 'center',alignItems: 'center'}} width="110" height="100" viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={[Styles.boxShadow]}>
+    <Path fill-rule="evenodd" clip-rule="evenodd" d="M55.1585 0.5773C66.9111 4.21154 66.9199 21.0459 73.573 31.3334C77.1569 36.8752 80.8088 41.8178 85.0849 46.852C93.2674 56.4853 109.621 61.6115 109.993 74.2107C110.339 85.9462 98.0919 96.6525 86.6408 99.5573C75.5429 102.372 66.2525 90.9513 55.1585 88.1205C47.9824 86.2894 40.7168 87.9903 33.5788 86.0174C22.5146 82.9593 8.23808 83.3663 2.40393 73.5394C-3.34993 63.8477 2.48353 51.3057 6.79327 40.9004C10.8337 31.1453 17.8469 23.3976 25.9806 16.6165C34.7087 9.3397 44.2789 -2.78701 55.1585 0.5773Z" fill="#A6A4E3"/>
+    <View style={{justifyContent: 'center',alignItems: 'center'}} marginT-s10>
+        <View marginT-s2>
+            <FontAwesome5 style={{justifyContent: 'center',alignItems: 'center'}} name={'chalkboard-teacher'} size={35} color={"white"}/>
+        </View>
+    </View>
+  </Svg>
+          </View>
+
+          <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          />
+        </View>
+  )}
+
+  {category === 'Goals' && 
+        (
+        <View paddingT-s6 centerH style={stylesPrompts.backgroundCard}>
+          <View style={{justifyContent: 'center',alignItems: 'center'}}>
+          <Svg style={{justifyContent: 'center',alignItems: 'center'}} width="128" height="103" viewBox="0 0 128 103" fill="none" xmlns="http://www.w3.org/2000/svg" style={[Styles.boxShadow]}>
+            <Path fill-rule="evenodd" clip-rule="evenodd" d="M61.4246 0C94.9774 0 128 20.7924 128 54.4034C128 86.6188 93.5843 102.957 61.4246 102.957C30.8681 102.957 0 85.0128 0 54.4034C0 22.3285 29.4052 0 61.4246 0Z" fill="#FAE269"/>
+            <View style={{justifyContent: 'center',alignItems: 'center'}} marginT-s8>
+                <FontAwesome5 style={{justifyContent: 'center',alignItems: 'center'}} name={'medal'} size={40} color={"white"}/>
+            </View>
+          </Svg> 
+        </View>
+
+          <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          />
+        </View>
+    )}
+
+  {category === 'Inspirations' && 
+        (
+        <View paddingT-s6 centerH style={stylesPrompts.backgroundCard}>
+          <View style={{justifyContent: 'center',alignItems: 'center'}}>
+          <Svg style={{justifyContent: 'center',alignItems: 'center'}} width="116" height="113" viewBox="0 0 116 113" fill="none" xmlns="http://www.w3.org/2000/svg" style={[Styles.boxShadow]} >
+              <Path fill-rule="evenodd" clip-rule="evenodd" d="M57.1199 14.6755C70.2159 16.5789 86.3329 6.99216 95.2653 16.6606C104.192 26.3224 91.4796 41.533 93.8349 54.4161C97.4113 73.9778 126.275 94.7505 112.121 108.855C97.9859 122.94 76.2052 97.1086 57.1199 91.0027C47.398 87.8924 36.9776 88.5641 28.9896 82.2589C19.9093 75.0916 14.0182 65.4522 10.7681 54.4161C5.77281 37.4542 -7.64902 15.2313 5.84319 3.66347C19.5861 -8.11929 39.1309 12.0608 57.1199 14.6755Z" fill="#C1E3A4"/>
+                <View style={{justifyContent: 'center',alignItems: 'center'}} marginT-s8>
+                    <FontAwesome5 style={{justifyContent: 'center',alignItems: 'center'}} name={'lightbulb'} size={40} color={"white"}/>
+              </View>
+          </Svg>
+        </View>
+
+          <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          />
+        </View>
+    )}
+
+
       </View>
 
 
