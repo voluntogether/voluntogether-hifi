@@ -37,7 +37,7 @@ const App = () => {
   });
 
   Typography.loadTypographies({
-    megaHeading: { fontSize: 35, fontWeight: '600' },
+    megaHeading: { fontSize: 35, fontWeight: "bold" },
     heading: { fontSize: 25, fontWeight: '600' },
     subHeading: { fontSize: 18, fontWeight: '600' },
     categoryTitle: { fontSize: 18, fontWeight: '600' },
@@ -47,7 +47,7 @@ const App = () => {
     body: { fontSize: 14, lineHeight: 21, fontWeight: '400' },
     bigBody: { fontSize: 16, lineHeight: 21, fontWeight: '600' },
     italic: { fontStyle: "italic" },
-    bold: { fontWeight: "bold" }
+    nonWhiteWhiteOnNonBlackBlack: { color: "#10123D", backgroundColor: "#F7FDF880", padding: 10 }
   });
 
   Spacings.loadSpacings({

@@ -248,6 +248,10 @@ const Styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between"
     },
+    alignProfilePicsRow: {
+        flexDirection: "row",
+    },
+
     alignColumn: {
         flexDirection: "column",
         //justifyContent: "space-between"
