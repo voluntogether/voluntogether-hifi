@@ -22,17 +22,21 @@ let ChallengeJoined = ({ navigation, route}) => {
 
           <ImageBackground style={{ width: windowWidth, height: 300 }} source={require("../../assets/images/ocean-cleanup.jpg")} >
             <View padding-page>
-                <BackArrowLight  navigation={navigation} />
+                <BackArrowLight navigation={navigation} />
             </View>
-            <Text center megaHeading nonWhiteWhite marginT-s10>Beach Cleanup</Text>
-          </ImageBackground>
+            <View centerH marginT-s10>
+                <Text megaHeading nonWhiteWhiteOnNonBlackBlack>Beach Cleanup</Text>
+            </View>
+        </ImageBackground>
         ) :
         (
           <ImageBackground style={{ width: windowWidth, height: 300 }} source={require("../../assets/images/tree-planting.jpg")} >
           <View padding-page>
               <BackArrowLight  navigation={navigation} />
           </View>
-            <Text center megaHeading nonWhiteWhite marginT-s10>Tree Planting</Text>
+          <View centerH marginT-s10>
+              <Text megaHeading nonWhiteWhiteOnNonBlackBlack>Tree Planting</Text>
+          </View>
           </ImageBackground>
 
         )
