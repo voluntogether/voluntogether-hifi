@@ -12,7 +12,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 let CreateThread = ({ navigation, route }) => {
 
-    const { prompt, id, category } = route.params;
+    const { prompt, id, category, icon } = route.params;
 
     const dispatch = useDispatch();
 
@@ -73,7 +73,7 @@ let CreateThread = ({ navigation, route }) => {
                         id: id,
                         prompt: {
                             prompt: prompt,
-                            icon: "arrow-left",
+                            icon: icon,
                             responses: [{
                                 message: {
 

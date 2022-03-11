@@ -88,7 +88,9 @@ let ViewPromptCategories = ({ navigation, route }) => {
             {
               category: 'Inspirations',
               id: id,
-              data: inspirationsData
+              data: inspirationsData,
+              icon: 'lightbulb'
+
             })}>
             <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH alignItems="center">
                 <Text categoryTitle nonWhiteWhite marginB-s4>Inspirations</Text>
@@ -107,7 +109,8 @@ let ViewPromptCategories = ({ navigation, route }) => {
             {
               category: 'Hardships',
               id: id,
-              data: hardshipsData
+              data: hardshipsData,
+              icon: 'dumbbell'
             })}>
 
 
@@ -131,7 +134,9 @@ let ViewPromptCategories = ({ navigation, route }) => {
             {
               category: 'Goals',
               id: id,
-              data: goalsData
+              data: goalsData,
+              icon: 'lightbulb'
+
             })}>
           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH alignItems="center">
             <Text categoryTitle nonWhiteWhite marginB-s4>Goals</Text>
@@ -152,6 +157,7 @@ let ViewPromptCategories = ({ navigation, route }) => {
               category: 'Lessons',
               id: id,
               data: lessonsData,
+              icon: 'chalkboard-teacher'
             })}>
           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH alignItems="center">
 

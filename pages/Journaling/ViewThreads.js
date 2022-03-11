@@ -11,7 +11,7 @@ import ProfilePic from "../../components/ProfilePic";
 
 
 let ViewThreads = ({ navigation, route }) => {
-  const { id } = route.params;
+  const { id, category } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
   return (
       <View flex padding-page>
@@ -29,7 +29,7 @@ let ViewThreads = ({ navigation, route }) => {
 
               <Card style={[Styles.blueCardPrompt]} centerH>
                 <View centerH>
-                  <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
+                  <FontAwesome5 name={prompt.icon} size={30} color={"#000"}/>
                   <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text>
                 </View>
               </Card>

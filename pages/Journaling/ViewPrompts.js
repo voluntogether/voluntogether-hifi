@@ -31,7 +31,7 @@ import BackArrow from '../../components/BackArrow';
 
 const ViewPrompts = ({ navigation, route }) => {
 
-  let { id, data, category } = route.params;
+  let { id, data, category, icon } = route.params;
   const journal = useSelector(state => state.journaling.journals.find(j => j.id === id));
 
   const Item = ({ title }) => (
@@ -39,7 +39,8 @@ const ViewPrompts = ({ navigation, route }) => {
       navigation.navigate("CreateThread", {
         prompt: title,
         id,
-        category: category
+        category: category,
+        icon: icon
       })
     }}>
       <View style={stylesPrompts.item}>
