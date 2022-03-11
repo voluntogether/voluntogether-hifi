@@ -10,6 +10,7 @@ const windowHeight = Dimensions.get('window').height;
 
 
 let ExpandChallenge = ({ navigation, route}) => {
+    const { challenge } = route.params;
   return (
     <View padding-page style={[Styles.noHorizontalPadding]}>
         <BackArrow navigation={navigation} />
@@ -19,28 +20,44 @@ let ExpandChallenge = ({ navigation, route}) => {
                 <View centerH marginB-s4 style={[Styles.challenge]}>
 
                 <View centerH>
-                    <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
+                    {(challenge === 'SF Beach Cleanup' ? <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
+                    : <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/tree-planting.jpg")} />)}
                 </View>
 
                 <View style={[Styles.width322, Styles.alignRow]}>
-                    <Text subHeading style={[Styles.challengeTitle]}>SF Beach Cleanup</Text>
+                    <Text subHeading style={[Styles.challengeTitle]}>{challenge}</Text>
                     <Text>
-                        <Text bold style={[Styles.participationCount]}>25  </Text> {/* extra two spaces at the end of this is intentional */}
+                        {(challenge === 'SF Beach Cleanup' ? <Text bold style={[Styles.participationCount]}>25</Text> : <Text bold style={[Styles.participationCount]}>12  </Text>)} {/* extra two spaces at the end of this is intentional */}
                         <FontAwesome5 name={'user-friends'} size={20} color={"#000"} />
                     </Text>
                 </View>
 
+                
+
                 <View style={[Styles.width322, Styles.tagList]} marginB-s4>
-                    <Text style={[Styles.nonButtonTag]} marginR-s2>
-                        <Text smallBody nonBlackBlack>🐳 Animal Welfare</Text>
+
+                    { challenge === 'SF Beach Cleanup' ? 
+                    (
+                    <>
+                     <Text style={[Styles.nonButtonTag]} marginR-s2>
+                        <Text smallBody nonBlackBlack> 🐳 Animal Welfare</Text>
                     </Text>
                     <Text style={[Styles.nonButtonTag]}>
                         <Text smallBody nonBlackBlack>🌍 Environment</Text>
                     </Text>
+</>
+                    ) : (<Text style={[Styles.nonButtonTag]}>
+                        <Text smallBody nonBlackBlack>🌍 Environment</Text>
+                    </Text>)
+                    
+                    }
+
+
                 </View>
 
                 <View style={[Styles.width322]} marginB-s2>
-                    <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+                    { challenge === 'SF Beach Cleanup' ? <Text body marginT-s2>Looking for service and serenity? Join this Beach Cleanup Challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text> : 
+                    <Text body marginT-s2>Our ecosystems need our help. Come out for a session of tree planting on your own or join a group with EcoTreeHealth.</Text> }
                 </View>
 
                 <View style={[Styles.alignRow]} marginB-s2>
@@ -56,7 +73,7 @@ let ExpandChallenge = ({ navigation, route}) => {
                     </Card>
                 </View>
 
-                <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined')} />
+                <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Join Challenge'} onPress={() => navigation.navigate('ChallengeJoined', { challenge: challenge })} />
 
             </View>
         </View>

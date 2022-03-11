@@ -9,13 +9,25 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 let ChallengeJoined = ({ navigation, route}) => {
+  const { challenge } = route.params;
   return (
     <ScrollView>
     <View flex >
       <View>
-        <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={"a" == 'a' ? require("../../assets/images/ocean-cleanup.jpg") : require("../../assets/images/tree-planting.jpg")} >
-          <Text center megaHeading bold color="#F7FDF8">Beach Cleanup</Text>
-        </ImageBackground>
+        { challenge === 'SF Beach Cleanup' ? 
+        (
+          <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/ocean-cleanup.jpg")} >
+            <Text center megaHeading bold color="#F7FDF8">Beach Cleanup</Text>
+          </ImageBackground>
+        ) :
+        ( 
+          <ImageBackground style={{ width: windowWidth, height: 300, justifyContent: "center" }} source={require("../../assets/images/tree-planting.jpg")} >
+            <Text center megaHeading bold color="#F7FDF8">Tree Planting</Text>
+          </ImageBackground>
+
+        )
+
+        }
       </View>
 
       <View right marginR-s4>
@@ -54,7 +66,7 @@ let ChallengeJoined = ({ navigation, route}) => {
         <Card style={[Styles.challengeDescriptionCard]} centerH>
           <View justifyContent="space-between" marginB-s4>
             <Text nonBlackBlack bigBody>Challenge Details</Text>
-            <Text nonBlackBlack body>Looking for service and serenity? Join this Beach Cleanup challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text>
+            {challenge === 'SF Beach Cleanup' ? <Text nonBlackBlack body>Looking for service and serenity? Join this Beach Cleanup challenge with SF Marine Wildlife to help make our planet and community more sustainable.</Text> : <Text nonBlackBlack body>Our ecosystems need our help. Come out for a session of tree planting on your own or join a group with EcoTreeHealth.</Text>}
           </View>
 
             <View style={[Styles.alignRow]}> 

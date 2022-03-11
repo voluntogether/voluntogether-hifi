@@ -18,36 +18,60 @@ let ProfileAvailability = ({ navigation }) => {
         { label: 'Perl', value: 'perl' }
     ];
 
-    let timesMorning = [
-        'Mon morning',
-        'Tue morning',
-        'Wed morning',
-        'Thu morning',
-        'Fri morning',
-        'Sat morning',
-        'Sun morning',
-        // 'Mon afternoon',
-        // 'Tue afternoon',
-        // 'Wed afternoon',
-        // 'Thu afternoon',
-        // 'Fri afternoon',
-        // 'Sat afternoon',
-        // 'Sun afternoon'
+
+    // let timesMorning = [
+    //     'Mon morning',
+    //     'Tue morning',
+    //     'Wed morning',
+    //     'Thu morning',
+    //     'Fri morning',
+    //     'Sat morning',
+    //     'Sun morning',
+    // ]
+
+    let daysLeft = [
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat',
+        'Sun',
     ]
 
-    let timesAfternoon = [
-        'Mon afternoon',
-        'Tue afternoon',
-        'Wed afternoon',
-        'Thu afternoon',
-        'Fri afternoon',
-        'Sat afternoon',
-        'Sun afternoon'
+    let daysMid = [
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat',
+        'Sun',
     ]
 
-    const [selected, setSelected] = React.useState([]);
-    const handlePress = time =>
-        selected.includes(time) ? setSelected(selected.filter(s => s !== time)) : setSelected([...selected, time]);
+    let daysRight = [
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat',
+        'Sun',
+    ]
+
+    const [selectedLeft, setSelectedLeft] = React.useState([]);
+    const [selectedMid, setSelectedMid] = React.useState([]);
+    const [selectedRight, setSelectedRight] = React.useState([]);
+
+
+    const handlePressLeft = day =>
+        selectedLeft.includes(day) ? setSelectedLeft(selectedLeft.filter(s => s !== day)) : setSelectedLeft([...selectedLeft, day]);
+
+    const handlePressMid = day =>
+        selectedMid.includes(day) ? setSelectedMid(selectedMid.filter(s => s !== day)) : setSelectedMid([...selectedMid, day]);
+
+    const handlePressRight = day =>
+        selectedRight.includes(day) ? setSelectedRight(selectedRight.filter(s => s !== day)) : setSelectedRight([...selectedRight, day]);
 
     return (
         <View flex padding-page>
@@ -67,27 +91,78 @@ let ProfileAvailability = ({ navigation }) => {
                 </Svg>
             </View>
 
+            <View paddingLeft={16} paddingRight={15} flexDirection={'row'} justifyContent={'space-between'}>
+                <View flexDirection={'column'}>
+                    <Text> Morning </Text>
+                    <View >
+                        {_.map(daysLeft, day => (
+                            <View marginT-s3 centerH>
+                                <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressLeft(day)} backgroundColor={selectedLeft.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                    <Text key={day.value}>{day}</Text>
+                                </Button>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+
+                <View flexDirection={'column'}>
+                    <Text> Afternoon </Text>
+                    <View >
+                        {_.map(daysMid, day => (
+                            <View marginT-s3 centerH>
+                                <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressMid(day)} backgroundColor={selectedMid.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                    <Text key={day.value}>{day}</Text>
+                                </Button>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+
+                <View flexDirection={'column'}>
+                    <Text> Evening </Text>
+                    <View >
+                        {_.map(daysRight, day => (
+                            <View marginT-s3 centerH>
+                                <Button fullWidth={false} size={Button.sizes.small} onPress={() => handlePressRight(day)} backgroundColor={selectedRight.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                    <Text key={day.value}>{day}</Text>
+                                </Button>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+            </View>
+{/* 
             <View style={Flex.container}>
-                <View style={Flex.leftCol}>
-                    {_.map(timesMorning, time => (
+                <View style={Flex.col}>
+                    {_.map(days, day => (
                         <View marginT-s3 centerH>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={time.value}>{time}</Text>
+                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                <Text key={day.value}>{day}</Text>
                             </Button>
                         </View>
                     ))}
                 </View>
 
-                <View style={Flex.rightCol}>
-                    {_.map(timesAfternoon, time => (
+                <View style={Flex.col}>
+                    {_.map(days, day => (
                         <View marginT-s3 centerH>
-                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(time)} backgroundColor={selected.includes(time) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
-                                <Text key={time.value}>{time}</Text>
+                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                <Text key={day.value}>{day}</Text>
                             </Button>
                         </View>
                     ))}
                 </View>
             </View>
+
+            <View style={Flex.col}>
+                    {_.map(days, day => (
+                        <View marginT-s3 centerH>
+                            <Button fullWidth={false} size={Button.sizes.xSmall} onPress={() => handlePress(day)} backgroundColor={selected.includes(day) ? '#C4C4C4' : '#F4F4F4'} outlineColor={'black'}>
+                                <Text key={day.value}>{day}</Text>
+                            </Button>
+                        </View>
+                    ))}
+                </View> */}
 
             <View flex right bottom>
                 <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"➔"} onPress={() => navigation.navigate('MatchingAlgorithm', {
@@ -103,12 +178,11 @@ let ProfileAvailability = ({ navigation }) => {
 const Flex = StyleSheet.create({
     container: {
         flexDirection: 'row',
+        paddingLeft: 15,
+        paddingRight: 15
     },
-    leftCol: {
-        flex: 3
-    },
-    rightCol: {
-        flex: 3
+    col: {
+        flex: 1
     }
 });
 
