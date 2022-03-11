@@ -6197,6 +6197,11 @@
   "resolved" "https://registry.npmjs.org/react-native-communications/-/react-native-communications-2.2.1.tgz"
   "version" "2.2.1"
 
+"react-native-fast-image@*", "react-native-fast-image@^8.5.11":
+  "integrity" "sha512-cNW4bIJg3nvKaheG8vGMfqCt5LMWX9MS5+wMudgKIHbGO51spRr4sgnlhVgwHLcZ5aeNOVJ8CPRxDIWKRq/0QA=="
+  "resolved" "https://registry.npmjs.org/react-native-fast-image/-/react-native-fast-image-8.5.11.tgz"
+  "version" "8.5.11"
+
 "react-native-gesture-handler@*", "react-native-gesture-handler@^2.2.0", "react-native-gesture-handler@>=1.9.0":
   "integrity" "sha512-WF25CNgn164bF9juW8N/jICIFXiEOgsxCuY7DRlnFdiH5ZfvMYtZHRC+zr1fFMap2ty1f2HWDQNVVSo0FDXP4A=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.2.0.tgz"
@@ -6229,6 +6234,11 @@
   "version" "0.0.3"
   dependencies:
     "react-native-codegen" "*"
+
+"react-native-image-modal@^2.0.4":
+  "integrity" "sha512-BTHOUAznjAHStrxg2D3k6R/3YPXMos2w6jZv5LdOR6xY2vHVHgMnSbjeszq882brbge51ZjS06FCi8sM6WNwxg=="
+  "resolved" "https://registry.npmjs.org/react-native-image-modal/-/react-native-image-modal-2.0.4.tgz"
+  "version" "2.0.4"
 
 "react-native-image-picker@^4.7.3":
   "integrity" "sha512-eRKm4wlsmZHmsWFyv77kYc2F+ZyEVqe0m7mqhsMzWk6TQT4FBDtEDxmRDDFq+ivCu/1QD+EPhmYcAIpeGr7Ekg=="
@@ -6360,7 +6370,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.67 || 1000.0.0", "react-native@>=0.42.0", "react-native@>=0.50.0", "react-native@>=0.59.0", "react-native@>=0.64.1", "react-native@0.67.3":
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.67 || 1000.0.0", "react-native@>=0.42.0", "react-native@>=0.50.0", "react-native@>=0.59.0", "react-native@>=0.60.0", "react-native@>=0.64.1", "react-native@0.67.3":
   "integrity" "sha512-epMVRMRH7dLCis97+YwiV4dmTVZO6qKmQgwcTNcxVt/kEMxAa+OYK7h81+99/n7XCeMFk/U2zYOBuQqc7c5Amg=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.67.3.tgz"
   "version" "0.67.3"
@@ -6431,7 +6441,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^16.9.0 || ^17.0.0 || 18.0.0-beta", "react@^17.0.0", "react@>=16.3.0", "react@>=17.0.1", "react@17.0.2":
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^16.8.6 || ^17.0.0", "react@^16.9.0 || ^17.0.0 || 18.0.0-beta", "react@^17.0.0", "react@>=16.3.0", "react@>=17.0.1", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

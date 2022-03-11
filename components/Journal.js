@@ -6,10 +6,13 @@ import ProfilePic from "./ProfilePic";
 import Styles from "../Style.js";
 import { userLookup } from "../util/util";
 import { useSelector } from "react-redux";
+import ImageModal from 'react-native-image-modal';
 
-let Journal = ({ journal, index, openModal }) => {
+
+let Journal = ({ journal, index, openModal, imageModalCallback }) => {
 
   let users = useSelector(state => state.user);
+
   return (
     _.map(journal.prompts[index].responses, (message, index) => {
       return (
@@ -23,8 +26,19 @@ let Journal = ({ journal, index, openModal }) => {
                   {_.map(message.message.images, (image) => {
                     return (
                       <Pressable onPress={() => {
-                        
-                      }}><Image source={{ uri: image.uri }} style={{ width: 50, height: 50 }} /></Pressable>)
+
+                        imageModalCallback(image)
+                      }}><ImageModal
+                          resizeMode="contain"
+                          imageBackgroundColor="#000000"
+                          style={{
+                            width: 50,
+                            height: 50,
+                          }}
+                          source={{
+                            uri: image.uri,
+                          }}
+                        /></Pressable>)
                   })}
                 </View>
                 <Text marginB-s2>{message.message.body}</Text>

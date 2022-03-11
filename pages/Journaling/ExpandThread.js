@@ -13,6 +13,7 @@ import MessageModal from "../../components/MessageModal";
 import { addMessage, addReply } from "../../state/journalingSlice.js";
 import Styles from "../../Style.js";
 
+import ImageModal from 'react-native-image-modal';
 
 
 let ExpandThread = ({ navigation, route }) => {
@@ -25,6 +26,7 @@ let ExpandThread = ({ navigation, route }) => {
   let [images, setImages] = useState([]);
   let [modifiedMessageIndex, setModifiedMessageIndex] = useState(null);
   let [response, setResponse] = useState("");
+
   const dispatch = useDispatch();
 
   const createReply = (message, promptIndex, messageIndex) => {
@@ -68,21 +70,25 @@ let ExpandThread = ({ navigation, route }) => {
 
 
   return (
-      <View padding-page style={[Styles.noHorizontalPadding]}>
-    <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
+    <View padding-page style={[Styles.noHorizontalPadding]}>
+      <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
         <BackArrow navigation={navigation} />
-    </View>
+      </View>
       <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
 
-      <Journal navigation={navigation} openModal={(messageIndex) => {
+      <Journal imageModalCallback={(image) => {
+        setImageModalImage(image);
+        setImageModalOpen(true);
 
-        setOpenReplyModal(true);
-        setModifiedMessageIndex(messageIndex);
+      }}
+        navigation={navigation} openModal={(messageIndex) => {
+
+          setOpenReplyModal(true);
+          setModifiedMessageIndex(messageIndex);
 
 
 
-      }} index={index} journal={journal} />
-
+        }} index={index} journal={journal} />
 
 
 
@@ -101,10 +107,6 @@ let ExpandThread = ({ navigation, route }) => {
           setOpenMessageModal(false);
         }}
       />
-
-
-
-
 
       <View flex right bottom>
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />
