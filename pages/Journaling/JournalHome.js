@@ -42,8 +42,8 @@ let JournalHome = ({ navigation }) => {
                           <Card style={[StylesJournal.blueCardJournal, Styles.boxShadow]} centerH >
 
 
-                            <View style={Styles.alignColumn} >
-                              <Svg width="85" height="130" viewBox="0 0 85 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <View style={Styles.alignColumn} paddingH-s2>
+                              <Svg width="108" height="139" viewBox="0 0 85 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <Rect x="5.119" y="0.397752" width="78.5211" height="100.05" rx="3.57977" fill={niceHex[(i * 2 + j) % 4]} stroke="#A6A6A6" stroke-width="0.795504" />
                                 <Rect x="3.97579" y="2.29983" width="78.9189" height="100.448" rx="3.77864" fill="#F5F5F5" stroke="#A6A6A6" stroke-width="0.397752" />
                                 <Rect x="3.03158" y="3.35024" width="78.9189" height="100.448" rx="3.77864" fill="#F5F5F5" stroke="#A6A6A6" stroke-width="0.397752" />
