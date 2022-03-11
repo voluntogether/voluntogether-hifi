@@ -30,14 +30,17 @@ let Home = ({ navigation }) => {
                 setOpenSettings(false);
             }} />
 
-            <View flex padding-page>
-                <Pressable marginT-s25 onPress={() => {
-                    setOpenSettings(true)
-                }}>
-                    <FontAwesome5 name="user" size={45} color="black" />
-                </Pressable>
-                <View marginT-s10>
-                    <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>{timeOfDay()}, {userName}.</Text>
+            <View flex >
+
+                <View right marginT-s10 marginR-s8>
+                    <Pressable onPress={() => {
+                        setOpenSettings(true)
+                    }}>
+                        <FontAwesome5 name="user" size={32} color="black" />
+                    </Pressable>
+                </View>
+                <View marginT-s2>
+                    <Text marginL-s8 megaHeading nonBlackBlack marginT-s4 marginB-s8>{timeOfDay()}, {userName}.</Text>
                 </View>
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}

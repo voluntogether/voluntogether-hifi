@@ -35,7 +35,7 @@ let SettingsModal = ({ visible, onDone, onCancel }) => {
                 }}
                 doneButtonProps={{ color: "#000" }}
                 cancelButtonProps={{ iconStyle: { tintColor: "#000" } }}
-                cancelLabel={<Text color="#000">abcd</Text>}
+                cancelLabel={<Text color="#000">Exit</Text>}
             />
 
             <Pressable onPress={() => {
@@ -52,28 +52,28 @@ let SettingsModal = ({ visible, onDone, onCancel }) => {
                 })
 
             }}>
-                <View centerH>
-                    <ProfilePic id={1} />
-                    <Text>Change Picture</Text>
+                <View centerH marginT-s6>
+                    <ProfilePic id={1} size={80}/>
+                    <Text marginT-s6>Change Picture</Text>
                 </View>
             </Pressable>
 
 
-            <TextField
+            <TextField marginH-s4 marginT-s4
                 placeholder={'Name'}
                 floatingPlaceholder
                 onChangeText={(text) => setName(text)}
 
             />
-            <TextField
-                placeholder={'email'}
+            <TextField marginH-s4 marginT-s4
+                placeholder={'Email'}
                 floatingPlaceholder
                 onChangeText={(text) => setLocalEmail(text)}
 
             />
-            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Re-onboard'} onPress={() => dispatch(toggleOnboarding())} />
+            <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Re-onboard'} onPress={() => dispatch(toggleOnboarding())} />
 
-            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Reset state'} onPress={() => dispatch(resetJournals())} />
+            <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Reset state'} onPress={() => dispatch(resetJournals())} />
 
 
         </Modal>

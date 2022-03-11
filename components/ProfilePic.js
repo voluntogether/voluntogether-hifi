@@ -5,7 +5,7 @@ import { userLookup } from "../util/util";
 import { View, Image } from "react-native-ui-lib";
 
 
-let ProfilePic = ({ id }) => {
+let ProfilePic = ({ id, size=40 }) => {
 
     let users = useSelector(state => state.user)
 
@@ -25,8 +25,8 @@ let ProfilePic = ({ id }) => {
             <Image
                 source={user.photoType == "base64" ? { uri: 'data:image/png;base64,' + user.photo } : { uri: user.photo }}
                 style={{
-                    width: 40,
-                    height: 40,
+                    width: size,
+                    height: size,
                     borderRadius: 50
                 }}
             />
