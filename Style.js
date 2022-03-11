@@ -267,6 +267,12 @@ const Styles = StyleSheet.create({
     backArrowContainerForPageWithoutPadding: {
         padding: 0,
         paddingLeft: 20
+    },
+    transparentWhiteBackground: {
+        backgroundColor: "#F7FDF890"
+    },
+    roundedEdges: {
+        borderRadius: 12
     }
 });
 

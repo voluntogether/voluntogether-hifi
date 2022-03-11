@@ -40,6 +40,9 @@ export const userSlice = createSlice({
             // immutable state based off those changes
             state.name = action.payload
         },
+        setProfilePic: (state, action) => {
+            state.photo = action.payload
+        },
         setEmail: (state, action) => {
             state.email = action.payload
         },
@@ -67,6 +70,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, setInterestArea, resetState } = userSlice.actions
+export const { rename, setEmail, setState, toggleOnboarding, setChips, setMatch, setInterestArea, resetState, setProfilePic } = userSlice.actions
 
 export default userSlice.reducer
