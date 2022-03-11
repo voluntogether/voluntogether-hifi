@@ -6,7 +6,7 @@ let BackArrow = ({ navigation }) => {
         <>
             <View marginB-20 />
             <View marginT-30 marginL-5 left top>
-                <FontAwesome5 name="arrow-left" size={20} color="black" onPress={() => navigation.goBack()} />
+                <FontAwesome5 name="arrow-left" size={20} color="#10123D" onPress={() => navigation.goBack()} />
             </View>
         </>
     );
