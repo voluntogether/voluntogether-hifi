@@ -27,9 +27,9 @@ let ViewThreads = ({ navigation, route }) => {
             index: index
           })}>
 
-              <Card style={[Styles.blueCardPrompt]} centerH>
+              <Card marginT-s8 style={[Styles.blueCardPrompt]} centerH>
                 <View centerH>
-                  <FontAwesome5 name={'mountain'} size={30} color={"#000"}/>
+                  <FontAwesome5 name={'dumbbell'} size={30} color={"#FFFFFF"}/>
                   <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text>
                 </View>
               </Card>
