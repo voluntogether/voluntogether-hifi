@@ -18,7 +18,7 @@ let ReplyModal = ({ message, openReplyModal, onChangeText, onDone, onCancel }) =
     
             />
             <View marginT-s10 marginH-s8 > 
-            <View style={[Styles.alignRow]}>
+            <View style={[Styles.alignProfilePicsRow]} centerH>
                 <ProfilePic marginR-s4 id={message.message.user}/>
                 <Text marginL-s2 marginH-s8>{message.message.body}</Text>
                 
