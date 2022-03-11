@@ -15,7 +15,7 @@ let ViewChallenges = ({ navigation, route}) => {
         <Text heading center nonBlackBlack marginB-s4>Explore Challenges</Text>
 
         <View centerH marginB-s4 style={[Styles.challenge]}>
-            <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
+            <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge', { challenge: 'SF Beach Cleanup' })}>
                 <View centerH>
                     <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/ocean-cleanup.jpg")} />
                 </View>
@@ -44,7 +44,7 @@ let ViewChallenges = ({ navigation, route}) => {
         <View style={[Styles.spacer]}></View>
 
         <View centerH marginB-s4 style={[Styles.challenge]}>
-            <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge')}>
+            <Pressable centerH onPress={() => navigation.navigate('ExpandChallenge', { challenge: 'Tree Planting' })}>
                 <View centerH>
                     <Image centerH style={[Styles.challengeImage]} source={require("../../assets/images/tree-planting.jpg")} />
                 </View>
