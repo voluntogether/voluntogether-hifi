@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pressable, ScrollView } from "react-native";
 import Svg, { Circle, Path } from 'react-native-svg';
 import { Button, Card, Incubator, Text, View } from "react-native-ui-lib";
@@ -7,8 +7,9 @@ import { resetJournals } from "../state/journalingSlice";
 import { resetState, toggleOnboarding } from "../state/userSlice";
 import Styles from "../Style.js";
 import { timeOfDay } from "../util/util";
-
-let TextField = Incubator.TextField;
+import CountDown from 'react-native-countdown-component';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import SettingsModal from "../components/SettingsModal";
 
 
 
@@ -19,16 +20,30 @@ let Home = ({ navigation }) => {
     let dispatch = useDispatch();
     let hasMatched = useSelector(state => state.user.hasMatched);
 
+    let [openSettings, setOpenSettings] = useState(false);
     return (
+
         <ScrollView>
+            <SettingsModal visible={openSettings} onDone={() => {
+                setOpenSettings(false);
+            }} onCancel={() => {
+                setOpenSettings(false);
+            }} />
 
             <View flex padding-page>
+                <Pressable marginT-s25 onPress={() => {
+                    setOpenSettings(true)
+                }}>
+                    <FontAwesome5 name="user" size={45} color="black" />
+                </Pressable>
                 <View marginT-s10>
                     <Text megaHeading nonBlackBlack marginT-s4 marginB-s8>{timeOfDay()}, {userName}.</Text>
                 </View>
 
                 {/* "TODO: have this card display either the matching or the journaling, depending on whether the user has done matching" */}
                 <View centerH>
+
+
                     <Pressable onPress={() => navigation.navigate(!hasMatched ? 'Matching' : 'Journaling')}>
                         <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
                             <Text heading center nonWhiteWhite marginB-s4>{!hasMatched ? "match with someone" : "journal with your partner"}</Text>
@@ -39,6 +54,15 @@ let Home = ({ navigation }) => {
                             </Svg>
                         </Card>
                     </Pressable>
+
+                    <Text heading center nonBlackBlack marginB-s4>{"The next challenge drops in"}</Text>
+
+                    <CountDown
+                        until={12000}
+                        // onFinish={() => { }}
+                        // onPress={() => { }}
+                        size={32}
+                    />
 
                     <Pressable onPress={() => navigation.navigate('Challenges')}>
                         <Card style={[Styles.resizeableBlueCard, Styles.boxShadow]} centerH >
@@ -62,7 +86,6 @@ let Home = ({ navigation }) => {
                 </View>
             </View>
         </ScrollView>
-
     );
 };
 
