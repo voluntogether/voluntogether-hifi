@@ -50,7 +50,7 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
                     <Pressable  >
                       {/* <View> */}
                       <View style={[StylesExpand.replyLine]}>
-                        <Text marginH-s6>{userLookup(message.message.user, users).name + ": " + reply.message.body}</Text>
+                        <Text marginH-s6>{userLookup(reply.message.user, users).name + ": " + reply.message.body}</Text>
                       </View>
                     </Pressable>)
                 })

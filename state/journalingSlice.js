@@ -19,7 +19,7 @@ const initialState = {
                         "replies": [
                             {
                                 "message": {
-                                    "user": 1,
+                                    "user": 2,
                                     "body": "Wow, I'm glad you got to connect with them :)"
                                 }
                             }
@@ -32,29 +32,23 @@ const initialState = {
         },
         {
             "date": Date.now(),
-            "organization": "Default 1",
+            "organization": "Champion Charities",
             "id": 2,
             "users": [1, 2],
             "prompts": [{
-                "prompt": "Describe a hardship you faced during this experience.",
+                "prompt": "What is a personal challenge you overcame when volunteering?",
                 "icon": "dumbbell",
                 "responses": [
                     {
                         "message": {
                             "user": 1,
-                            "body": "I'm doing great!"
+                            "body": "I've generally had a difficult time adjusting to the work environment, but I feel like I did a much better job this time around!"
                         },
                         "replies": [
                             {
                                 "message": {
-                                    "user": 1,
-                                    "body": "I'm doing great!"
-                                }
-                            },
-                            {
-                                "message": {
                                     "user": 2,
-                                    "body": "I'm doing great!"
+                                    "body": "You did great! Everyone really appreciated the work you were able to do."
                                 }
                             }
                         ]
@@ -66,7 +60,7 @@ const initialState = {
         },
         {
             "date": Date.now(),
-            "organization": "Default 2",
+            "organization": "Hearts for Homeless",
             "id": 3,
             "users": [1, 2],
             "prompts": [{
@@ -76,19 +70,13 @@ const initialState = {
                     {
                         "message": {
                             "user": 1,
-                            "body": "I'm doing great!"
+                            "body": "I'm extremely passionate about helping better my community, and this experience brought a lot of awareness to issues I was previously unaware of. "
                         },
                         "replies": [
                             {
                                 "message": {
-                                    "user": 1,
-                                    "body": "I'm doing great!"
-                                }
-                            },
-                            {
-                                "message": {
                                     "user": 2,
-                                    "body": "I'm doing great!"
+                                    "body": "I feel the same way. I signed up for their next service opportunity and really look forward to being able to help and learn more."
                                 }
                             }
                         ]
