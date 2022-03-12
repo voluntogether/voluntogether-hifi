@@ -7,6 +7,7 @@ import { launchImageLibrary } from "react-native-image-picker";
 
 import { useDispatch, useSelector } from "react-redux";
 import { rename, setProfilePic, toggleOnboarding, setEmail } from "../state/userSlice";
+import { resetJournals } from "../state/journalingSlice";
 import Styles from "../Style.js";
 let TextField = Incubator.TextField;
 
@@ -53,7 +54,7 @@ let SettingsModal = ({ visible, onDone, onCancel }) => {
 
             }}>
                 <View centerH marginT-s6>
-                    <ProfilePic id={1} size={80}/>
+                    <ProfilePic id={1} size={80} />
                     <Text marginT-s6>Change Picture</Text>
                 </View>
             </Pressable>
