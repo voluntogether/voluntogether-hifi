@@ -105,8 +105,6 @@ let ExpandThread = ({ navigation, route }) => {
           setOpenMessageModal(false);
         }}
       />
-      
-      
 
       <View style={{marginTop: 350}} marginR-s4 flex right bottom>
         
