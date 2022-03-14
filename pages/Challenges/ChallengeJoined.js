@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions, ImageBackground, Pressable, ScrollView, Alert } from "react-native";
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
-import { Card, Text, View } from "react-native-ui-lib";
+import { Card, Text, View, Button } from "react-native-ui-lib";
 import Styles from "../../Style.js";
 import BackArrowLight from "../../components/BackArrowLight";
 
@@ -111,7 +111,7 @@ let ChallengeJoined = ({ navigation, route }) => {
             leaveChallengeAlert();
           }
           }>
-            <Text>Quit challenge</Text>
+            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Quit Challenge'} />
           </Pressable>
 
 
