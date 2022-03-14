@@ -74,9 +74,6 @@ let CreateThread = ({ navigation, route }) => {
                             {category === 'Goals' && <FontAwesome5 name={'medal'} size={30} color={"white"}/>}
                             {category === 'Inspirations' && <FontAwesome5 name={'lightbulb'} size={30} color={"white"}/>}
 
-
-
-
                             <Text center bigBody marginT-s4>Prompt: {prompt}</Text>
                             {/* <Text bigBody marginT-s4>Prompt: {prompt.prompt}</Text> */}
                             </View>
