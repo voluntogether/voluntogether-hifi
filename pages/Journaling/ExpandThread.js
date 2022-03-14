@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pressable } from "react-native";
+import { Pressable, ScrollView } from "react-native";
 import { launchImageLibrary } from "react-native-image-picker";
 import { Button, Image, Modal, Text, TextField, View } from "react-native-ui-lib";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -70,43 +70,47 @@ let ExpandThread = ({ navigation, route }) => {
 
 
   return (
+
     <View padding-page style={[Styles.noHorizontalPadding]}>
-      <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
-        <BackArrow navigation={navigation} />
-      </View>
-      <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
 
-      <Journal imageModalCallback={(image) => {
-        setImageModalImage(image);
-        setImageModalOpen(true);
+    <ScrollView contentContainerStyle={{flexGrow: 1}}>
 
-      }}
-      
-        navigation={navigation} openModal={(messageIndex) => {
+        <View style={[Styles.backArrowContainerForPageWithoutPadding]}>
+          <BackArrow navigation={navigation} />
+        </View>
+        <Text heading center nonBlackBlack marginB-s4>Journal Responses</Text>
 
-          setOpenReplyModal(true);
-          setModifiedMessageIndex(messageIndex);
-
-        }} index={index} journal={journal} />
-
-      {modifiedMessageIndex !== null && <ReplyModal message={messageLookup(journal, index, modifiedMessageIndex)} openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
-        onDone={() => {
-          createReply(response, index, modifiedMessageIndex)
-          setOpenReplyModal(false);
+        <Journal imageModalCallback={(image) => {
+          setImageModalImage(image);
+          setImageModalOpen(true);
         }}
-        onChangeText={(message) => {
-          setResponse(message);
-        }}
-      />}
+        
+          navigation={navigation} openModal={(messageIndex) => {
 
-      <MessageModal prompt={prompt} images={images} imageCallback={(assets) => setImages(images.concat(assets))} openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
-        onChangeText={(message) => setResponse(message)} onDone={() => {
-          createMessage(response, images)
-          setOpenMessageModal(false);
-        }}
-      />
+            setOpenReplyModal(true);
+            setModifiedMessageIndex(messageIndex);
 
-      <View style={{marginTop: 350}} marginR-s4 flex right bottom>
+          }} index={index} journal={journal} />
+
+        {modifiedMessageIndex !== null && <ReplyModal message={messageLookup(journal, index, modifiedMessageIndex)} openReplyModal={openReplyModal} onCancel={() => setOpenReplyModal(false)}
+          onDone={() => {
+            createReply(response, index, modifiedMessageIndex)
+            setOpenReplyModal(false);
+          }}
+          onChangeText={(message) => {
+            setResponse(message);
+          }}
+        />}
+
+        <MessageModal prompt={prompt} images={images} imageCallback={(assets) => setImages(images.concat(assets))} openMessageModal={openMessageModal} onCancel={() => setOpenMessageModal(false)}
+          onChangeText={(message) => setResponse(message)} onDone={() => {
+            createMessage(response, images)
+            setOpenMessageModal(false);
+          }}
+        />
+      </ScrollView>
+
+      <View position={'absolute'} style={{ marginTop: 690, marginLeft: 310 }} marginR-s4 flex right bottom>
         
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => setOpenMessageModal(true)} />
       </View>

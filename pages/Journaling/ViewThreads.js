@@ -73,7 +73,7 @@ let ViewThreads = ({ navigation, route }) => {
 
       </View>
 
-      <View style={{ marginTop: 700, marginLeft: 310 }} right marginR-s8 position={'absolute'}>
+      <View style={{ marginTop: 690, marginLeft: 310 }} right marginR-s8 position={'absolute'}>
         {/* <View style={{ height: window.Height }} > */}
         <Button bold buttonArrow nonBlackBlack style={[Styles.yellowButton]} label={"+"} onPress={() => navigation.navigate('ViewPromptCategories', { id })} />
       </View>
