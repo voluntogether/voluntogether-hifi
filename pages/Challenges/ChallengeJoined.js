@@ -83,7 +83,7 @@ let ChallengeJoined = ({ navigation, route }) => {
             </Svg>
 
             {challenge === 'SF Beach Cleanup' ? <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 5 hours on this challenge.</Text> :
-              <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 8 hours on this challenge.</Text>}
+              <Text marginT-s2 nonBlackBlack left>The voluntogether community collectively volunteered 2 hours on this challenge.</Text>}
           </Card>
 
 
