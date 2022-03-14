@@ -36,7 +36,7 @@ let Home = ({ navigation }) => {
                     <Pressable onPress={() => {
                         setOpenSettings(true)
                     }}>
-                        <FontAwesome5 name="user" size={32} color="black" />
+                        <FontAwesome5 name="user" solid size={32} color="black" />
                     </Pressable>
                 </View>
                 <View marginT-s2>
