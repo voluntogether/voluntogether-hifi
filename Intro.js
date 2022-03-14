@@ -223,7 +223,7 @@ const Intro = () => {
                 },
                 {
                     backgroundColor: '#f4f4f4',
-                    subtitle:  <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4 >Then, work together to volunteer at an organization related to your interests, and come back to the app to reflect on your experience.</Text>,
+                    subtitle: <Text style={{ color: '#4A4A4A', fontSize: 16 }} center marginH-s4 >Then, work together to volunteer at an organization related to your interests, and come back to the app to reflect on your experience.</Text>,
                     image: <OnboardBlob3 width={250} height={250} />,
                 },
                 {
@@ -233,7 +233,7 @@ const Intro = () => {
                 },
                 {
                     backgroundColor: '#345F93',
-                    subtitle:  <Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>Partner journal to better connect, reflect, and serve your community.</Text>,
+                    subtitle: <Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>Partner journal to better connect, reflect, and serve your community.</Text>,
                     image: <><Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>Now go voluntogether!</Text><OnboardBlob5 width={250} height={250} /></>,
                 },
                 {
@@ -244,7 +244,7 @@ const Intro = () => {
                         <Text style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4>How would you liked to be called?</Text>
                         <TextField
                             style={{ color: '#FFFFFF', fontSize: 16 }} center marginH-s4
-                            placeholder={'Placeholder'}
+                            placeholder={'Your Name'}
                             floatingPlaceholder
                             onChangeText={(message) => dispatch(rename(message))}
 
