@@ -107,12 +107,9 @@ let ChallengeJoined = ({ navigation, route }) => {
             </View>
           </Card>
 
-          <Pressable centerH onPress={() => {
+          <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Quit Challenge'} onPress={() => {
             leaveChallengeAlert();
-          }
-          }>
-            <Button style={[Styles.greenButton, Styles.boxShadow]} label={'Quit Challenge'} />
-          </Pressable>
+          }} />
 
 
 
@@ -126,7 +123,7 @@ let ChallengeJoined = ({ navigation, route }) => {
 
 
       </View>
-    </ScrollView>
+    </ScrollView >
   );
 }
 
