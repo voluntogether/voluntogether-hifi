@@ -55,26 +55,32 @@ let SettingsModal = ({ visible, onDone, onCancel }) => {
             }}>
                 <View centerH marginT-s6>
                     <ProfilePic id={1} size={80} />
-                    <Text marginT-s6>Change Picture</Text>
+                    <Text marginT-s6 style={{ fontSize: 18 }}>Change Picture</Text>
                 </View>
             </Pressable>
 
 
             <TextField marginH-s4 marginT-s4
                 placeholder={'Name'}
+                floatingPlaceholderStyle={{ fontSize: 18 }}
                 floatingPlaceholder
                 onChangeText={(text) => setName(text)}
+                height={50}
+                style={{ fontSize: 18 }}
 
             />
             <TextField marginH-s4 marginT-s4
                 placeholder={'Email'}
+                floatingPlaceholderStyle={{ fontSize: 18 }}
+
                 floatingPlaceholder
                 onChangeText={(text) => setLocalEmail(text)}
+                style={{ fontSize: 18 }}
 
             />
-            <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Re-onboard'} onPress={() => dispatch(toggleOnboarding())} />
+            {/* <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Re-onboard'} onPress={() => dispatch(toggleOnboarding())} />
 
-            <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Reset state'} onPress={() => dispatch(resetJournals())} />
+            <Button marginT-s4 marginH-s4 style={[Styles.greenButton, Styles.boxShadow]} label={'Reset state'} onPress={() => dispatch(resetJournals())} /> */}
 
 
         </Modal>

@@ -61,6 +61,8 @@ let Home = ({ navigation }) => {
                     <CountDown
                         until={12000}
                         size={32}
+                        digitStyle={{ backgroundColor: '#a4c1e3', borderWidth: 2, borderColor: "#a4a4a4" }}
+
                     />
 
                     <Pressable onPress={() => navigation.navigate('Challenges')}>

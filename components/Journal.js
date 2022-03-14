@@ -24,25 +24,26 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
                 <View style={[Styles.alignRow]} centerH paddingB-s6>
                   <ProfilePic id={message.message.user} />
                   <Text bold smallBody> {userLookup(message.message.user, users).name + "'s journal entry"} </Text>
-                  {_.map(message.message.images, (image) => {
-                    return (
-                      <Pressable onPress={() => {
 
-                        imageModalCallback(image)
-                      }}><ImageModal
-                          resizeMode="contain"
-                          imageBackgroundColor="#000000"
-                          style={{
-                            width: 50,
-                            height: 50,
-                          }}
-                          source={{
-                            uri: image.uri,
-                          }}
-                        /></Pressable>)
-                  })}
                 </View>
-                <Text marginB-s4>{message.message.body}</Text>
+                {_.map(message.message.images, (image) => {
+                  return (
+                    <Pressable onPress={() => {
+
+                      imageModalCallback(image)
+                    }}><ImageModal
+                        resizeMode="contain"
+                        imageBackgroundColor="#000000"
+                        style={{
+                          width: 75,
+                          height: 75,
+                        }}
+                        source={{
+                          uri: image.uri,
+                        }}
+                      /></Pressable>)
+                })}
+                <Text marginT-s4 marginB-s4>{message.message.body}</Text>
 
                 {/* REPLY */}
                 {_.map(message.replies, (reply) => {
@@ -58,7 +59,7 @@ let Journal = ({ journal, index, openModal, imageModalCallback }) => {
 
               </View>
             </View>
-            <FontAwesome5 style={{marginLeft: 300}} name={'reply'} size={20} color={"#000"} />
+            <FontAwesome5 style={{ marginLeft: 300 }} name={'reply'} size={20} color={"#000"} />
 
           </View>
         </Pressable>
